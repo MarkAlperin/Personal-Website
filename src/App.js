@@ -5,13 +5,14 @@ import FrontPage from "./components/FrontPage";
 import Resume from "./components/Resume";
 
 const App = () => {
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<FrontPage />}>
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<FrontPage />} />
         <Route path="/resume" element={<Resume />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>;
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default App;

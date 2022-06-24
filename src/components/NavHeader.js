@@ -5,7 +5,7 @@ import styled from "styled-components";
 import logo from "../logo.svg";
 import "../App.css";
 
-const Header = (props) => {
+const NavHeader = (props) => {
   const [lastClicked, setLastClicked] = useState(null);
 
   const resumeButtonHandler = () => {};
@@ -19,10 +19,10 @@ const Header = (props) => {
         </LinkContainer>
         <LinkContainer>
           <StyledA to="#experience">Experience</StyledA>
-        </LinkContainer>{" "}
+        </LinkContainer>
         <LinkContainer>
           <StyledA to="#projects">Projects</StyledA>
-        </LinkContainer>{" "}
+        </LinkContainer>
         <LinkContainer>
           <StyledA to="#contact">Contact</StyledA>
         </LinkContainer>
@@ -37,15 +37,16 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default NavHeader;
 
 const StyledHeader = styled.h3`
   width: 100%;
+  height: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #f5f5f5;
+  background-color: #081f29;
 `;
 
 const NavigationContainer = styled.div`

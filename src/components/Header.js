@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
 
 import logo from "../logo.svg";
@@ -14,21 +15,24 @@ const Header = (props) => {
       <img src={logo} className="App-logo" alt="logo" />
       <NavigationContainer>
         <LinkContainer>
-          <StyledLink to="/About">About</StyledLink>
+          <StyledA to="#about">About</StyledA>
         </LinkContainer>
         <LinkContainer>
-          <StyledLink to="/About">Experience</StyledLink>
+          <StyledA to="#experience">Experience</StyledA>
         </LinkContainer>{" "}
         <LinkContainer>
-          <StyledLink to="/About">Projects</StyledLink>
+          <StyledA to="#projects">Projects</StyledA>
         </LinkContainer>{" "}
         <LinkContainer>
-          <StyledLink to="/About">Contact</StyledLink>
+          <StyledA to="#contact">Contact</StyledA>
         </LinkContainer>
         <LinkContainer>
-          <StyledButton onClick={resumeButtonHandler}>Resume</StyledButton>
+          <StyledLinkContainer>
+            <Link to="/resume">Resume</Link>
+          </StyledLinkContainer>
         </LinkContainer>
       </NavigationContainer>
+      <Outlet />
     </StyledHeader>
   );
 };
@@ -56,12 +60,12 @@ const LinkContainer = styled.div`
   margin-right: 8%;
 `;
 
-const StyledLink = styled.a`
+const StyledA = styled.a`
   margin-right: 8%%;
   width: auto;
 `;
 
-const StyledButton = styled.button`
+const StyledLinkContainer = styled.div`
   background-color: #4caf50;
   /* margin-right: 10%; */
 `;

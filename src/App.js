@@ -6,12 +6,13 @@ import Resume from "./components/Resume";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<FrontPage />} />
-        <Route path="/resume" element={<Resume />} />
-      </Routes>
-    </BrowserRouter>
+    <FrontPage />
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/" element={<FrontPage />} />
+    //     <Route path="/resume" element={<Resume />} />
+    //   </Routes>
+    // </BrowserRouter>
   );
 };
 

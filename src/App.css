@@ -5,6 +5,9 @@
 .App-logo {
   height: 10vmin;
   pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 const height = window.innerHeight;
-console.log('height: ', height);
+
 const templates = {
 
   DisplayContainer: styled.div`
@@ -13,7 +13,7 @@ const templates = {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: navy;
+    scroll-behavior: smooth;
   `,
 }
 

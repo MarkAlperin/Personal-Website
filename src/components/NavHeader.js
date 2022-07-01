@@ -2,36 +2,64 @@ import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
 
-import logo from "../logo.svg";
+import logo from "../assets/logo.svg";
 import "../App.css";
 
 const NavHeader = (props) => {
   const [lastClicked, setLastClicked] = useState(null);
 
-  const resumeButtonHandler = () => {};
+  const scrollHandler = (id) => {
+    setLastClicked(id);
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <StyledHeader>
       <img src={logo} className="App-logo" alt="logo" />
+
       <NavigationContainer>
         <LinkContainer>
-          <StyledA to="#about">About</StyledA>
+          <StyledP
+            onClick={() => {
+              scrollHandler("about");
+            }}
+          >
+            About
+          </StyledP>
         </LinkContainer>
         <LinkContainer>
-          <StyledA to="#experience">Experience</StyledA>
+          <StyledP
+            onClick={() => {
+              scrollHandler("experience");
+            }}
+          >
+            Experience
+          </StyledP>
         </LinkContainer>
         <LinkContainer>
-          <StyledA to="#projects">Projects</StyledA>
+          <StyledP
+            onClick={() => {
+              scrollHandler("projects");
+            }}
+          >
+            Projects
+          </StyledP>
         </LinkContainer>
         <LinkContainer>
-          <StyledA to="#contact">Contact</StyledA>
+          <StyledP
+            onClick={() => {
+              scrollHandler("contact");
+            }}
+          >
+            Contact
+          </StyledP>
         </LinkContainer>
-        <LinkContainer>
-          <StyledLinkContainer>
-            <Link to="/resume">Resume</Link>
-          </StyledLinkContainer>
-        </LinkContainer>
+        <div>
+          {/* <Link to="/resume">Resume</Link> */}
+          <a href="../resume.pdf">Resume</a>
+        </div>
       </NavigationContainer>
+
       <Outlet />
     </StyledHeader>
   );
@@ -59,14 +87,19 @@ const NavigationContainer = styled.div`
 
 const LinkContainer = styled.div`
   margin-right: 8%;
+  color: white;
 `;
 
-const StyledA = styled.a`
-  margin-right: 8%%;
+const StyledP = styled.p`
+  margin-right: 8%;
   width: auto;
+  color: inherit;
+  cursor: pointer;
+  &:hover {
+    color: #cab1fa;
+  }
 `;
 
 const StyledLinkContainer = styled.div`
-  background-color: #4caf50;
-  /* margin-right: 10%; */
+  color: white;
 `;

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import NavHeader from "./NavHeader";
+import SideBar from "./SideBar";
 import LandingDisplay from "./LandingDisplay";
 import About from "./About";
 import Experience from "./Experience";
@@ -14,30 +15,35 @@ const FrontPage = () => {
 
   return (
     <OuterContainer className="App">
-      <NavHeader />
-      <DisplayContainer>
-        <LandingDisplay id="landing" />
-      </DisplayContainer>
-      <DisplayContainer>
-        <About id="about" />
-      </DisplayContainer>
-      <DisplayContainer>
-        {" "}
-        <Experience id="experience" />
-      </DisplayContainer>
-      <DisplayContainer>
-        {" "}
-        <Projects id="projects" />
-      </DisplayContainer>
-      <DisplayContainer>
-        {" "}
-        <Contact id="contact" />
-      </DisplayContainer>
+      <SideBar />
+      {/* <NavHeader /> */}
+      <ScrollContainer>
+        <DisplayContainer id="home">
+          <LandingDisplay />
+        </DisplayContainer>
+        <DisplayContainer id="about">
+          <About />
+        </DisplayContainer>
+        <DisplayContainer id="skills">
+          <Experience />
+        </DisplayContainer>
+        <DisplayContainer id="projects">
+          <Projects />
+        </DisplayContainer>
+        <DisplayContainer id="contact">
+          <Contact />
+        </DisplayContainer>
+      </ScrollContainer>
     </OuterContainer>
   );
 };
 export default FrontPage;
 
 const OuterContainer = styled.div`
-background-color: #081f29;
+  background-color: whitesmoke;
+`;
+
+const ScrollContainer = styled.div`
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 `;

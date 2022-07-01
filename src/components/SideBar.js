@@ -7,6 +7,12 @@ import "../App.css";
 
 const SideBar = () => {
   const [showSideBar, setShowSideBar] = useState(false);
+  const [lastClicked, setLastClicked] = useState(null);
+
+  const scrollHandler = (id) => {
+    setLastClicked(id);
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  };
 
   const enterHandler = () => {
     setShowSideBar(true);
@@ -20,23 +26,23 @@ const SideBar = () => {
     <StyledAside onMouseEnter={enterHandler} onMouseLeave={leaveHandler}>
       <StyledImg src={logo} />
       <IconContainer>
-        <IconTextContainer>
+        <IconTextContainer onClick={() => {scrollHandler("home")}}>
           <i class="fa-solid fa-house fa-lg" ></i>
           {showSideBar && <P>Home</P>}
         </IconTextContainer>
-        <IconTextContainer>
+        <IconTextContainer  onClick={() => {scrollHandler("about")}}>
           <i class="fa-solid fa-user fa-lg"></i>
           {showSideBar && <P>About</P>}
         </IconTextContainer>
-        <IconTextContainer>
+        <IconTextContainer onClick={() => {scrollHandler("skills")}}>
           <i class="fa-solid fa-display fa-lg"></i>
           {showSideBar && <P>Skills</P>}
         </IconTextContainer>
-        <IconTextContainer>
+        <IconTextContainer onClick={() => {scrollHandler("projects")}}>
           <i class="fa-solid fa-briefcase fa-lg"></i>
           {showSideBar && <P>Projects</P>}
         </IconTextContainer>
-        <IconTextContainer>
+        <IconTextContainer onClick={() => {scrollHandler("contact")}}>
           <i class="fa-solid fa-envelope fa-lg"></i>
           {showSideBar && <P>Contact</P>}
         </IconTextContainer>

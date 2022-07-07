@@ -27,6 +27,6 @@ const SkillsContainer = styled.div`
   height: auto;
   background-color: white;
   border-radius: 10px;
-  dropshadow: 5px 5px 5px black;
+  box-shadow: 0px 4px 8px rgba(134, 151, 168, 0.1);
 
 `;

@@ -6,13 +6,11 @@ const SkillCard = ({ icon }) => {
 
   return (
     <SkillCardContainer>
-      <a href={href} target="blank" rel="noopener noreferrer">
-
-          <StyledImg src={src} alt={alt} />
-
+      <StyledA href={href} target="blank" rel="noopener noreferrer" >
+        <StyledImg src={src} alt={alt} />
 
         <StyledP>{alt}</StyledP>
-      </a>
+      </StyledA>
     </SkillCardContainer>
   );
 };
@@ -31,15 +29,25 @@ const SkillCardContainer = styled.div`
   width: 80px;
   margin: 20px;
   padding: 5px;
+
+  transition: all 0.3s ease-in;
+  &:hover {
+    box-shadow: 10px 10px 10px #cad1d9;
+  }
 `;
 
 const StyledImg = styled.img`
   width: 40px;
   height: 40px;
-  `;
+`;
 
 const StyledP = styled.p`
   font-size: 12px;
   font-weight: bold;
-  color:
+  text-decoration: none;
+  color:  #081f29;
+`;
+
+const StyledA = styled.a`
+  text-decoration: none;
 `;

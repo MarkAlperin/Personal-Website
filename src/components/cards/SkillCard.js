@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import templates from "../templates";
+
 const SkillCard = ({ icon }) => {
   const { href, src, alt } = icon;
 
@@ -8,7 +10,6 @@ const SkillCard = ({ icon }) => {
     <SkillCardContainer>
       <StyledA href={href} target="blank" rel="noopener noreferrer" >
         <StyledImg src={src} alt={alt} />
-
         <StyledP>{alt}</StyledP>
       </StyledA>
     </SkillCardContainer>
@@ -32,7 +33,7 @@ const SkillCardContainer = styled.div`
 
   transition: all 0.3s ease-in;
   &:hover {
-    box-shadow: 10px 10px 10px #cad1d9;
+    box-shadow: 10px 10px 10px ${templates.boxShadowColor};
   }
 `;
 

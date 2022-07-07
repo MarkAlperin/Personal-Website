@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-import SkillCard from "../SkillCard";
+import SkillCard from "../cards/SkillCard";
 import icons from "../../assets/techIcons";
+
 
 const Skills = () => {
 
   return (
     <SkillsContainer>
-      {icons.map((icon, idx) => {
+      {icons.skills.map((icon, idx) => {
         return <SkillCard key={idx} icon={icon} />;
       })}
     </SkillsContainer>

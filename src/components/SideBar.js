@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import logo from "../assets/logo.svg";
 import user from "../assets/user.svg";
+import templates from "./templates";
 import "../App.css";
 
 const SideBar = () => {
@@ -67,7 +68,7 @@ const StyledAside = styled.aside`
   justify-content: space-between;
   width: 105px;
   height: 100vh;
-  background-color: #081f29;
+  background-color: ${templates.colorDark};
   position: fixed;
   color: white;
   /* -webkit-transition: all 0.3s ease-in; */
@@ -84,6 +85,7 @@ const IconContainer = styled.div`
   align-items: flex-start;
   justify-content: space-evenly;
   height: 300px;
+  transition: all 0.3s ease-in;
 `;
 
 const StyledImg = styled.img`
@@ -102,7 +104,7 @@ const IconTextContainer = styled.div`
   padding-left: 10px;
   width: 120px;
   border-radius: 5px;
-
+  transition: all 0.3s ease-in;
   &:hover {
     cursor: pointer;
     background-color: blue;

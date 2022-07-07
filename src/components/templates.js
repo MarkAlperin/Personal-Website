@@ -16,6 +16,10 @@ const templates = {
     justify-content: center;
     scroll-behavior: smooth;
   `,
+
+  colorDark: "#081f29",
+  colorLight: "#f2f2f2",
+  boxShadowColor: "#cad1d9",
 }
 
 export default templates;

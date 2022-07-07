@@ -11,22 +11,22 @@ const icons = [
   },
   {
     href: "https://expressjs.com",
-    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/expressjs/expressjs-original-wordmark.svg",
+    src:"https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg",
     alt: "Express",
   },
   {
     href: "https://jestjs.io",
-    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/jest/jest-original-wordmark.svg",
+    src: "https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg",
     alt: "Jest",
   },
   {
     href: "https://mochajs.org",
-    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mocha/mocha-original-wordmark.svg",
+    src: "https://www.vectorlogo.zone/logos/mochajs/mochajs-icon.svg",
     alt: "Mocha",
   },
   {
     href: "https://chaijs.com",
-    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/chai/chai-original-wordmark.svg",
+    src: "https://www.vectorlogo.zone/logos/chaijs/chaijs-icon.svg",
     alt: "Chai",
   },
   {
@@ -41,7 +41,7 @@ const icons = [
   },
   {
     href: "https://redux.js.org",
-    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original-wordmark.svg",
+    src:"https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg",
     alt: "Redux",
   },
   {
@@ -66,12 +66,12 @@ const icons = [
   },
   {
     href: "https://mongoosejs.com",
-    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongoose/mongoose-original-wordmark.svg",
+    src:"https://mongoosejs.com/docs/images/mongoose5_62x30_transparent.png",
     alt: "Mongoose",
   },
   {
     href: "https://nginx.org",
-    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original-wordmark.svg",
+    src:"https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg",
     alt: "Nginx",
   },
   {
@@ -86,12 +86,12 @@ const icons = [
   },
   {
     href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original-wordmark.svg",
+    src:"https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
     alt: "JavaScript",
   },
   {
     href: "https://www.typescriptlang.org",
-    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original-wordmark.svg",
+    src:"https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
     alt: "TypeScript",
   },
   {
@@ -101,12 +101,12 @@ const icons = [
   },
   {
     href: "https://babeljs.io",
-    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/babel/babel-original-wordmark.svg",
+    src:"https://www.vectorlogo.zone/logos/babeljs/babeljs-icon.svg",
     alt: "Babel",
   },
   {
     href: "https://www.gnu.org/software/bash/",
-    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/bash/bash-original-wordmark.svg",
+    src:"https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg",
     alt: "Bash",
   },
   {
@@ -116,7 +116,7 @@ const icons = [
   },
   {
     href: "https://firebase.google.com",
-    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-original-wordmark.svg",
+    src: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
     alt: "Firebase",
   },
   {
@@ -136,12 +136,12 @@ const icons = [
   },
   {
     href: "https://www.getpostman.com",
-    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postman/postman-original-wordmark.svg",
+    src:"https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
     alt: "Postman",
   },
   {
     href: "https://facebook.github.io/react-native/",
-    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react-native/react-native-original-wordmark.svg",
+    src: "https://reactnative.dev/img/header_logo.svg",
     alt: "React Native",
   },
 ];

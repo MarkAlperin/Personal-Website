@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-import NavHeader from "./NavHeader";
-import SideBar from "./SideBar";
-import LandingDisplay from "./LandingDisplay";
+import SideBar from "../SideBar";
+import Home from "./Home";
 import About from "./About";
-import Experience from "./Experience";
+import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
-import templates from "./templates";
+import templates from "../templates";
 
 const FrontPage = () => {
   const { DisplayContainer } = templates;
@@ -19,13 +18,13 @@ const FrontPage = () => {
       {/* <NavHeader /> */}
       <ScrollContainer>
         <DisplayContainer id="home">
-          <LandingDisplay />
+          <Home />
         </DisplayContainer>
         <DisplayContainer id="about">
           <About />
         </DisplayContainer>
         <DisplayContainer id="skills">
-          <Experience />
+          <Skills />
         </DisplayContainer>
         <DisplayContainer id="projects">
           <Projects />

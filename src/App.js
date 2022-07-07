@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import FrontPage from "./components/FrontPage";
+import FrontPage from "./components/displays/FrontPage";
 import Resume from "./components/Resume";
 
 const App = () => {

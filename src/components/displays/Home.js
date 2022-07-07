@@ -1,6 +1,6 @@
 import React from "react";
 
-const LandingDisplay = () => {
+const Home = () => {
 
   return (
     <div>
@@ -9,6 +9,6 @@ const LandingDisplay = () => {
   );
 };
 
-export default LandingDisplay;
+export default Home;
 
 

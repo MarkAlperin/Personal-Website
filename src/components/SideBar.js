@@ -27,23 +27,23 @@ const SideBar = () => {
       <StyledImg src={logo} />
       <IconContainer>
         <IconTextContainer onClick={() => {scrollHandler("home")}}>
-          <i class="fa-solid fa-house fa-lg" ></i>
+          <i className="fa-solid fa-house fa-lg" ></i>
           {showSideBar && <P>Home</P>}
         </IconTextContainer>
         <IconTextContainer  onClick={() => {scrollHandler("about")}}>
-          <i class="fa-solid fa-user fa-lg"></i>
+          <i className="fa-solid fa-user fa-lg"></i>
           {showSideBar && <P>About</P>}
         </IconTextContainer>
         <IconTextContainer onClick={() => {scrollHandler("skills")}}>
-          <i class="fa-solid fa-display fa-lg"></i>
+          <i className="fa-solid fa-display fa-lg"></i>
           {showSideBar && <P>Skills</P>}
         </IconTextContainer>
         <IconTextContainer onClick={() => {scrollHandler("projects")}}>
-          <i class="fa-solid fa-briefcase fa-lg"></i>
+          <i className="fa-solid fa-briefcase fa-lg"></i>
           {showSideBar && <P>Projects</P>}
         </IconTextContainer>
         <IconTextContainer onClick={() => {scrollHandler("contact")}}>
-          <i class="fa-solid fa-envelope fa-lg"></i>
+          <i className="fa-solid fa-envelope fa-lg"></i>
           {showSideBar && <P>Contact</P>}
         </IconTextContainer>
       </IconContainer>

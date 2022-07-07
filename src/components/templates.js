@@ -7,8 +7,9 @@ const templates = {
 
   DisplayContainer: styled.div`
     height: ${height}px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 105px;
+    padding-left: 10%
+    padding-right: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;

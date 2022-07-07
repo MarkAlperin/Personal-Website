@@ -13,7 +13,7 @@ const FrontPage = () => {
   const { DisplayContainer } = templates;
 
   return (
-    <OuterContainer className="App">
+    <OuterContainer>
       <SideBar />
       {/* <NavHeader /> */}
       <ScrollContainer>

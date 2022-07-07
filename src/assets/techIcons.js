@@ -1,16 +1,4 @@
 const icons = {
-  links: [
-    {
-      href: "https://www.linkedin.com/in/markalperin/",
-      src: "https://platform.linkedin.com/badges/js/profile.js",
-      alt: "LinkedIn",
-    },
-    {
-      href: "https://github.com/MarkAlperin",
-      src: "https://buttons.github.io/buttons.js",
-      alt: "GitHub",
-    },
-  ],
 
   skills: [
     {

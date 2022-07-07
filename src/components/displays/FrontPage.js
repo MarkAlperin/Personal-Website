@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
+
 import SideBar from "../SideBar";
-import Home from "./Home";
+import Home from "./home/Home";
 import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
@@ -15,7 +16,6 @@ const FrontPage = () => {
   return (
     <OuterContainer>
       <SideBar />
-      {/* <NavHeader /> */}
       <ScrollContainer>
         <DisplayContainer id="home">
           <Home />

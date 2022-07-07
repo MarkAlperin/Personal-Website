@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import logo from "../assets/logo.svg";
-import user from "../assets/user.svg";
 import templates from "./templates";
 import "../App.css";
 
@@ -56,22 +55,15 @@ const SideBar = () => {
 export default SideBar;
 
 const StyledAside = styled.aside`
-  /* display: -webkit-box;
-  display: -ms-flexbox; */
+
   display: flex;
-  /* -webkit-box-orient: vertical;
-  -webkit-box-direction: normal; */
-  /* -ms-flex-direction: column; */
   flex-direction: column;
-  /* -webkit-box-pack: justify;
-  -ms-flex-pack: justify; */
   justify-content: space-between;
   width: 105px;
   height: 100vh;
-  background-color: ${templates.colorDark};
+  background-color: ${templates.color.dark};
   position: fixed;
-  color: white;
-  /* -webkit-transition: all 0.3s ease-in; */
+  color: ${templates.color.white};
   transition: all 0.3s ease-in;
   z-index: 10;
   &:hover {
@@ -107,8 +99,8 @@ const IconTextContainer = styled.div`
   transition: all 0.3s ease-in;
   &:hover {
     cursor: pointer;
-    background-color: blue;
-    box-shadow: 0px 0px 10px #purple;
+    background-color: ${templates.color.mid};
+    box-shadow: 0px 0px 10px ${templates.color.light};
   }
 `;
 

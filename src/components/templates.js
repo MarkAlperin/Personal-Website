@@ -17,9 +17,15 @@ const templates = {
     scroll-behavior: smooth;
   `,
 
-  colorDark: "#081f29",
-  colorLight: "#f2f2f2",
-  boxShadowColor: "#cad1d9",
+  color: {
+    accent: "#687864",
+    dark: "#31708E",
+    mid: "#5085A5",
+    light: "#8FC1E3",
+    white: "whitesmoke", // "#F7F9FB",
+    shadowLight: "#C3D1D6",
+    shadowDark: "#A1ACB0 "
+  },
 }
 
 export default templates;

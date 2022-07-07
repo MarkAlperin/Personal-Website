@@ -8,7 +8,7 @@ const SkillCard = ({ icon }) => {
 
   return (
     <SkillCardContainer>
-      <StyledA href={href} target="blank" rel="noopener noreferrer" >
+      <StyledA href={href} target="blank" rel="noopener noreferrer">
         <StyledImg src={src} alt={alt} />
         <StyledP>{alt}</StyledP>
       </StyledA>
@@ -24,8 +24,8 @@ const SkillCardContainer = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  border: 1.5px solid whitesmoke;
-  box-shadow: 0px 4px 8px rgba(134, 151, 168, 0.1);
+  border: 1.5px solid ${templates.color.white};
+  box-shadow: 0px 3px 6px ${templates.color.shadowLight};
   height: 80px;
   width: 80px;
   margin: 20px;
@@ -33,7 +33,8 @@ const SkillCardContainer = styled.div`
 
   transition: all 0.3s ease-in;
   &:hover {
-    box-shadow: 10px 10px 10px ${templates.boxShadowColor};
+    box-shadow: 10px 10px 10px ${templates.color.shadowDark},
+      0px 3px 6px ${templates.color.dark};
   }
 `;
 
@@ -46,7 +47,7 @@ const StyledP = styled.p`
   font-size: 12px;
   font-weight: bold;
   text-decoration: none;
-  color:  #081f29;
+  color: #081f29;
 `;
 
 const StyledA = styled.a`

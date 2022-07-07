@@ -7,11 +7,11 @@ const SkillCard = ({ icon }) => {
   return (
     <SkillCardContainer>
       <a href={href} target="blank" rel="noopener noreferrer">
-        <IconContainer>
-          <img src={src} alt={alt} />
-        </IconContainer>
 
-        <p>{alt}</p>
+          <StyledImg src={src} alt={alt} />
+
+
+        <StyledP>{alt}</StyledP>
       </a>
     </SkillCardContainer>
   );
@@ -25,13 +25,21 @@ const SkillCardContainer = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  border: 1px solid whitesmoke;
-  dropshadow: 5px 5px 5px black;
-  height: 50px;
-  width: 50px;
+  border: 1.5px solid whitesmoke;
+  box-shadow: 0px 4px 8px rgba(134, 151, 168, 0.1);
+  height: 80px;
+  width: 80px;
+  margin: 20px;
+  padding: 5px;
 `;
 
-const IconContainer = styled.div`
-padding: 5px;
-  object-fit: contain;
+const StyledImg = styled.img`
+  width: 40px;
+  height: 40px;
+  `;
+
+const StyledP = styled.p`
+  font-size: 12px;
+  font-weight: bold;
+  color:
 `;

@@ -64,11 +64,11 @@ const icons = [
     src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg",
     alt: "MySQL",
   },
-  {
-    href: "https://mongoosejs.com",
-    src:"https://mongoosejs.com/docs/images/mongoose5_62x30_transparent.png",
-    alt: "Mongoose",
-  },
+  // {
+  //   href: "https://mongoosejs.com",
+  //   src:"https://mongoosejs.com/docs/images/mongoose5_62x30_transparent.png",
+  //   alt: "Mongoose",
+  // },
   {
     href: "https://nginx.org",
     src:"https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg",

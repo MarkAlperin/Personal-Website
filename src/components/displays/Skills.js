@@ -5,7 +5,7 @@ import SkillCard from "../SkillCard";
 import icons from "../../assets/techIcons";
 
 const Skills = () => {
-  console.log(icons)
+
   return (
     <SkillsContainer>
       {icons.map((icon, idx) => {

@@ -70,7 +70,7 @@ const Button = styled.div`
   justify-content: center;
   width: 150px;
   height: 45px;
-  border-radius: 30px;
+  border-radius: 5px;
   margin-right: 25px;
   background-color: ${templates.color.accent};
   color: ${templates.color.white};
@@ -100,7 +100,7 @@ const IconContainer = styled.a`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 6px;
   box-shadow:  2px 2px 4px ${templates.color.shadowDark};
   background-color: ${templates.color.mid};

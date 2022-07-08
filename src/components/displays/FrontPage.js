@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-
 import SideBar from "../SideBar";
 import Home from "./home/Home";
 import About from "./About";
@@ -9,9 +8,16 @@ import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import templates from "../templates";
+import helpers from "../../helpers/helpers";
 
 const FrontPage = () => {
   const { DisplayContainer } = templates;
+
+
+
+  window.onscroll = () => {
+   helpers.amountscrolled();
+  };
 
   return (
     <OuterContainer>

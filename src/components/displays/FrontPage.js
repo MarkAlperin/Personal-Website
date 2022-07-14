@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 
+import { AppContext } from "../../context/appContext";
 import SideBar from "../SideBar";
 import Home from "./home/Home";
 import About from "./About";
@@ -11,16 +12,20 @@ import templates from "../templates";
 import helpers from "../../helpers/helpers";
 
 const FrontPage = () => {
+  const ctx = useContext(AppContext);
   const { DisplayContainer } = templates;
 
-
-
   window.onscroll = () => {
-   helpers.amountscrolled();
+    let scrollPct = helpers.amountscrolled();
+    if (ctx.darkMode && scrollPct > 0.5) {
+      ctx.setDarkMode(false);
+    } else if (!ctx.darkMode && scrollPct < 0.5) {
+      ctx.setDarkMode(true);
+    }
   };
 
   return (
-    <OuterContainer>
+    <OuterContainer ctx={ctx}>
       <SideBar />
       <ScrollContainer>
         <DisplayContainer id="home">
@@ -45,7 +50,11 @@ const FrontPage = () => {
 export default FrontPage;
 
 const OuterContainer = styled.div`
-  background-color: whitesmoke;
+  transition: all 0.4s ease-in-out;
+  background-color: ${({ ctx }) =>
+    ctx.darkMode ? templates.color.black : "whitesmoke"};
+  color: ${({ ctx }) =>
+    ctx.darkMode ? templates.color.light : templates.color.black};
 `;
 
 const ScrollContainer = styled.div`

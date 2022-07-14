@@ -12,6 +12,7 @@ const helpers = {
   },
 
   amountscrolled: () => {
+    // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
     var winheight =
       window.innerHeight ||
       (document.documentElement || document.body).clientHeight;
@@ -21,8 +22,8 @@ const helpers = {
       (document.documentElement || document.body.parentNode || document.body)
         .scrollTop;
     var trackLength = docheight - winheight;
-    var pctScrolled = Math.floor((scrollTop / trackLength) * 100); // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
-    console.log(pctScrolled + "% scrolled");
+    var pctScrolled = Math.floor((scrollTop / trackLength) * 100);
+    // console.log(pctScrolled + "% scrolled");
     return pctScrolled;
   },
 };

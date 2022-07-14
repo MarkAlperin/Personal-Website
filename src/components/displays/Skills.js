@@ -23,11 +23,9 @@ const SkillsContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-
   width: 90%;
   height: auto;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(134, 151, 168, 0.1);
-
 `;

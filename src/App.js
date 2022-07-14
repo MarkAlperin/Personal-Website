@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import FrontPage from "./components/displays/FrontPage";
 import { AppContextProvider } from "./context/appContext";

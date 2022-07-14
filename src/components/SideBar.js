@@ -7,10 +7,10 @@ import "../App.css";
 
 const SideBar = () => {
   const [showSideBar, setShowSideBar] = useState(false);
-  const [lastClicked, setLastClicked] = useState(null);
+  // const [lastClicked, setLastClicked] = useState(null);
 
   const scrollHandler = (id) => {
-    setLastClicked(id);
+    // setLastClicked(id);
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   };
 

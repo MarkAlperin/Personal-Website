@@ -4,6 +4,7 @@ import styled from "styled-components";
 import templates from "../templates";
 
 const SkillCard = ({ icon }) => {
+  console.log({icon})
   const { href, src, alt } = icon;
 
   return (

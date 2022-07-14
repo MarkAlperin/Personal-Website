@@ -6,10 +6,12 @@ import icons from "../../assets/techIcons";
 
 
 const Skills = () => {
+  console.log(icons.skills.length)
 
   return (
     <SkillsContainer>
       {icons.skills.map((icon, idx) => {
+        console.log(idx, icon)
         return <SkillCard key={idx} icon={icon} />;
       })}
     </SkillsContainer>

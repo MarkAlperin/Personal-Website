@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import SkillCard from "../cards/SkillCard";
+import ProjectCard from "../cards/ProjectCard";
 import projects from "../../assets/projects";
 
 
@@ -10,7 +10,7 @@ const Projects = () => {
   return (
     <ProjectsContainer>
       {projects.map((project, idx) => {
-        return <SkillCard key={idx} project={project} />;
+        return <ProjectCard key={idx} project={project} />;
       })}
     </ProjectsContainer>
   );

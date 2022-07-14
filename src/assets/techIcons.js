@@ -7,7 +7,7 @@ const icons = {
       alt: "AWS",
     },
     {
-      href: "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3",
+      href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
       src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg",
       alt: "CSS3",
     },

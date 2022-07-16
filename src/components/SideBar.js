@@ -61,7 +61,7 @@ const StyledAside = styled.aside`
   justify-content: space-between;
   width: 105px;
   height: 100vh;
-  background-color: ${templates.color.dark};
+  background-color: black;
   position: fixed;
   color: ${templates.color.white};
   transition: all 0.3s ease-in;

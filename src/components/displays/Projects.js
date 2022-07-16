@@ -16,6 +16,9 @@ const Projects = () => {
   );
 };
 
+
+
+
 export default Projects;
 
 const ProjectsContainer = styled.div`
@@ -24,6 +27,7 @@ const ProjectsContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   width: 90%;
+  padding: 5px;
   height: auto;
   background-color: white;
   border-radius: 10px;

@@ -6,7 +6,6 @@ import icons from "../../assets/techIcons";
 
 
 const Skills = () => {
-  console.log(icons.skills.length)
 
   return (
     <SkillsContainer>
@@ -26,6 +25,7 @@ const SkillsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 90%;
+  padding: 5px;
   height: auto;
   background-color: white;
   border-radius: 10px;

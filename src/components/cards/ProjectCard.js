@@ -48,6 +48,10 @@ const ProjectCardContainer = styled.div`
 
 const ButtonLink = styled.a`
   margin-bottom: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  color: ${templates.color.dark}
 `;
 
 const StyledImage = styled.img`

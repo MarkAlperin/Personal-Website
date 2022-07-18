@@ -37,9 +37,9 @@ const FrontPage = () => {
         <DisplayContainer id="skills">
           <Skills />
         </DisplayContainer>
-        <DisplayContainer id="projects">
+        <ProjectsContainer id="projects">
           <Projects />
-        </DisplayContainer>
+        </ProjectsContainer>
         <DisplayContainer id="contact">
           <Contact />
         </DisplayContainer>
@@ -61,3 +61,15 @@ const ScrollContainer = styled.div`
   overflow-y: scroll;
   scroll-behavior: smooth;
 `;
+
+const ProjectsContainer = styled.div`
+    height: auto;
+    margin-left: 105px;
+    padding-left: 10%
+    padding-right: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    scroll-behavior: smooth;
+  `;

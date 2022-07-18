@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import AppContext from "../../context/appContext";
 import SideBar from "../SideBar";
+import NavHeader from "../NavHeader";
 import Home from "./home/Home";
 import Landing from "./Landing";
 import Skills from "./Skills";
@@ -26,7 +27,8 @@ const FrontPage = () => {
 
   return (
     <OuterContainer ctx={ctx}>
-      <SideBar />
+      {/* <SideBar /> */}
+      <NavHeader />
       <ScrollContainer>
         <DisplayContainer id="home">
           <Landing />

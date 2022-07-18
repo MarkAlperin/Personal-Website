@@ -9,6 +9,19 @@ const ProjectCard = ({ project }) => {
   return (
     <ProjectCardContainer>
       <StyledImage src='https://alexcalia.com/assets/images/slangapp.PNG'/>
+      <TextContainer>
+        <H3>{project.name}</H3>
+        <StyledP>{project.description}</StyledP>
+        <StyledP>Tech: {project.technologies.map((tech, idx) => {
+          return <span key={idx}>{tech}</span>;
+        })}</StyledP>
+        <ul>
+          {project.bullets.map((bullet, idx) => {
+            return <li key={idx}>{bullet}</li>;
+          })}
+        </ul>
+        <ButtonLink href={project.github}/>
+      </TextContainer>
     </ProjectCardContainer>
   );
 };
@@ -23,11 +36,9 @@ const ProjectCardContainer = styled.div`
   border-radius: 10px;
   border: 1.5px solid ${templates.color.white};
   box-shadow: 0px 3px 6px ${templates.color.shadowLight};
-
   width: 90%;
   margin: 20px;
   padding: 5px;
-
   transition: all 0.3s ease-in;
   &:hover {
     box-shadow: 10px 10px 10px ${templates.color.shadowDark},
@@ -35,9 +46,20 @@ const ProjectCardContainer = styled.div`
   }
 `;
 
+const ButtonLink = styled.a`
+
+`;
+
 const StyledImage = styled.img`
   width: 40;
   height: 40px;
+`;
+
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
 `;
 
 const StyledP = styled.p`
@@ -47,6 +69,6 @@ const StyledP = styled.p`
   color: #081f29;
 `;
 
-const StyledA = styled.a`
-  text-decoration: none;
-`;
+const H3 = styled.h3`
+  font-size: 1.25rem;
+  font-weight: bold;`;

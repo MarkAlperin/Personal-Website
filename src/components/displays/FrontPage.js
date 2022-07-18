@@ -50,7 +50,7 @@ const FrontPage = () => {
 export default FrontPage;
 
 const OuterContainer = styled.div`
-  transition: all 0.4s ease-in-out;
+  transition: all .4s ease-in-out;
   background-color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.black : "whitesmoke"};
   color: ${({ ctx }) =>

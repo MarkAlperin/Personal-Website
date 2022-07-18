@@ -24,7 +24,8 @@ const templates = {
     white: "#FEFFFF", // "#F7F9FB",
     shadowLight: "#C3D1D6",
     shadowDark: "#A1ACB0 ",
-    black: "#17252A",
+    darker: "#17252A",
+    black: "black",
   },
 
   // MODERNITY IN FULL BLOOM (greens)

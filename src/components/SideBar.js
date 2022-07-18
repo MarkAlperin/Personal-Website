@@ -55,13 +55,13 @@ const SideBar = () => {
 export default SideBar;
 
 const StyledAside = styled.aside`
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 105px;
   height: 100vh;
-  background-color: black;
+  background-color: ${templates.color.black};
+  border-right: 1.2px solid ${templates.color.light};
   position: fixed;
   color: ${templates.color.white};
   transition: all 0.3s ease-in;

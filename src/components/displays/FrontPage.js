@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 
 import AppContext from "../../context/appContext";
-import SideBar from "../SideBar";
+// import SideBar from "../SideBar";
 import NavHeader from "../NavHeader";
 import Home from "./home/Home";
-import Landing from "./Landing";
+import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
@@ -31,10 +31,10 @@ const FrontPage = () => {
       <NavHeader />
       <ScrollContainer>
         <DisplayContainer id="home">
-          <Landing />
+          <Home />
         </DisplayContainer>
         <DisplayContainer id="about">
-          <Home />
+          <About />
         </DisplayContainer>
         <DisplayContainer id="skills">
           <Skills />

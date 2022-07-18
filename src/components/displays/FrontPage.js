@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 
-import { AppContext } from "../../context/appContext";
+import AppContext from "../../context/appContext";
 import SideBar from "../SideBar";
 import Home from "./home/Home";
 import Landing from "./Landing";

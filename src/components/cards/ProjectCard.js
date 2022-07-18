@@ -3,24 +3,24 @@ import styled from "styled-components";
 
 import templates from "../templates";
 
-const ProjectCard = ({ project }) => {
 
+const ProjectCard = ({ project }) => {
 
   return (
     <ProjectCardContainer>
-      <StyledImage src='https://alexcalia.com/assets/images/slangapp.PNG'/>
+      <StyledImage src={project.image}/>
       <TextContainer>
         <H3>{project.name}</H3>
         <StyledP>{project.description}</StyledP>
-        <StyledP>Tech: {project.technologies.map((tech, idx) => {
-          return <span key={idx}>{tech}</span>;
-        })}</StyledP>
-        <ul>
+        <StyledP2>Tech: {project.techs.map((tech, idx) => {
+          return <span key={idx}>{tech }</span>;
+        })}</StyledP2>
+        <StyledList>
           {project.bullets.map((bullet, idx) => {
-            return <li key={idx}>{bullet}</li>;
+            return <StyledLi key={idx}>{bullet}</StyledLi>;
           })}
-        </ul>
-        <ButtonLink href={project.github}/>
+        </StyledList>
+        <ButtonLink href={project.github} target="blank"> Repo </ButtonLink>
       </TextContainer>
     </ProjectCardContainer>
   );
@@ -47,15 +47,17 @@ const ProjectCardContainer = styled.div`
 `;
 
 const ButtonLink = styled.a`
-
+  margin-bottom: 10px;
 `;
 
 const StyledImage = styled.img`
-  width: 40;
-  height: 40px;
+  width: 40%;
+  height: auto;
+  border: 1.5px solid ${templates.color.light};
 `;
 
 const TextContainer = styled.div`
+width: 40%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -63,7 +65,14 @@ const TextContainer = styled.div`
 `;
 
 const StyledP = styled.p`
-  font-size: 12px;
+  font-size: 13px;
+  /* font-weight: bold; */
+  text-decoration: none;
+  color: #081f29;
+`;
+
+const StyledP2 = styled.p`
+  font-size: 15px;
   font-weight: bold;
   text-decoration: none;
   color: #081f29;
@@ -72,3 +81,15 @@ const StyledP = styled.p`
 const H3 = styled.h3`
   font-size: 1.25rem;
   font-weight: bold;`;
+
+const StyledLi = styled.li`
+  font-size: 13px;
+  /* font-weight: bold; */
+  text-decoration: none;
+  color: #081f29;
+  padding-bottom: 5px;
+  `;
+
+  const StyledList = styled.ul`
+  padding-left: 0;
+  `;

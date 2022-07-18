@@ -25,7 +25,7 @@ const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   width: 90%;
   padding: 5px;
   height: auto;

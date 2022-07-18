@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { AppContext } from "../../context/appContext";
 import SideBar from "../SideBar";
 import Home from "./home/Home";
-import About from "./About";
+import Landing from "./Landing";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
@@ -29,10 +29,10 @@ const FrontPage = () => {
       <SideBar />
       <ScrollContainer>
         <DisplayContainer id="home">
-          <Home />
+          <Landing />
         </DisplayContainer>
         <DisplayContainer id="about">
-          <About />
+          <Home />
         </DisplayContainer>
         <DisplayContainer id="skills">
           <Skills />

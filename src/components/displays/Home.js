@@ -4,8 +4,8 @@ import styled from "styled-components";
 import portrait from "../../assets/portrait.jpeg";
 import templates from "../templates";
 import AppContext from "../../context/appContext";
-import linkedInIcon from "../../assets/linkedin.svg";
-import githubIcon from "../../assets/github.svg";
+import Icons from "../icons/Icons";
+
 
 const Home = () => {
   const ctx = useContext(AppContext);
@@ -15,17 +15,7 @@ const Home = () => {
       <Portrait src={portrait} alt="Portrait" />
       <P1 ctx={ctx}>Hello, I'm Mark </P1>
       <P2 ctx={ctx}>I build things for the web.</P2>
-      <LinksContainer>
-        <IconContainer
-          href="https://www.linkedin.com/in/markalperin/"
-          target="blank"
-        >
-          <StyledLinkedin src={linkedInIcon} />
-        </IconContainer>
-        <IconContainer href="https://www.github.com/markalperin" target="blank">
-          <StyledGithub src={githubIcon} />
-        </IconContainer>
-      </LinksContainer>
+      <Icons />
     </HomeContainer>
   );
 };
@@ -46,9 +36,6 @@ const Portrait = styled.img`
   height: auto;
   border-radius: 50%;
   margin: 5%;
-  /* box-shadow: 0px 0px 8px ${templates.color.dark},
-      10px 0px 5px ${templates.color.light},
-      15px 0px 5px ${templates.color.shadowLight}; */
 `;
 
 const P1 = styled.p`
@@ -69,57 +56,3 @@ const P2 = styled.p`
     ctx.darkMode ? templates.color.shadowDark : templates.color.grey};
 `;
 
-const LinksContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 130px;
-`;
-
-const IconContainer = styled.a`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 5px;
-  padding: 6px;
-  box-shadow: 1px 1px 2px ${templates.color.shadowDark};
-  background-color: ${templates.color.shadowLight};
-  transition: all 0.3s ease-in;
-  &:hover {
-    box-shadow: 5px 5px 5px ${templates.color.shadowDark},
-      0px 0px 3px ${templates.color.dark};
-  }
-`;
-
-const StyledLinkedin = styled.img`
-  width: 30px;
-  height: 30px;
-  background-color: ${templates.color.white};
-  border-radius: 15%;
-`;
-
-const StyledGithub = styled.img`
-  width: 30px;
-  height: 30px;
-  background-color: ${templates.color.white};
-  border-radius: 50%;
-`;
-
-// const Button = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   width: 150px;
-//   height: 45px;
-//   border-radius: 5px;
-//   margin-right: 25px;
-//   background-color: ${templates.color.shadowDark};
-//   color: ${templates.color.white};
-//   box-shadow: 2.5px 2.5px 5px ${templates.color.shadowDark};
-//   transition: all 0.3s ease-in;
-//   &:hover {
-//     box-shadow: 10px 10px 10px ${templates.color.shadowDark},
-//       0px 0px 6px ${templates.color.dark};
-//   }
-// `;

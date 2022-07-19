@@ -4,9 +4,8 @@ import styled from "styled-components";
 import portrait from "../../assets/portrait.jpeg";
 import templates from "../templates";
 import AppContext from "../../context/appContext";
-import LinkedInIcon from "../icons/LinkedinIcon";
-import GithubIcon from "../icons/GithubIcon";
 import Icons from "../icons/Icons";
+
 
 const Home = () => {
   const ctx = useContext(AppContext);
@@ -17,10 +16,6 @@ const Home = () => {
       <P1 ctx={ctx}>Hello, I'm Mark </P1>
       <P2 ctx={ctx}>I build things for the web.</P2>
       <Icons />
-      {/* <LinksContainer>
-        <LinkedInIcon/>
-        <GithubIcon />
-      </LinksContainer> */}
     </HomeContainer>
   );
 };
@@ -41,9 +36,6 @@ const Portrait = styled.img`
   height: auto;
   border-radius: 50%;
   margin: 5%;
-  /* box-shadow: 0px 0px 8px ${templates.color.dark},
-      10px 0px 5px ${templates.color.light},
-      15px 0px 5px ${templates.color.shadowLight}; */
 `;
 
 const P1 = styled.p`
@@ -64,9 +56,3 @@ const P2 = styled.p`
     ctx.darkMode ? templates.color.shadowDark : templates.color.grey};
 `;
 
-const LinksContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 130px;
-`;

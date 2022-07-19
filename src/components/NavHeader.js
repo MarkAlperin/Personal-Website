@@ -1,16 +1,14 @@
-import React, { useState, useContext } from "react";
-import { Link, Outlet } from "react-router-dom";
+import React, { useContext } from "react";
+import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 
 import templates from "./templates";
 import AppContext from "../context/appContext";
 
 const NavHeader = (props) => {
-  const [lastClicked, setLastClicked] = useState(null);
   const ctx = useContext(AppContext);
 
   const scrollHandler = (id) => {
-    setLastClicked(id);
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   };
 

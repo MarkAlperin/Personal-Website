@@ -12,7 +12,6 @@ import Contact from "./Contact";
 import templates from "../templates";
 import helpers from "../../helpers/helpers";
 
-const height = window.innerHeight;
 
 const FrontPage = () => {
   const ctx = useContext(AppContext);

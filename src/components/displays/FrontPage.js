@@ -22,9 +22,9 @@ const FrontPage = () => {
   window.onscroll = () => {
     let scrollPct = helpers.amountscrolled();
     // console.log(`Scroll Percent: ${scrollPct}%`)
-    if (ctx.darkMode && (scrollPct > 1 && scrollPct < 98)) {
+    if (ctx.darkMode && (scrollPct > 1 && scrollPct < 96)) {
       ctx.setDarkMode(false);
-    } else if (!ctx.darkMode && (scrollPct <= 1 || scrollPct >= 98)) {
+    } else if (!ctx.darkMode && (scrollPct <= 1 || scrollPct >= 96)) {
       ctx.setDarkMode(true);
     }
   };
@@ -48,9 +48,9 @@ const FrontPage = () => {
         <SectionTitle blurb="TAKE A LOOK AT MY" title="PROJECTS" margin={true}/>
           <Projects />
         </ProjectsContainer>
-        <DisplayContainer id="contact">
+        <ContactContainer id="contact">
           <Contact />
-        </DisplayContainer>
+        </ContactContainer>
       </ScrollContainer>
     </OuterContainer>
   );
@@ -85,6 +85,17 @@ const ProjectsContainer = styled.div`
 const DisplayContainer = styled.div`
 height: ${height}px;
 margin-bottom: 4%;
+padding-left: 10%
+padding-right: 10%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+scroll-behavior: smooth;
+`
+
+const ContactContainer = styled.div`
+height: ${height}px;
 padding-left: 10%
 padding-right: 10%;
 display: flex;

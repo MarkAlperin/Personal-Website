@@ -1,21 +1,51 @@
 const icons = {
-
-  skills: [
+  front: [
     {
-      href: "https://aws.amazon.com",
-      src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
-      alt: "AWS",
+      href: "https://www.typescriptlang.org",
+      src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
+      alt: "TypeScript",
+    },
+    {
+      href: "https://reactjs.org",
+      src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg",
+      alt: "React",
+    },
+    {
+      href: "https://redux.js.org",
+      src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg",
+      alt: "Redux",
+    },
+    {
+      href: "https://webpack.js.org",
+      src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/webpack/webpack-original-wordmark.svg",
+      alt: "Webpack",
     },
     {
       href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
       src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg",
       alt: "CSS3",
     },
+  ],
+  back: [
+    {
+      href: "https://nodejs.org",
+      src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg",
+      alt: "Node",
+    },
     {
       href: "https://expressjs.com",
       src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg",
       alt: "Express",
     },
+  ],
+  development: [
+    {
+      href: "https://aws.amazon.com",
+      src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+      alt: "AWS",
+    },
+  ],
+  skills: [
     {
       href: "https://jestjs.io",
       src: "https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg",
@@ -31,21 +61,8 @@ const icons = {
       src: "https://www.vectorlogo.zone/logos/chaijs/chaijs-icon.svg",
       alt: "Chai",
     },
-    {
-      href: "https://nodejs.org",
-      src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg",
-      alt: "Node",
-    },
-    {
-      href: "https://reactjs.org",
-      src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg",
-      alt: "React",
-    },
-    {
-      href: "https://redux.js.org",
-      src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg",
-      alt: "Redux",
-    },
+
+
     {
       href: "https://www.mongodb.com",
       src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
@@ -76,21 +93,13 @@ const icons = {
       src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original-wordmark.svg",
       alt: "SQLite",
     },
-    {
-      href: "https://webpack.js.org",
-      src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/webpack/webpack-original-wordmark.svg",
-      alt: "Webpack",
-    },
+
     {
       href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
       src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
       alt: "JavaScript",
     },
-    {
-      href: "https://www.typescriptlang.org",
-      src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
-      alt: "TypeScript",
-    },
+
     {
       href: "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
       src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg",

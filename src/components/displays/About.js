@@ -29,13 +29,25 @@ const About = () => {
         <br />
         <br />
         Prior to coding I was a sailor for the American Merchant Fleet and
-        before that I was a paratrooper in the 3/75th Ranger Regiment. I am a
-        veteran of five special-operations tours to Afghanistan and Iraq and my
-        significant decorations include the Bronze Star Medal with ‘Valor’
-        device, Soldier’s Medal, Army Commendation Medal x2, Army Achievement
-        Medal, Ranger Tab. When I am not coding I enjoy rock climbing, playing
-        board games, and spending time with my friends, family, and lovely wife.
-        <br /><br />
+        before that I was a paratrooper in the{" "}
+        <span>
+          <StyledA
+            ctx={ctx}
+            href="https://en.wikipedia.org/wiki/75th_Ranger_Regiment"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            3/75th Ranger Regiment
+          </StyledA>
+        </span>
+        . I am a veteran of five special-operations tours to Afghanistan and
+        Iraq and my significant decorations include the Bronze Star Medal with
+        ‘Valor’ device, Soldier’s Medal, Army Commendation Medal x2, Army
+        Achievement Medal, Ranger Tab. When I am not coding I enjoy rock
+        climbing, playing board games, and spending time with my friends,
+        family, and lovely wife.
+        <br />
+        <br />
         Feel free to reach out and contact me!
       </StyledP>
     </AboutContainer>

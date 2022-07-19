@@ -26,6 +26,7 @@ const TitleContainer = styled.div`
   align-self: flex-start;
   margin-left: 5%;
   margin-bottom: 3%;
+
 `;
 
 const BlurbContainer = styled.div`

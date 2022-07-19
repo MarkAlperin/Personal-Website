@@ -8,7 +8,7 @@ const SkillCard = ({ icon }) => {
 
   return (
     <SkillCardContainer>
-      <StyledA href={href} target="blank" rel="noopener noreferrer">
+      <StyledA href={href} target="_blank" rel="noopener noreferrer">
         <StyledImg src={src} alt={alt} />
         <StyledP>{alt}</StyledP>
       </StyledA>

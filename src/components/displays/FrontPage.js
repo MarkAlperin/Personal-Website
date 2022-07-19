@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 
 import AppContext from "../../context/appContext";
-// import SideBar from "../SideBar";
 import NavHeader from "../NavHeader";
 import Home from "./Home";
 import About from "./About";
@@ -29,7 +28,6 @@ const FrontPage = () => {
 
   return (
     <OuterContainer ctx={ctx}>
-      {/* <SideBar /> */}
       <NavHeader />
       <ScrollContainer>
         <DisplayContainer id="home">

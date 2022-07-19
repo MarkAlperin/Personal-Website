@@ -30,7 +30,8 @@ const Skills = () => {
         </SectionContainer>
         <SectionContainer>
           <TitleContainer>
-            <P2 ctx={ctx}>Development</P2>
+            <P2 ctx={ctx}>Deployment</P2>
+            <P2 ctx={ctx}>Testing</P2>
           </TitleContainer>
           {icons.development.map((icon, idx) => {
             return <SkillCard key={idx} icon={icon} />;
@@ -57,8 +58,8 @@ const SkillsContainer = styled.div`
 
 const P2 = styled.p`
   font-size: 1rem;
-  line-height: 1em;
-  font-weight: 250;
+  line-height: 0em;
+  font-weight: 350;
   margin-left: ${({ margin }) => (margin ? "5px" : "0")};
   letter-spacing: -0.5px;
   text-shadow: 0 0 1.15px ${templates.color.shadowDark};
@@ -71,6 +72,7 @@ const TitleContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
   height: 80px;
   width: 80px;
   margin: 20px;

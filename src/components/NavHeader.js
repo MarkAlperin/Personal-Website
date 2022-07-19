@@ -57,7 +57,7 @@ const NavHeader = (props) => {
       </StyledP>
       <StyledA
         ctx={ctx}
-        target="blank"
+        target="_blank"
         href="../Mark-Alperin-Resume.pdf"
         alt="Mark Alperin Resume"
       >

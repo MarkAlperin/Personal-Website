@@ -1,15 +1,18 @@
-import React  from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 import templates from "../templates";
 import githubIcon from "../../assets/github.svg";
 
-
 const GithubIcon = () => {
   return (
-    <IconContainer href="https://www.github.com/markalperin" target="blank">
-    <StyledGithub src={githubIcon} />
-  </IconContainer>
+    <IconContainer
+      href="https://www.github.com/markalperin"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <StyledGithub src={githubIcon} />
+    </IconContainer>
   );
 };
 

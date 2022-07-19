@@ -20,7 +20,7 @@ const ProjectCard = ({ project }) => {
             return <StyledLi key={idx}>{bullet}</StyledLi>;
           })}
         </StyledList>
-        <ButtonLink href={project.github} target="blank"> Repo </ButtonLink>
+        <ButtonLink href={project.github} target="_blank"> Repo </ButtonLink>
       </TextContainer>
     </ProjectCardContainer>
   );

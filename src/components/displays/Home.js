@@ -6,7 +6,6 @@ import templates from "../templates";
 import AppContext from "../../context/appContext";
 import Icons from "../icons/Icons";
 
-
 const Home = () => {
   const ctx = useContext(AppContext);
 
@@ -44,6 +43,9 @@ const P1 = styled.p`
   font-size: 5rem;
   line-height: 1em;
   font-weight: 600;
+  text-shadow: 0 0 1px
+    ${({ ctx }) =>
+      ctx.darkMode ? templates.color.shadowLight : templates.color.shadowDark};
   color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.white : templates.color.black};
 `;
@@ -52,7 +54,9 @@ const P2 = styled.p`
   font-size: 2rem;
   line-height: 1em;
   font-weight: 100;
+  text-shadow: 0 0 1px
+    ${({ ctx }) =>
+      ctx.darkMode ? templates.color.shadowLight : templates.color.shadowDark};
   color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.shadowDark : templates.color.grey};
 `;
-

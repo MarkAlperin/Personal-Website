@@ -10,11 +10,14 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 import templates from "../templates";
 import helpers from "../../helpers/helpers";
+import SectionTitle from "../SectionTitle";
+
+const height = window.innerHeight;
 
 
 const FrontPage = () => {
   const ctx = useContext(AppContext);
-  const { DisplayContainer } = templates;
+  // const { DisplayContainer } = templates;
 
   window.onscroll = () => {
     let scrollPct = helpers.amountscrolled();
@@ -34,12 +37,15 @@ const FrontPage = () => {
           <Home />
         </DisplayContainer>
         <DisplayContainer id="about">
+          <SectionTitle blurb="SOME INFO" title="ABOUT ME"/>
           <About />
         </DisplayContainer>
         <DisplayContainer id="skills">
+        <SectionTitle blurb="CHECK OUT MY" title="SKILLS" margin={true}/>
           <Skills />
         </DisplayContainer>
         <ProjectsContainer id="projects">
+        <SectionTitle blurb="TAKE A LOOK AT MY" title="PROJECTS" margin={true}/>
           <Projects />
         </ProjectsContainer>
         <DisplayContainer id="contact">
@@ -76,3 +82,14 @@ const ProjectsContainer = styled.div`
     scroll-behavior: smooth;
   `;
 
+const DisplayContainer = styled.div`
+height: ${height}px;
+margin-bottom: 4%;
+padding-left: 10%
+padding-right: 10%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+scroll-behavior: smooth;
+`

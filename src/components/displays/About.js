@@ -10,7 +10,7 @@ const About = () => {
   return (
     <AboutContainer>
       <StyledP ctx={ctx}>
-        I am a full-stack software engineer living in Austin Texas. I have a
+        I am a full-stack software engineer living in Austin, Texas. I have a
         background in industrial electrical systems and my experience has given
         me a strong foundation for finding solutions to complex logical
         problems. Recently I graduated from the{" "}
@@ -25,10 +25,10 @@ const About = () => {
           </StyledA>
         </span>
         , where I discovered a passion for coding and solving problems through
-        code. I am currently looking for positions in the Austin area.
+        code. I am currently looking for a full-time role in the Austin area.
         <br />
         <br />
-        Prior to coding I was a sailor for the American Merchant Fleet and
+        Prior to coding, I was a sailor for the American Merchant Fleet and
         before that I was a paratrooper in the{" "}
         <span>
           <StyledA
@@ -42,13 +42,9 @@ const About = () => {
         </span>
         . I am a veteran of five special-operations tours to Afghanistan and
         Iraq and my significant decorations include the Bronze Star Medal with
-        ‘Valor’ device, Soldier’s Medal, Army Commendation Medal x2, Army
-        Achievement Medal, Ranger Tab. When I am not coding I enjoy rock
-        climbing, playing board games, and spending time with my friends,
-        family, and lovely wife.
-        <br />
-        <br />
-        Feel free to reach out and contact me!
+        ‘Valor’ device, Soldier’s Medal, Army Commendation Medal x2, Ranger Tab.
+        When I am not coding I enjoy rock climbing, playing board games, and
+        spending time with my friends, family, and lovely wife.
       </StyledP>
     </AboutContainer>
   );

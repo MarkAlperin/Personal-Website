@@ -6,36 +6,37 @@ import icons from "../../assets/techIcons";
 import templates from "../templates";
 import AppContext from "../../context/appContext";
 
+
 const Skills = () => {
   const ctx = useContext(AppContext);
 
   return (
-    <SkillsContainer>
-      <SectionContainer>
-        <TitleContainer>
-          <P2 ctx={ctx}>Front-End</P2>
-        </TitleContainer>
-        {icons.front.map((icon, idx) => {
-          return <SkillCard key={idx} icon={icon} />;
-        })}
-      </SectionContainer>
-      <SectionContainer>
-        <TitleContainer>
-          <P2 ctx={ctx}>Back-End</P2>
-        </TitleContainer>
-        {icons.back.map((icon, idx) => {
-          return <SkillCard key={idx} icon={icon} />;
-        })}
-      </SectionContainer>
-      <SectionContainer>
-        <TitleContainer>
-          <P2 ctx={ctx}>Development</P2>
-        </TitleContainer>
-        {icons.development.map((icon, idx) => {
-          return <SkillCard key={idx} icon={icon} />;
-        })}
-      </SectionContainer>
-    </SkillsContainer>
+      <SkillsContainer>
+        <SectionContainer>
+          <TitleContainer>
+            <P2 ctx={ctx}>Front-End</P2>
+          </TitleContainer>
+          {icons.front.map((icon, idx) => {
+            return <SkillCard key={idx} icon={icon} />;
+          })}
+        </SectionContainer>
+        <SectionContainer>
+          <TitleContainer>
+            <P2 ctx={ctx}>Back-End</P2>
+          </TitleContainer>
+          {icons.back.map((icon, idx) => {
+            return <SkillCard key={idx} icon={icon} />;
+          })}
+        </SectionContainer>
+        <SectionContainer>
+          <TitleContainer>
+            <P2 ctx={ctx}>Development</P2>
+          </TitleContainer>
+          {icons.development.map((icon, idx) => {
+            return <SkillCard key={idx} icon={icon} />;
+          })}
+        </SectionContainer>
+      </SkillsContainer>
   );
 };
 

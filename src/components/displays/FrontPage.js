@@ -14,15 +14,12 @@ import SectionTitle from "../SectionTitle";
 
 const height = window.innerHeight;
 
-
 const FrontPage = () => {
   const ctx = useContext(AppContext);
-  // const { DisplayContainer } = templates;
 
   window.onscroll = () => {
     let scrollPct = helpers.amountscrolled();
-    // console.log(`Scroll Percent: ${scrollPct}%`)
-    if (ctx.darkMode && (scrollPct > 1 && scrollPct < 96)) {
+    if (ctx.darkMode && scrollPct > 1 && scrollPct < 96) {
       ctx.setDarkMode(false);
     } else if (!ctx.darkMode && (scrollPct <= 1 || scrollPct >= 96)) {
       ctx.setDarkMode(true);
@@ -33,19 +30,23 @@ const FrontPage = () => {
     <OuterContainer ctx={ctx}>
       <NavHeader />
       <ScrollContainer>
-        <DisplayContainer id="home">
+        <HomeContainer id="home">
           <Home />
-        </DisplayContainer>
-        <DisplayContainer id="about">
-          <SectionTitle blurb="SOME INFO" title="ABOUT ME"/>
+        </HomeContainer>
+        <AboutContainer id="about">
+          <SectionTitle blurb="SOME INFO" title="ABOUT ME" />
           <About />
-        </DisplayContainer>
-        <DisplayContainer id="skills">
-        <SectionTitle blurb="CHECK OUT MY" title="SKILLS" margin={true}/>
+        </AboutContainer>
+        <SkillsContainer id="skills">
+          <SectionTitle blurb="CHECK OUT MY" title="SKILLS" margin={true} />
           <Skills />
-        </DisplayContainer>
+        </SkillsContainer>
         <ProjectsContainer id="projects">
-        <SectionTitle blurb="TAKE A LOOK AT MY" title="PROJECTS" margin={true}/>
+          <SectionTitle
+            blurb="TAKE A LOOK AT MY"
+            title="PROJECTS"
+            margin={true}
+          />
           <Projects />
         </ProjectsContainer>
         <ContactContainer id="contact">
@@ -58,7 +59,7 @@ const FrontPage = () => {
 export default FrontPage;
 
 const OuterContainer = styled.div`
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   background-color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.black : "whitesmoke"};
   color: ${({ ctx }) =>
@@ -70,37 +71,63 @@ const ScrollContainer = styled.div`
   scroll-behavior: smooth;
 `;
 
+const HomeContainer = styled.div`
+  height: ${height}px;
+  margin-bottom: 4%;
+  padding-left: 10%
+  padding-right: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-behavior: smooth;
+`;
+
+const AboutContainer = styled.div`
+  height: ${height}px;
+  margin-bottom: 4%;
+  padding-left: 10%
+  padding-right: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-behavior: smooth;
+`;
+
+const SkillsContainer = styled.div`
+  height: ${height}px;
+  margin-bottom: 10%;
+  padding-top: 4%;
+  padding-left: 10%
+  padding-right: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-behavior: smooth;
+`;
+
 const ProjectsContainer = styled.div`
-    height: auto;
-    padding-left: 10%
-    padding-right: 10%;
-    margin-bottom: 4%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    scroll-behavior: smooth;
+  height: auto;
+  padding-left: 10%
+  padding-right: 10%;
+  padding-top: 4%;
+  margin-bottom: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-behavior: smooth;
   `;
 
-const DisplayContainer = styled.div`
-height: ${height}px;
-margin-bottom: 4%;
-padding-left: 10%
-padding-right: 10%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-scroll-behavior: smooth;
-`
-
 const ContactContainer = styled.div`
-height: ${height}px;
-padding-left: 10%
-padding-right: 10%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-scroll-behavior: smooth;
-`
+  height: ${height}px;
+  padding-left: 10%
+  padding-right: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-behavior: smooth;
+`;

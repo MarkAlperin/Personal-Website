@@ -4,7 +4,7 @@ import styled from "styled-components";
 import AppContext from "../../context/appContext";
 // import SideBar from "../SideBar";
 import NavHeader from "../NavHeader";
-import Home from "./home/Home";
+import Home from "./Home";
 import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
@@ -18,9 +18,10 @@ const FrontPage = () => {
 
   window.onscroll = () => {
     let scrollPct = helpers.amountscrolled();
-    if (ctx.darkMode && scrollPct > 0.5) {
+    console.log(`Scroll Percent: ${scrollPct}%`)
+    if (ctx.darkMode && (scrollPct > 1 && scrollPct < 97)) {
       ctx.setDarkMode(false);
-    } else if (!ctx.darkMode && scrollPct < 0.5) {
+    } else if (!ctx.darkMode && (scrollPct <= 1 || scrollPct >= 97)) {
       ctx.setDarkMode(true);
     }
   };

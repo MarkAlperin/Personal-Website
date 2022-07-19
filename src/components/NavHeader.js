@@ -79,7 +79,7 @@ const StyledName = styled.p`
   width: auto;
   padding: 12px 0;
   color: #fff;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   line-height: 1.8rem;
   font-weight: 700;
   letter-spacing: -0.5px;

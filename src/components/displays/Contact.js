@@ -3,8 +3,7 @@ import styled from "styled-components";
 
 import templates from "../templates";
 import AppContext from "../../context/appContext";
-import GithubIcon from "../../assets/github.svg";
-import LinkedInIcon from "../../assets/linkedin.svg";
+import Icons from "../icons/Icons";
 
 const Contact = () => {
   const ctx = useContext(AppContext);
@@ -14,7 +13,7 @@ const Contact = () => {
       <P1 ctx={ctx}>Contact </P1>
       <LeftBorderContainer ctx={ctx}>
         <P2 ctx={ctx}>Thanks for your interest in getting in touch!</P2>
-        <P3 ctx={ctx}>
+        <P2 ctx={ctx}>
           The best way to reach me is by email at{" "}
           <span>
             <StyledA
@@ -26,8 +25,10 @@ const Contact = () => {
             </StyledA>
           </span>
           .
-        </P3>
+        </P2>
       </LeftBorderContainer>
+      <P3 ctx={ctx}>You can learn more about me at LinkedIn or Github.</P3>
+      <Icons offset={true}/>
     </ContactContainer>
   );
 };
@@ -46,13 +47,14 @@ const LeftBorderContainer = styled.div`
     ${({ ctx }) =>
       ctx.darkMode ? templates.color.white : templates.color.black};
   padding-left: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 2.5rem;
+  /* margin-bottom: 2rem; */
 `;
 
 const P1 = styled.p`
   margin: 0 0 0 -2px;
   padding: 0;
+  padding-top: 5rem;
   font-size: 5rem;
   line-height: 1em;
   font-weight: 600;
@@ -61,7 +63,7 @@ const P1 = styled.p`
 `;
 
 const P2 = styled.p`
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   line-height: 1em;
   font-weight: 150;
   color: ${({ ctx }) =>
@@ -69,15 +71,17 @@ const P2 = styled.p`
 `;
 
 const P3 = styled.p`
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   line-height: 1em;
   font-weight: 150;
+  margin-bottom: 2rem;
   color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.shadowDark : templates.color.grey};
 `;
 
 const StyledA = styled.a`
   text-decoration: none;
+  font-weight: 300;
   color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.white : templates.color.black};
 `;

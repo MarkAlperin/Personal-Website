@@ -6,6 +6,7 @@ import templates from "../templates";
 import AppContext from "../../context/appContext";
 import LinkedInIcon from "../icons/LinkedinIcon";
 import GithubIcon from "../icons/GithubIcon";
+import Icons from "../icons/Icons";
 
 const Home = () => {
   const ctx = useContext(AppContext);
@@ -15,10 +16,11 @@ const Home = () => {
       <Portrait src={portrait} alt="Portrait" />
       <P1 ctx={ctx}>Hello, I'm Mark </P1>
       <P2 ctx={ctx}>I build things for the web.</P2>
-      <LinksContainer>
+      <Icons />
+      {/* <LinksContainer>
         <LinkedInIcon/>
         <GithubIcon />
-      </LinksContainer>
+      </LinksContainer> */}
     </HomeContainer>
   );
 };

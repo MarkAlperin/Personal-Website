@@ -12,6 +12,8 @@ import Contact from "./Contact";
 import templates from "../templates";
 import helpers from "../../helpers/helpers";
 
+const height = window.innerHeight;
+
 const FrontPage = () => {
   const ctx = useContext(AppContext);
   const { DisplayContainer } = templates;
@@ -19,9 +21,9 @@ const FrontPage = () => {
   window.onscroll = () => {
     let scrollPct = helpers.amountscrolled();
     // console.log(`Scroll Percent: ${scrollPct}%`)
-    if (ctx.darkMode && (scrollPct > 1 && scrollPct < 97)) {
+    if (ctx.darkMode && (scrollPct > 1 && scrollPct < 98)) {
       ctx.setDarkMode(false);
-    } else if (!ctx.darkMode && (scrollPct <= 1 || scrollPct >= 97)) {
+    } else if (!ctx.darkMode && (scrollPct <= 1 || scrollPct >= 98)) {
       ctx.setDarkMode(true);
     }
   };
@@ -67,12 +69,13 @@ const ScrollContainer = styled.div`
 
 const ProjectsContainer = styled.div`
     height: auto;
-    margin-left: 105px;
     padding-left: 10%
     padding-right: 10%;
+    margin-bottom: 4%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     scroll-behavior: smooth;
   `;
+

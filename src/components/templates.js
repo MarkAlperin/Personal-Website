@@ -5,7 +5,7 @@ const height = window.innerHeight;
 const templates = {
   DisplayContainer: styled.div`
     height: ${height}px;
-    /* margin-left: 105px; */
+    /* margin-left: 105px; */ // for use with sidebar
     padding-left: 10%
     padding-right: 10%;
     display: flex;

@@ -75,6 +75,7 @@ const P3 = styled.p`
   line-height: 1em;
   font-weight: 150;
   margin-bottom: 2rem;
+  margin-left: 5px;
   color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.shadowDark : templates.color.grey};
 `;

@@ -115,8 +115,8 @@ const icons = {
       alt: "AWS",
     },
     {
-      href: "https://firebase.google.com/",
-      src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-original-wordmark.svg",
+      href: "https://firebase.google.com",
+      src: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
       alt: "Firebase",
     },
     {
@@ -144,6 +144,11 @@ const icons = {
       src: "https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg",
       alt: "Bash",
     },
+    {
+      href: "https://www.git-scm.com",
+      src: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg",
+      alt: "Git",
+    }
   ],
 };
 

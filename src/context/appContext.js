@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const AppContext = React.createContext({
+const AppContext = React.createContext({
   darkMode: true,
   setDarkMode: () => {},
 });
@@ -19,3 +19,5 @@ export const AppContextProvider = (props) => {
     </AppContext.Provider>
   );
 };
+
+export default AppContext;

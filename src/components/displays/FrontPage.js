@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 
-import { AppContext } from "../../context/appContext";
-import SideBar from "../SideBar";
-import Home from "./home/Home";
-import Landing from "./Landing";
+import AppContext from "../../context/appContext";
+// import SideBar from "../SideBar";
+import NavHeader from "../NavHeader";
+import Home from "./Home";
+import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
@@ -17,22 +18,24 @@ const FrontPage = () => {
 
   window.onscroll = () => {
     let scrollPct = helpers.amountscrolled();
-    if (ctx.darkMode && scrollPct > 0.5) {
+    console.log(`Scroll Percent: ${scrollPct}%`)
+    if (ctx.darkMode && (scrollPct > 1 && scrollPct < 97)) {
       ctx.setDarkMode(false);
-    } else if (!ctx.darkMode && scrollPct < 0.5) {
+    } else if (!ctx.darkMode && (scrollPct <= 1 || scrollPct >= 97)) {
       ctx.setDarkMode(true);
     }
   };
 
   return (
     <OuterContainer ctx={ctx}>
-      <SideBar />
+      {/* <SideBar /> */}
+      <NavHeader />
       <ScrollContainer>
         <DisplayContainer id="home">
-          <Landing />
+          <Home />
         </DisplayContainer>
         <DisplayContainer id="about">
-          <Home />
+          <About />
         </DisplayContainer>
         <DisplayContainer id="skills">
           <Skills />
@@ -50,7 +53,7 @@ const FrontPage = () => {
 export default FrontPage;
 
 const OuterContainer = styled.div`
-  transition: all 0.4s ease-in-out;
+  transition: all .4s ease-in-out;
   background-color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.black : "whitesmoke"};
   color: ${({ ctx }) =>

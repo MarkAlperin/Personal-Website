@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
 
-import logo from "../assets/logo.svg";
-import "../App.css";
+import templates from "./templates";
+import AppContext from "../context/appContext";
 
 const NavHeader = (props) => {
   const [lastClicked, setLastClicked] = useState(null);
+  const ctx = useContext(AppContext);
 
   const scrollHandler = (id) => {
     setLastClicked(id);
@@ -14,52 +15,44 @@ const NavHeader = (props) => {
   };
 
   return (
-    <StyledHeader>
-      <img src={logo} className="App-logo" alt="logo" />
+    <StyledHeader ctx={ctx}>
+      <StyledName ctx={ctx}>Mark Alperin</StyledName>
 
-      <NavigationContainer>
-        <LinkContainer>
-          <StyledP
-            onClick={() => {
-              scrollHandler("about");
-            }}
-          >
-            About
-          </StyledP>
-        </LinkContainer>
-        <LinkContainer>
-          <StyledP
-            onClick={() => {
-              scrollHandler("experience");
-            }}
-          >
-            Experience
-          </StyledP>
-        </LinkContainer>
-        <LinkContainer>
-          <StyledP
-            onClick={() => {
-              scrollHandler("projects");
-            }}
-          >
-            Projects
-          </StyledP>
-        </LinkContainer>
-        <LinkContainer>
-          <StyledP
-            onClick={() => {
-              scrollHandler("contact");
-            }}
-          >
-            Contact
-          </StyledP>
-        </LinkContainer>
-        <div>
-          {/* <Link to="/resume">Resume</Link> */}
-          <a href="../resume.pdf">Resume</a>
-        </div>
-      </NavigationContainer>
-
+      <StyledP
+        ctx={ctx}
+        onClick={() => {
+          scrollHandler("about");
+        }}
+      >
+        ABOUT
+      </StyledP>
+      <StyledP
+        ctx={ctx}
+        onClick={() => {
+          scrollHandler("experience");
+        }}
+      >
+        SKILLS
+      </StyledP>
+      <StyledP
+        ctx={ctx}
+        onClick={() => {
+          scrollHandler("projects");
+        }}
+      >
+        PROJECTS
+      </StyledP>
+      <StyledP
+        ctx={ctx}
+        onClick={() => {
+          scrollHandler("contact");
+        }}
+      >
+        CONTACT
+      </StyledP>
+      <StyledA ctx={ctx} href="../resume.pdf">
+        RESUME
+      </StyledA>
       <Outlet />
     </StyledHeader>
   );
@@ -67,39 +60,68 @@ const NavHeader = (props) => {
 
 export default NavHeader;
 
-const StyledHeader = styled.h3`
+const StyledHeader = styled.div`
   width: 100%;
-  height: 100px;
+  height: ${({ ctx }) => (ctx.darkMode ? "100px" : "0px")};
+  position: fixed;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  background-color: #081f29;
+  justify-content: flex-start;
+  background-color: ${templates.color.black};
+  transition: all 0.6s ease-in-out;
 `;
 
-const NavigationContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+const StyledName = styled.p`
+  margin-left: 4%;
   margin-right: 2%;
-  width: 30%;
-`;
-
-const LinkContainer = styled.div`
-  margin-right: 8%;
-  color: white;
+  visibility: ${({ ctx }) => (ctx.darkMode ? "visible" : "hidden")};
+  width: auto;
+  padding: 12px 0;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-transform: none;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
 `;
 
 const StyledP = styled.p`
-  margin-right: 8%;
+  margin-left: 2%;
+  padding: 12px 0;
+  visibility: ${({ ctx }) => (ctx.darkMode ? "visible" : "hidden")};
   width: auto;
-  color: inherit;
+  color: ${templates.color.shadowDark};
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
   &:hover {
-    color: #cab1fa;
+    color: ${templates.color.white};
+    border-bottom: 0.5px solid ${templates.color.white};
   }
 `;
 
-const StyledLinkContainer = styled.div`
-  color: white;
+const StyledA = styled.a`
+  margin-left: 2%;
+  padding: 12px 0;
+  visibility: ${({ ctx }) => (ctx.darkMode ? "visible" : "hidden")};
+  text-decoration: none;
+  width: auto;
+  color: ${templates.color.shadowDark};
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  border-bottom: 0px solid ${templates.color.white};
+  &:hover {
+    color: ${templates.color.white};
+    border-bottom: 0.5px solid ${templates.color.white};
+  }
+  &:after {
+    content: "";
+    height: 10px;
+    width: 100px;
+    background: ${templates.color.mid};
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px black;
+  }
 `;

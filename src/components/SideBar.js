@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 
 import logo from "../assets/logo.svg";
 import templates from "./templates";
+import AppContext from "../context/appContext"
 import "../App.css";
 
 const SideBar = () => {
   const [showSideBar, setShowSideBar] = useState(false);
-  // const [lastClicked, setLastClicked] = useState(null);
+  const ctx = useContext(AppContext);
 
   const scrollHandler = (id) => {
-    // setLastClicked(id);
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   };
 
@@ -23,30 +23,30 @@ const SideBar = () => {
   };
 
   return (
-    <StyledAside onMouseEnter={enterHandler} onMouseLeave={leaveHandler}>
-      <StyledImg src={logo} />
-      <IconContainer>
+    <StyledAside onMouseEnter={enterHandler} onMouseLeave={leaveHandler} ctx={ctx}>
+      <StyledImg src={logo} onClick={() => {scrollHandler("home")}}/>
+      {!ctx.darkMode && <IconContainer>
         <IconTextContainer onClick={() => {scrollHandler("home")}}>
-          <i className="fa-solid fa-house fa-lg" ></i>
+          <i className="fa-solid fa-house" ></i>
           {showSideBar && <P>Home</P>}
         </IconTextContainer>
         <IconTextContainer  onClick={() => {scrollHandler("about")}}>
-          <i className="fa-solid fa-user fa-lg"></i>
+          <i className="fa-solid fa-user"></i>
           {showSideBar && <P>About</P>}
         </IconTextContainer>
         <IconTextContainer onClick={() => {scrollHandler("skills")}}>
-          <i className="fa-solid fa-display fa-lg"></i>
+          <i className="fa-solid fa-display"></i>
           {showSideBar && <P>Skills</P>}
         </IconTextContainer>
         <IconTextContainer onClick={() => {scrollHandler("projects")}}>
-          <i className="fa-solid fa-briefcase fa-lg"></i>
+          <i className="fa-solid fa-briefcase"></i>
           {showSideBar && <P>Projects</P>}
         </IconTextContainer>
         <IconTextContainer onClick={() => {scrollHandler("contact")}}>
-          <i className="fa-solid fa-envelope fa-lg"></i>
+          <i className="fa-solid fa-envelope"></i>
           {showSideBar && <P>Contact</P>}
         </IconTextContainer>
-      </IconContainer>
+      </IconContainer>}
       <Hidden>.</Hidden>
     </StyledAside>
   );
@@ -55,13 +55,14 @@ const SideBar = () => {
 export default SideBar;
 
 const StyledAside = styled.aside`
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 105px;
+  width: ${({ctx}) =>
+      ctx.darkMode ? "0px" : "105px"};
   height: 100vh;
-  background-color: black;
+  background-color: ${templates.color.black};
+  /* border-right: 1.2px solid ${templates.color.light}; */
   position: fixed;
   color: ${templates.color.white};
   transition: all 0.3s ease-in;

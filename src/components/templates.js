@@ -5,7 +5,7 @@ const height = window.innerHeight;
 const templates = {
   DisplayContainer: styled.div`
     height: ${height}px;
-    margin-left: 105px;
+    /* margin-left: 105px; */
     padding-left: 10%
     padding-right: 10%;
     display: flex;
@@ -24,7 +24,9 @@ const templates = {
     white: "#FEFFFF", // "#F7F9FB",
     shadowLight: "#C3D1D6",
     shadowDark: "#A1ACB0 ",
-    black: "#17252A",
+    darker: "#17252A",
+    black: "black",
+    grey: "#343536"
   },
 
   // MODERNITY IN FULL BLOOM (greens)

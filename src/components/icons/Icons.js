@@ -7,7 +7,7 @@ import LinkedinIcon from ".//LinkedinIcon";
 
 const Icons = ({offset}) => {
   return (
-    <LinksContainer offset={offset}>
+    <LinksContainer offsetIcons={offset}>
       <LinkedinIcon />
       <GithubIcon />
     </LinksContainer>
@@ -20,6 +20,6 @@ const LinksContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: ${({ offset }) => (offset ? "170px" : "130px")};
-  margin-left: ${({ offset }) => offset ? "60px" : "0"};
+  width: ${({ offsetIcons }) => (offsetIcons ? "170px" : "130px")};
+  margin-left: ${({ offsetIcons }) => offsetIcons ? "60px" : "0"};
 `;

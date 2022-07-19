@@ -34,7 +34,7 @@ const NavHeader = (props) => {
       <StyledP
         ctx={ctx}
         onClick={() => {
-          scrollHandler("experience");
+          scrollHandler("skills");
         }}
       >
         SKILLS

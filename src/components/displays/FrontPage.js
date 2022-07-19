@@ -18,7 +18,7 @@ const FrontPage = () => {
 
   window.onscroll = () => {
     let scrollPct = helpers.amountscrolled();
-    console.log(`Scroll Percent: ${scrollPct}%`)
+    // console.log(`Scroll Percent: ${scrollPct}%`)
     if (ctx.darkMode && (scrollPct > 1 && scrollPct < 97)) {
       ctx.setDarkMode(false);
     } else if (!ctx.darkMode && (scrollPct <= 1 || scrollPct >= 97)) {

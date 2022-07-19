@@ -16,7 +16,14 @@ const NavHeader = (props) => {
 
   return (
     <StyledHeader ctx={ctx}>
-      <StyledName ctx={ctx}>Mark Alperin</StyledName>
+      <StyledName
+        ctx={ctx}
+        onClick={() => {
+          scrollHandler("home");
+        }}
+      >
+        Mark Alperin
+      </StyledName>
 
       <StyledP
         ctx={ctx}

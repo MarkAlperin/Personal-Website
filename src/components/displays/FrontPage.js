@@ -12,10 +12,14 @@ import templates from "../templates";
 import helpers from "../../helpers/helpers";
 import SectionTitle from "../SectionTitle";
 
-const height = window.innerHeight;
 
 const FrontPage = () => {
   const ctx = useContext(AppContext);
+
+  let height = window.innerHeight;
+  window.addEventListener('resize', function(event){
+    height = window.innerHeight;
+  });
 
   window.onscroll = () => {
     let scrollPct = helpers.amountscrolled();
@@ -30,7 +34,7 @@ const FrontPage = () => {
     <OuterContainer ctx={ctx}>
       <NavHeader />
       <ScrollContainer ctx={ctx}>
-        <HomeContainer id="home">
+        <HomeContainer id="home" height={height}>
           <Home />
         </HomeContainer>
         <AboutContainer id="about">
@@ -49,7 +53,7 @@ const FrontPage = () => {
           />
           <Projects />
         </ProjectsContainer>
-        <ContactContainer id="contact">
+        <ContactContainer id="contact" height={height}>
           <Contact />
         </ContactContainer>
       </ScrollContainer>
@@ -77,7 +81,7 @@ const ScrollContainer = styled.div`
 `;
 
 const HomeContainer = styled.div`
-  height: ${height}px;
+  height: ${({ height }) => height}px;
   width: 100%;
   margin-bottom: 5%;
   padding-left: 10%
@@ -131,7 +135,7 @@ const ProjectsContainer = styled.div`
   `;
 
 const ContactContainer = styled.div`
-  height: ${height}px;
+  height: ${({ height }) => height}px;
   padding-left: 10%
   padding-right: 10%;
   display: flex;

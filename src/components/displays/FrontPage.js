@@ -74,7 +74,7 @@ const ScrollContainer = styled.div`
 
 const HomeContainer = styled.div`
   height: ${height}px;
-  margin-bottom: 4%;
+  margin-bottom: 5%;
   padding-left: 10%
   padding-right: 10%;
   display: flex;
@@ -87,7 +87,7 @@ const HomeContainer = styled.div`
 const AboutContainer = styled.div`
   height: auto;
   margin-bottom: 10%;
-  padding-top: 4%;
+  padding-top: 5%;
   padding-left: 10%
   padding-right: 10%;
   display: flex;
@@ -100,7 +100,7 @@ const AboutContainer = styled.div`
 const SkillsContainer = styled.div`
   height: auto;
   margin-bottom: 10%;
-  padding-top: 4%;
+  padding-top: 5%;
   padding-left: 10%
   padding-right: 10%;
   display: flex;
@@ -112,10 +112,10 @@ const SkillsContainer = styled.div`
 
 const ProjectsContainer = styled.div`
   height: auto;
+  margin-bottom: 3%;
+  padding-top: 5%;
   padding-left: 10%
   padding-right: 10%;
-  padding-top: 4%;
-  margin-bottom: 4%;
   display: flex;
   flex-direction: column;
   align-items: center;

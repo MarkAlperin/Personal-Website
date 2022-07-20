@@ -72,7 +72,8 @@ export default NavHeader;
 
 const StyledHeader = styled.div`
   width: 100%;
-  height: ${({ ctx }) => (ctx.darkMode ? "100px" : "60px")};
+  height: ${({ ctx }) => (ctx.darkMode ? "6.5%" : "4%")};
+  min-height: ${({ ctx }) => (ctx.darkMode ? "100px" : "60px")};
   position: fixed;
   display: flex;
   flex-direction: row;

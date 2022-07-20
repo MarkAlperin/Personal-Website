@@ -76,12 +76,14 @@ const ScrollContainer = styled.div`
   scroll-behavior: smooth;
   height: auto;
   width: 100%;
+  transition: all 0.4s ease-in-out;
   background-color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.black : "whitesmoke"};
 `;
 
 const HomeContainer = styled.div`
   height: ${({ height }) => height}px;
+  transition: all 0.4s ease-in-out;
   width: 100%;
   margin-bottom: 5%;
   padding-left: 10%
@@ -136,6 +138,7 @@ const ProjectsContainer = styled.div`
 
 const ContactContainer = styled.div`
   height: ${({ height }) => height}px;
+  transition: all 0.4s ease-in-out;
   padding-left: 10%
   padding-right: 10%;
   display: flex;

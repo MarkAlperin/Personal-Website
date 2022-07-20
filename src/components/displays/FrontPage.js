@@ -23,13 +23,18 @@ const FrontPage = () => {
       ctx.setDarkMode(false);
     } else if (!ctx.darkMode && (scrollPct <= 1 || scrollPct >= 96)) {
       ctx.setDarkMode(true);
+      // if (scrollPct >= 96) {
+      //   console.log("scrollPct: ", scrollPct);
+      //   window.scrollTo({top: document.body.scrollHeight, behavior: "smooth" });
+      //   // document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+      // }
     }
   };
 
   return (
     <OuterContainer ctx={ctx}>
       <NavHeader />
-      <ScrollContainer>
+      <ScrollContainer ctx={ctx}>
         <HomeContainer id="home">
           <Home />
         </HomeContainer>
@@ -59,6 +64,7 @@ const FrontPage = () => {
 export default FrontPage;
 
 const OuterContainer = styled.div`
+  width: 100%;
   transition: all 0.4s ease-in-out;
   background-color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.black : "whitesmoke"};
@@ -70,10 +76,14 @@ const ScrollContainer = styled.div`
   overflow-y: scroll;
   scroll-behavior: smooth;
   height: auto;
+  width: 100%;
+  background-color: ${({ ctx }) =>
+    ctx.darkMode ? templates.color.black : "whitesmoke"};
 `;
 
 const HomeContainer = styled.div`
   height: ${height}px;
+  width: 100%;
   margin-bottom: 5%;
   padding-left: 10%
   padding-right: 10%;
@@ -86,6 +96,7 @@ const HomeContainer = styled.div`
 
 const AboutContainer = styled.div`
   height: auto;
+  width: 100%;
   margin-bottom: 10%;
   padding-top: 5%;
   padding-left: 10%
@@ -99,6 +110,7 @@ const AboutContainer = styled.div`
 
 const SkillsContainer = styled.div`
   height: auto;
+  width: 100%;
   margin-bottom: 10%;
   padding-top: 5%;
   padding-left: 10%

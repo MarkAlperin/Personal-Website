@@ -11,8 +11,11 @@ const templates = {
     shadowDark: "#A1ACB0 ",
     darker: "#17252A",
     black: "black",
-    grey: "#343536"
+    grey: "#343536",
+    midGrey: "#808080",
+    whitesmoke: "whitesmoke",
   },
+  borderRadius: "7px",
 
   // MODERNITY IN FULL BLOOM (greens)
   // color: {

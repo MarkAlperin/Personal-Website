@@ -29,7 +29,7 @@ const About = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-             Hack Reactor
+              Hack Reactor
           </StyledA>
         </span>
         , a 12-week advanced software engineering immersive program consisting

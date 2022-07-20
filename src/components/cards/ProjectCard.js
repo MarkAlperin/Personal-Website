@@ -3,24 +3,28 @@ import styled from "styled-components";
 
 import templates from "../templates";
 
-
 const ProjectCard = ({ project }) => {
-
   return (
     <ProjectCardContainer>
-      <StyledImage src={project.image}/>
+      <StyledImage src={project.image} />
       <TextContainer>
         <H3>{project.name}</H3>
         <StyledP>{project.description}</StyledP>
-        <StyledP2>Tech: {project.techs.map((tech, idx) => {
-          return <span key={idx}>{tech }</span>;
-        })}</StyledP2>
+        <StyledP2>
+          Tech:{" "}
+          {project.techs.map((tech, idx) => {
+            return <TechSpan key={idx}>{tech}</TechSpan>;
+          })}
+        </StyledP2>
         <StyledList>
           {project.bullets.map((bullet, idx) => {
             return <StyledLi key={idx}>{bullet}</StyledLi>;
           })}
         </StyledList>
-        <ButtonLink href={project.github} target="_blank"> Repo </ButtonLink>
+        <ButtonLink href={project.github} target="_blank">
+          {" "}
+          Repo{" "}
+        </ButtonLink>
       </TextContainer>
     </ProjectCardContainer>
   );
@@ -33,17 +37,19 @@ const ProjectCardContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  border-radius: 10px;
-  border: 1.5px solid ${templates.color.white};
+  border-radius: ${templates.borderRadius};
+  border: 1px solid ${templates.color.shadowDark};
   box-shadow: 0px 3px 6px ${templates.color.shadowLight};
+  background-color: ${templates.color.whitesmoke};
   width: 90%;
-  margin: 20px;
-  padding: 5px;
+  margin: 2%;
+  padding: 0.75%;
   transition: all 0.3s ease-in;
-  &:hover {
+  /* cursor: pointer; */
+  /* &:hover {
     box-shadow: 10px 10px 10px ${templates.color.shadowDark},
       0px 3px 6px ${templates.color.dark};
-  }
+  } */
 `;
 
 const ButtonLink = styled.a`
@@ -51,7 +57,11 @@ const ButtonLink = styled.a`
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;
-  color: ${templates.color.dark}
+  color: ${templates.color.dark};
+  &:hover {
+    color: ${templates.color.mid};
+    text-shadow: 0 0 1.15px ${templates.color.shadowDark};
+  };
 `;
 
 const StyledImage = styled.img`
@@ -61,7 +71,7 @@ const StyledImage = styled.img`
 `;
 
 const TextContainer = styled.div`
-width: 40%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -84,7 +94,8 @@ const StyledP2 = styled.p`
 
 const H3 = styled.h3`
   font-size: 1.25rem;
-  font-weight: bold;`;
+  font-weight: bold;
+`;
 
 const StyledLi = styled.li`
   font-size: 13px;
@@ -92,8 +103,13 @@ const StyledLi = styled.li`
   text-decoration: none;
   color: #081f29;
   padding-bottom: 5px;
-  `;
+`;
 
-  const StyledList = styled.ul`
+const StyledList = styled.ul`
   padding-left: 0;
-  `;
+`;
+
+const TechSpan = styled.span`
+  color: ${templates.color.mid};
+  text-shadow: 0px 0px 2px ${templates.color.shadowLight};
+`;

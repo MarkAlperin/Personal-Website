@@ -16,6 +16,13 @@ const templates = {
     whitesmoke: "whitesmoke",
   },
   borderRadius: "7px",
+  breakpoints: {
+    mobile: "600px",
+    tablet: "768px",
+    laptop: "1024px",
+    desktop: "1280px",
+    largeDesktop: "1440px",
+  },
 
   // MODERNITY IN FULL BLOOM (greens)
   // color: {

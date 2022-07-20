@@ -48,8 +48,11 @@ const ProjectCardContainer = styled.div`
   /* cursor: pointer; */
   /* &:hover {
     box-shadow: 10px 10px 10px ${templates.color.shadowDark},
-      0px 3px 6px ${templates.color.dark};
+    0px 3px 6px ${templates.color.dark};
   } */
+  @media (max-width: 768px) {
+    flex-direction: column;
+  };
 `;
 
 const ButtonLink = styled.a`
@@ -66,12 +69,19 @@ const ButtonLink = styled.a`
 
 const StyledImage = styled.img`
   width: 40%;
+  @media (max-width: 768px) {
+    width: 90%;
+    margin-top: 1.5%;
+  };
   height: auto;
   border: 1.5px solid ${templates.color.light};
 `;
 
 const TextContainer = styled.div`
   width: 40%;
+  @media (max-width: 768px) {
+    width: 90%;
+  };
   display: flex;
   flex-direction: column;
   align-items: flex-start;

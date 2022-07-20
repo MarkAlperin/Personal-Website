@@ -10,10 +10,18 @@ const About = () => {
   return (
     <AboutContainer>
       <StyledP ctx={ctx}>
-        I am a full-stack software engineer living in Austin, Texas. I have a
-        background in industrial electrical systems and my experience has given
-        me a strong foundation for finding solutions to complex logical
-        problems. Recently I graduated from the{" "}
+        I am a full-stack software engineer living in Austin, Texas. I'm
+        passionate about clean, modular code. I write my code to be clear,
+        concise, and understandable, with variables clear enough to be
+        self-documenting and files that typically don’t exceed 60 lines of code.
+        If I ever spot something that can be done with less code, I refactor it
+        for readability and smooth debugging.
+        <br />
+        <br />
+        With a background in industrial electrical systems and military special
+        ops, my experience has given me a solid foundation for finding solutions
+        to complex, logical problems and strong teamwork skills. After a year (X
+        AMOUNT OF TIME) of self-teaching, I pursued and got accepted into
         <span>
           <StyledA
             ctx={ctx}
@@ -21,30 +29,23 @@ const About = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Hack Reactor Software Engineering Immersive Bootcamp
+            Hack Reactor
           </StyledA>
         </span>
-        , where I discovered a passion for coding and solving problems through
-        code. I am currently looking for a full-time role in the Austin area.
+        , a 12-week advanced software engineering immersive program consisting
+        of 1000+ hours of coding. Through this experience, I learned full-stack
+        development with JavaScript, React, Express, PostgreSQL, MongoDB, and
+        MySQL in an AGILE environment.
         <br />
         <br />
-        Prior to coding, I was a sailor for the American Merchant Fleet and
-        before that I was a paratrooper in the{" "}
-        <span>
-          <StyledA
-            ctx={ctx}
-            href="https://en.wikipedia.org/wiki/75th_Ranger_Regiment"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            3/75th Ranger Regiment
-          </StyledA>
-        </span>
-        . I am a veteran of five special-operations tours to Afghanistan and
-        Iraq and my significant decorations include the Bronze Star Medal with
-        ‘Valor’ device, Soldier’s Medal, Army Commendation Medal x2, Ranger Tab.
-        When I am not coding I enjoy rock climbing, playing board games, and
-        spending time with my friends, family, and lovely wife.
+        Right now, I am currently looking for a full-time software engineering
+        role at an Austin-based company that emphasizes/values XYZ. I’m
+        confident that my background and technical capabilities will make me a
+        strong addition to an engineering team.
+        <br />
+        <br />
+        Personally, when I am not coding I enjoy rock climbing, playing board
+        games, and spending time with my friends, family, and lovely wife.
       </StyledP>
     </AboutContainer>
   );

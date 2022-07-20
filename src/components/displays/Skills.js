@@ -124,9 +124,9 @@ const IconsContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  /* @media (max-width: ${templates.breakpoints.tablet}) {
+  @media (max-width: ${templates.breakpoints.tablet}) {
     justify-content: center;
-  }; */
+  };
   width: 100%;
   height: auto;
 `;

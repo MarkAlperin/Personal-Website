@@ -81,6 +81,9 @@ const StyledHeader = styled.div`
   justify-content: flex-start;
   background-color: ${templates.color.black};
   transition: all 0.6s ease-in-out;
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    display: none;
+  };
 `;
 
 const StyledName = styled.p`

@@ -65,11 +65,14 @@ const ButtonLink = styled.a`
     color: ${templates.color.mid};
     text-shadow: 0 0 1.15px ${templates.color.shadowDark};
   };
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    align-self: center;
+  };
 `;
 
 const StyledImage = styled.img`
   width: 40%;
-  @media (max-width: 768px) {
+  @media (max-width: ${templates.breakpoints.tablet}) {
     width: 90%;
     margin-top: 1.5%;
   };
@@ -79,7 +82,7 @@ const StyledImage = styled.img`
 
 const TextContainer = styled.div`
   width: 40%;
-  @media (max-width: 768px) {
+  @media (max-width: ${templates.breakpoints.tablet}) {
     width: 90%;
   };
   display: flex;

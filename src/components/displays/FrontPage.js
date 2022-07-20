@@ -23,11 +23,6 @@ const FrontPage = () => {
       ctx.setDarkMode(false);
     } else if (!ctx.darkMode && (scrollPct <= 1 || scrollPct >= 96)) {
       ctx.setDarkMode(true);
-      // if (scrollPct >= 96) {
-      //   console.log("scrollPct: ", scrollPct);
-      //   window.scrollTo({top: document.body.scrollHeight, behavior: "smooth" });
-      //   // document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-      // }
     }
   };
 

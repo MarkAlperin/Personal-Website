@@ -32,6 +32,9 @@ const HomeContainer = styled.div`
 const Portrait = styled.img`
   align-self: center;
   width: 200px;
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    width: 175px;
+  };
   height: auto;
   border-radius: 50%;
   margin: 5%;
@@ -41,6 +44,9 @@ const P1 = styled.p`
   margin: 0 0 0 -2px;
   padding: 0;
   font-size: 5rem;
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    font-size: 3.5rem;
+  };
   line-height: 1em;
   font-weight: 600;
   text-shadow: 0 0 1px

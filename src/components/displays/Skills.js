@@ -6,38 +6,43 @@ import icons from "../../assets/techIcons";
 import templates from "../templates";
 import AppContext from "../../context/appContext";
 
-
 const Skills = () => {
   const ctx = useContext(AppContext);
 
   return (
-      <SkillsContainer>
-        <SectionContainer>
+    <SkillsContainer>
+      <SectionContainer>
           <TitleContainer>
             <P2 ctx={ctx}>Front-End</P2>
           </TitleContainer>
+        <IconsContainer>
           {icons.front.map((icon, idx) => {
             return <SkillCard key={idx} icon={icon} />;
           })}
-        </SectionContainer>
-        <SectionContainer>
-          <TitleContainer>
-            <P2 ctx={ctx}>Back-End</P2>
-          </TitleContainer>
+        </IconsContainer>
+      </SectionContainer>
+      <SectionContainer>
+        <TitleContainer>
+          <P2 ctx={ctx}>Back-End</P2>
+        </TitleContainer>
+        <IconsContainer>
           {icons.back.map((icon, idx) => {
             return <SkillCard key={idx} icon={icon} />;
           })}
-        </SectionContainer>
-        <SectionContainer>
+        </IconsContainer>
+      </SectionContainer>
+      <SectionContainer>
           <TitleContainer>
             <P2 ctx={ctx}>Deployment</P2>
             <P2 ctx={ctx}>Testing</P2>
           </TitleContainer>
+        <IconsContainer>
           {icons.development.map((icon, idx) => {
             return <SkillCard key={idx} icon={icon} />;
           })}
-        </SectionContainer>
-      </SkillsContainer>
+        </IconsContainer>
+      </SectionContainer>
+    </SkillsContainer>
   );
 };
 
@@ -57,9 +62,9 @@ const SkillsContainer = styled.div`
 `;
 
 const P2 = styled.p`
-  font-size: 1rem;
+  font-size: .9rem;
   line-height: 0em;
-  font-weight: 350;
+  font-weight: 400;
   margin-left: ${({ margin }) => (margin ? "5px" : "0")};
   letter-spacing: -0.5px;
   text-shadow: 0 0 1.15px ${templates.color.shadowDark};
@@ -75,15 +80,25 @@ const TitleContainer = styled.div`
   border-radius: 10px;
   height: 80px;
   width: 80px;
+  max-width: 80px;
   margin: 20px;
-  padding: 5px;
+  padding: 3px;
 `;
 
 const SectionContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+  /* flex-wrap: wrap; */
+  justify-content: flex-start;
+  height: auto;
+`;
+
+const IconsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  width: 100%;
   height: auto;
 `;

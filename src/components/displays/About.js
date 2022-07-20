@@ -20,8 +20,8 @@ const About = () => {
         <br />
         With a background in industrial electrical systems and military special
         ops, my experience has given me a solid foundation for finding solutions
-        to complex, logical problems and strong teamwork skills. After a year (X
-        AMOUNT OF TIME) of self-teaching, I pursued and got accepted into
+        to complex, logical problems and strong teamwork skills. After a few
+        months of self-teaching, I pursued and got accepted into the
         <span>
           <StyledA
             ctx={ctx}

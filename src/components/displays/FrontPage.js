@@ -69,6 +69,7 @@ const OuterContainer = styled.div`
 const ScrollContainer = styled.div`
   overflow-y: scroll;
   scroll-behavior: smooth;
+  height: auto;
 `;
 
 const HomeContainer = styled.div`
@@ -84,8 +85,9 @@ const HomeContainer = styled.div`
 `;
 
 const AboutContainer = styled.div`
-  height: ${height}px;
-  margin-bottom: 4%;
+  height: auto;
+  margin-bottom: 10%;
+  padding-top: 4%;
   padding-left: 10%
   padding-right: 10%;
   display: flex;
@@ -96,7 +98,7 @@ const AboutContainer = styled.div`
 `;
 
 const SkillsContainer = styled.div`
-  height: ${height}px;
+  height: auto;
   margin-bottom: 10%;
   padding-top: 4%;
   padding-left: 10%

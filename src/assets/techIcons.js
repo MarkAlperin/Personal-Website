@@ -68,11 +68,6 @@ const icons = {
       alt: "Python",
     },
     {
-      href: "https://pandas.pydata.org",
-      src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original-wordmark.svg",
-      alt: "Pandas",
-    },
-    {
       href: "https://www.mongodb.com",
       src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
       alt: "MongoDB",
@@ -106,6 +101,11 @@ const icons = {
       href: "https://www.getpostman.com",
       src: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
       alt: "Postman",
+    },
+    {
+      href: "https://pandas.pydata.org",
+      src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original-wordmark.svg",
+      alt: "Pandas",
     },
   ],
   development: [

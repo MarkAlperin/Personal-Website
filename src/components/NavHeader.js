@@ -72,7 +72,7 @@ export default NavHeader;
 
 const StyledHeader = styled.div`
   width: 100%;
-  height: ${({ ctx }) => (ctx.darkMode ? "100px" : "0px")};
+  height: ${({ ctx }) => (ctx.darkMode ? "100px" : "60px")};
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -85,7 +85,7 @@ const StyledHeader = styled.div`
 const StyledName = styled.p`
   margin-left: 4%;
   margin-right: 2%;
-  visibility: ${({ ctx }) => (ctx.darkMode ? "visible" : "hidden")};
+  /* visibility: ${({ ctx }) => (ctx.darkMode ? "visible" : "hidden")}; */
   width: auto;
   padding: 12px 0;
   color: #fff;
@@ -101,7 +101,7 @@ const StyledName = styled.p`
 const StyledP = styled.p`
   margin-left: 2%;
   padding: 12px 0;
-  visibility: ${({ ctx }) => (ctx.darkMode ? "visible" : "hidden")};
+  /* visibility: ${({ ctx }) => (ctx.darkMode ? "visible" : "hidden")}; */
   width: auto;
   color: ${templates.color.shadowDark};
   cursor: pointer;
@@ -115,7 +115,7 @@ const StyledP = styled.p`
 const StyledA = styled.a`
   margin-left: 2%;
   padding: 12px 0;
-  visibility: ${({ ctx }) => (ctx.darkMode ? "visible" : "hidden")};
+  /* visibility: ${({ ctx }) => (ctx.darkMode ? "visible" : "hidden")}; */
   text-decoration: none;
   width: auto;
   color: ${templates.color.shadowDark};

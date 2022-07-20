@@ -56,6 +56,9 @@ const P1 = styled.p`
   padding: 0;
   padding-top: 5rem;
   font-size: 5rem;
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    font-size: 3.5rem;
+  };
   line-height: 1em;
   font-weight: 600;
   color: ${({ ctx }) =>

@@ -22,6 +22,14 @@ const NavHeader = (props) => {
       >
         Mark Alperin
       </StyledName>
+      <StyledInitials
+        ctx={ctx}
+        onClick={() => {
+          scrollHandler("home");
+        }}
+      >
+        MA
+      </StyledInitials>
 
       <StyledP
         ctx={ctx}
@@ -81,9 +89,6 @@ const StyledHeader = styled.div`
   justify-content: flex-start;
   background-color: ${templates.color.black};
   transition: all 0.6s ease-in-out;
-  @media (max-width: ${templates.breakpoints.mobile}) {
-    display: none;
-  };
 `;
 
 const StyledName = styled.p`
@@ -100,6 +105,27 @@ const StyledName = styled.p`
   text-transform: none;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    display: none;
+  } ;
+`;
+const StyledInitials = styled.p`
+  margin-left: 4%;
+  margin-right: 2%;
+  /* visibility: ${({ ctx }) => (ctx.darkMode ? "visible" : "hidden")}; */
+  width: auto;
+  padding: 12px 0;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-transform: none;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  @media (min-width: ${templates.breakpoints.mobile}) {
+    display: none;
+  } ;
 `;
 
 const StyledP = styled.p`

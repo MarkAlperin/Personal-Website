@@ -40,6 +40,10 @@ const ContactContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    align-items: center;
+    padding: 0 5%;
+  };
 `;
 
 const LeftBorderContainer = styled.div`

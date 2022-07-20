@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-// import templates from "./templates";
+import templates from "../templates";
 import GithubIcon from ".//GithubIcon";
 import LinkedinIcon from ".//LinkedinIcon";
 
@@ -22,4 +22,7 @@ const LinksContainer = styled.div`
   justify-content: space-around;
   width: ${({ offsetIcons }) => (offsetIcons ? "170px" : "130px")};
   margin-left: ${({ offsetIcons }) => offsetIcons ? "60px" : "0"};
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    margin-left: 0;
+  };
 `;

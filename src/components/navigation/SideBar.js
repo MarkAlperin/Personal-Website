@@ -68,18 +68,15 @@ export default SideBar;
 
 const StyledAside = styled.aside`
   position: fixed;
-  /* float: right; */
   right: -3px;
-  top: 5%;
   top: 0px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: ${({ ctx }) => (ctx.showMenu ? "36%" : "0px")};
   height: auto;
   background-color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.black : templates.color.white};
-  /* position: fixed; */
   color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.white : templates.color.black};
   transition: all 0.3s ease-in;

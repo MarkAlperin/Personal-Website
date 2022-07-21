@@ -13,12 +13,11 @@ import helpers from "../../helpers/helpers";
 import SectionTitle from "./SectionTitle";
 import SideBar from "../navigation/SideBar";
 
-
 const FrontPage = () => {
   const ctx = useContext(AppContext);
 
   let height = window.innerHeight;
-  window.addEventListener('resize', function(event){
+  window.addEventListener("resize", function (event) {
     height = window.innerHeight;
   });
 
@@ -66,7 +65,9 @@ const FrontPage = () => {
 export default FrontPage;
 
 const OuterContainer = styled.div`
-  width: 100%;
+
+
+  z-index: 5;
   transition: all 0.4s ease-in-out;
   background-color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.black : "whitesmoke"};
@@ -82,6 +83,7 @@ const ScrollContainer = styled.div`
   transition: all 0.4s ease-in-out;
   background-color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.black : "whitesmoke"};
+
 `;
 
 const HomeContainer = styled.div`

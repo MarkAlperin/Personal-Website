@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 
-import portrait from "../../assets/portrait.jpeg";
+import portrait from "../../assets/mark.png";
 import templates from "../templates";
 import AppContext from "../../context/appContext";
 import Icons from "../icons/Icons";

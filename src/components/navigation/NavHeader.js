@@ -76,7 +76,8 @@ const NavHeader = (props) => {
         ctx.setShowMenu(!ctx.showMenu);
         console.log(ctx.showMenu);
       }}>
-        <i className="fa-solid fa-bars fa-lg"></i>
+        {!ctx.showMenu && <i className="fa-solid fa-bars fa-lg"></i>}
+        {ctx.showMenu && <i className="fa-solid fa-xmark fa-lg"></i>}
       </HamburgerContainer>
 
       {/* <Outlet /> */}
@@ -87,7 +88,9 @@ const NavHeader = (props) => {
 export default NavHeader;
 
 const StyledHeader = styled.div`
+positions: absolute;
   width: 100%;
+  z-index: 100;
   height: ${({ ctx }) => (ctx.darkMode ? "6.5%" : "4%")};
   min-height: ${({ ctx }) => (ctx.darkMode ? "100px" : "60px")};
   position: fixed;
@@ -171,14 +174,14 @@ const StyledA = styled.a`
     color: ${templates.color.white};
     border-bottom: 0.5px solid ${templates.color.white};
   }
-  &:after {
+  /* &:after {
     content: "";
     height: 10px;
     width: 100px;
     background: ${templates.color.mid};
     border-radius: 10px;
     box-shadow: 0px 0px 2px black;
-  }
+  } */
   @media (max-width: ${templates.breakpoints.mobile}) {
     display: none;
   } ;

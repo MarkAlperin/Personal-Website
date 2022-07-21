@@ -69,10 +69,11 @@ const StyledAside = styled.aside`
   /* float: right; */
   right: 0;
   top: 5%;
+  top: 0px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: ${({ ctx }) => (ctx.showMenu ? "30%" : "0px")};
+  width: ${({ ctx }) => (ctx.showMenu ? "35%" : "0px")};
   height: 50%;
   background-color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.black : templates.color.white};
@@ -80,8 +81,11 @@ const StyledAside = styled.aside`
   color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.white : templates.color.black};
   transition: all 0.3s ease-in;
+  border: 1px solid
+    ${({ ctx }) =>
+      ctx.darkMode ? templates.color.white : templates.color.black};
+  border-radius: ${templates.borderRadius};
   z-index: 50;
-  top: 0px;
 `;
 
 const IconContainer = styled.div`
@@ -94,19 +98,10 @@ const IconContainer = styled.div`
   transition: all 0.3s ease-in;
 `;
 
-const StyledImg = styled.img`
-  height: 10vmin;
-  pointer-events: none;
-`;
-
-const Hidden = styled.p`
-  color: #081f29;
-`;
-
 const IconTextContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 32px;
+  margin-left: 8%;
   padding-left: 10px;
   width: 120px;
   border-radius: 5px;
@@ -117,4 +112,3 @@ const P = styled.p`
   margin-left: 20px;
   font-size: 0.8rem;
 `;
-

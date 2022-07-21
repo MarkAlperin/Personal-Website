@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 
 import AppContext from "../../context/appContext";
-import NavHeader from "../NavHeader";
+import NavHeader from "../navigation/NavHeader";
 import Home from "./Home";
 import About from "./About";
 import Skills from "./Skills";
@@ -10,7 +10,7 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 import templates from "../templates";
 import helpers from "../../helpers/helpers";
-import SectionTitle from "../SectionTitle";
+import SectionTitle from "./SectionTitle";
 
 
 const FrontPage = () => {

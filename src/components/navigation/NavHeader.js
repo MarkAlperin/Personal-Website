@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 
-import templates from "./templates";
-import AppContext from "../context/appContext";
+import templates from "../templates";
+import AppContext from "../../context/appContext";
 
 const NavHeader = (props) => {
   const ctx = useContext(AppContext);
@@ -71,6 +71,9 @@ const NavHeader = (props) => {
       >
         RESUME
       </StyledA>
+      <HamburgerContainer ctx={ctx}>
+        <i className="fa-solid fa-bars fa-lg"></i>
+      </HamburgerContainer>
       <Outlet />
     </StyledHeader>
   );
@@ -89,6 +92,9 @@ const StyledHeader = styled.div`
   justify-content: flex-start;
   background-color: ${templates.color.black};
   transition: all 0.6s ease-in-out;
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    justify-content: space-between;
+  };
 `;
 
 const StyledName = styled.p`
@@ -140,6 +146,9 @@ const StyledP = styled.p`
     color: ${templates.color.white};
     border-bottom: 0.5px solid ${templates.color.white};
   }
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    display: none;
+  } ;
 `;
 
 const StyledA = styled.a`
@@ -164,4 +173,22 @@ const StyledA = styled.a`
     border-radius: 10px;
     box-shadow: 0px 0px 2px black;
   }
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    display: none;
+  } ;
+`;
+
+const HamburgerContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 4%;
+  /* padding-left: 5px; */
+  width: 90px;
+  height: auto;
+  border-radius: 3px;
+  transition: all 0.3s ease-in;
+  color: white;
+  @media (min-width: ${templates.breakpoints.mobile}) {
+    display: none;
+  } ;
 `;

@@ -21,7 +21,7 @@ const SideBar = () => {
           }}
         >
           <i className="fa-solid fa-house"></i>
-          <P>Home</P>
+          <P>HOME</P>
         </IconTextContainer>
         <IconTextContainer
           onClick={() => {
@@ -29,7 +29,7 @@ const SideBar = () => {
           }}
         >
           <i className="fa-solid fa-user"></i>
-          <P>About</P>
+          <P>ABOUT</P>
         </IconTextContainer>
         <IconTextContainer
           onClick={() => {
@@ -37,7 +37,7 @@ const SideBar = () => {
           }}
         >
           <i className="fa-solid fa-display"></i>
-          <P>Skills</P>
+          <P>SKILLS</P>
         </IconTextContainer>
         <IconTextContainer
           onClick={() => {
@@ -45,7 +45,7 @@ const SideBar = () => {
           }}
         >
           <i className="fa-solid fa-briefcase"></i>
-          <P>Projects</P>
+          <P>PROJECTS</P>
         </IconTextContainer>
         <IconTextContainer
           onClick={() => {
@@ -53,7 +53,7 @@ const SideBar = () => {
           }}
         >
           <i className="fa-solid fa-envelope"></i>
-          <P>Contact</P>
+          <P>CONTACT</P>
         </IconTextContainer>
       </IconContainer>
       {/* <Hidden>.</Hidden> */}
@@ -64,23 +64,23 @@ const SideBar = () => {
 export default SideBar;
 
 const StyledAside = styled.aside`
-  position: absolute;
-  float: right;
-
+  position: fixed;
+  /* float: right; */
+  right: 0;
+  top: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: ${({ ctx }) => (ctx.showMenu ? "33px" : "0px")};
-  height:  ${({ ctx }) => (ctx.showMenu ? "33vh" : "0px")};
-  background-color: ${({ctx}) => ctx.darkMode ? templates.color.black : templates.color.black};
+  width: ${({ ctx }) => (ctx.showMenu ? "30%" : "0px")};
+  height: 50%;
+  background-color: ${({ ctx }) =>
+    ctx.darkMode ? templates.color.black : templates.color.white};
   /* position: fixed; */
-  color: ${templates.color.white};
+  color: ${({ ctx }) =>
+    ctx.darkMode ? templates.color.white : templates.color.black};
   transition: all 0.3s ease-in;
-  z-index: 1000;
+  z-index: 50;
   top: 0px;
-  &:hover {
-    width: 200px;
-  }
 `;
 
 const IconContainer = styled.div`
@@ -110,14 +110,10 @@ const IconTextContainer = styled.div`
   width: 120px;
   border-radius: 5px;
   transition: all 0.3s ease-in;
-  &:hover {
-    cursor: pointer;
-    background-color: ${templates.color.mid};
-    box-shadow: 0px 0px 10px ${templates.color.light};
-  }
 `;
 
 const P = styled.p`
   margin-left: 20px;
   font-size: 0.8rem;
 `;
+

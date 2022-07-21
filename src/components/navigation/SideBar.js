@@ -10,6 +10,7 @@ const SideBar = () => {
 
   const scrollHandler = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    ctx.setShowMenu(false);
   };
 
   return (

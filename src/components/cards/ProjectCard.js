@@ -6,6 +6,7 @@ import templates from "../templates";
 const ProjectCard = ({ project }) => {
   return (
     <ProjectCardContainer>
+      <H3a>{project.name}</H3a>
       <StyledImage src={project.image} />
       <TextContainer>
         <H3>{project.name}</H3>
@@ -60,11 +61,11 @@ const ButtonLink = styled.a`
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;
-  color: ${templates.color.dark};
-  &:hover {
+
+
     color: ${templates.color.mid};
     text-shadow: 0 0 1.15px ${templates.color.shadowDark};
-  };
+
   @media (max-width: ${templates.breakpoints.mobile}) {
     align-self: center;
   };
@@ -108,6 +109,17 @@ const StyledP2 = styled.p`
 const H3 = styled.h3`
   font-size: 1.25rem;
   font-weight: bold;
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    display: none;
+  }
+`;
+
+const H3a = styled.h3`
+  font-size: 1.25rem;
+  font-weight: bold;
+  @media (min-width: ${templates.breakpoints.mobile}) {
+    display: none;
+  }
 `;
 
 const StyledLi = styled.li`
@@ -123,6 +135,6 @@ const StyledList = styled.ul`
 `;
 
 const TechSpan = styled.span`
-  color: ${templates.color.mid};
+  color: ${templates.color.dark};
   text-shadow: 0px 0px 2px ${templates.color.shadowLight};
 `;

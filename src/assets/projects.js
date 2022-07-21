@@ -1,23 +1,34 @@
 const mapImage = require("./map.png");
 const sdcImage = require("./sdc.png");
-const fecGif = require("./fecGif.gif");
+// const fecGif = require("./fecGif.gif");
 const fecImage = require("./fec.png")
+const cardImage = require("./cards.png");
 
 const projects = [
   {
-    name: "Cradle Mountain",
-    description:
-      "E-commerce front page that allows users to shop for clothing products, read and write reviews.",
-    position: "Front-End Engineer",
-    techs: ["React, ", "Redux, ", "AWS, ", "Axios, ", "CSS3 "],
-    github: "https://github.com/CradleMountain/wouldawoodshopshopwood",
+    name: "Secret Card Club",
+    description: "A mobile playing card sandbox game for up to 8 players.",
+    techs: ["React-Native, ", "Node.js, ", "uWebSockets, ", "PostgreSQL, ", "Express "],
+    github: "https://github.com/SecretCardClub",
     bullets: [
-      "Built custom carousels (vertical, horizontal, nested) with React and CSS3 that directed users to products.",
-      "Implemented the state management tool React Redux to integrate multiple widgets from different developers and reduce refactor times.",
-      "Built API interactivity with Axios to gather product data and persist user shopping data.",
+      "Implemented custom card deck/table sandbox UX with the React-Native PanResponder and Gesture Responder Systems.",
+      "Built synchronized multiplayer UI with the React-Native Animated library.",
+      "Leveraged uWebSockets create a real time data stream between the server and the clients.",
     ],
-    image:
-      fecImage,
+    image: cardImage,
+  },
+  {
+    name: "Project Greene",
+    description: "Interactive donation website to connect and broker exchanges between local users.",
+    position: "Front-End Engineer",
+    techs: [ "React, ", "GoogleMaps, ", "Node.js, ", "Firebase, ", "PostgreSQL, ", "Socket.io", ],
+    github: "https://github.com/GreeneOcean/Project_Greene",
+    bullets: [
+      "Created map components with the GoogleMaps API to provide UI/UX for local-to-user data.",
+      "Built out React functionality for the landing, browse, and item pages for an intuitive user experience.",
+      "Implement Socket.io video chat to allow user-to-user communication.",
+    ],
+    image: mapImage,
   },
   {
     name: "Cradle Mountain API",
@@ -33,17 +44,19 @@ const projects = [
     image: sdcImage,
   },
   {
-    name: "Project Greene",
-    description: "Interactive donation website to connect and broker exchanges between local users.",
+    name: "Cradle Mountain",
+    description:
+      "E-commerce front page that allows users to shop for clothing products, read and write reviews.",
     position: "Front-End Engineer",
-    techs: [ "React, ", "GoogleMaps, ", "Node.js, ", "Firebase, ", "Socket.io", ],
-    github: "https://github.com/GreeneOcean/Project_Greene",
+    techs: ["React, ", "Redux, ", "AWS, ", "Axios, ", "CSS3 "],
+    github: "https://github.com/CradleMountain/wouldawoodshopshopwood",
     bullets: [
-      "Created map components with the GoogleMaps API to provide UI/UX for local-to-user data.",
-      "Built out React functionality for the landing, browse, and item pages for an intuitive user experience.",
-      "Implement Socket.io video chat to allow user-to-user communication.",
+      "Built custom carousels (vertical, horizontal, nested) with React and CSS3 that directed users to products.",
+      "Implemented the state management tool React Redux to integrate multiple widgets from different developers and reduce refactor times.",
+      "Built API interactivity with Axios to gather product data and persist user shopping data.",
     ],
-    image: mapImage,
+    image:
+      fecImage,
   },
 ];
 

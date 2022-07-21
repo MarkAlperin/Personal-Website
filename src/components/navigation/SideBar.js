@@ -69,13 +69,13 @@ export default SideBar;
 const StyledAside = styled.aside`
   position: fixed;
   /* float: right; */
-  right: 0;
+  right: -3px;
   top: 5%;
   top: 0px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: ${({ ctx }) => (ctx.showMenu ? "35%" : "0px")};
+  width: ${({ ctx }) => (ctx.showMenu ? "36%" : "0px")};
   height: auto;
   background-color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.black : templates.color.white};
@@ -86,7 +86,7 @@ const StyledAside = styled.aside`
   border: 1px solid
     ${({ ctx }) =>
       ctx.darkMode ? templates.color.white : templates.color.black};
-  border-radius: ${templates.borderRadius};
+  border-bottom-left-radius: ${templates.borderRadius};
   z-index: 50;
 `;
 

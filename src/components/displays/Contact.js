@@ -28,7 +28,7 @@ const Contact = () => {
         </P2>
       </LeftBorderContainer>
       <P3 ctx={ctx}>You can learn more about me at LinkedIn or Github.</P3>
-      <Icons offset={true}/>
+      <Icons offset={true} />
     </ContactContainer>
   );
 };
@@ -40,10 +40,10 @@ const ContactContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
-  @media (max-width: ${templates.breakpoints.mobile}) {
+  @media (max-width: ${templates.breakpoints.tablet}) {
     align-items: center;
     padding: 0 5%;
-  };
+  } ;
 `;
 
 const LeftBorderContainer = styled.div`
@@ -60,10 +60,12 @@ const P1 = styled.p`
   padding-top: 4rem;
   margin-left: 4%;
   font-size: 5rem;
+  @media (max-width: ${templates.breakpoints.tablet}) {
+    margin-left: 0;
+  }
   @media (max-width: ${templates.breakpoints.mobile}) {
     font-size: 3.5rem;
-    margin-left: 0;
-  };
+  }
   line-height: 1em;
   font-weight: 600;
   color: ${({ ctx }) =>
@@ -86,7 +88,6 @@ const P3 = styled.p`
   margin-left: 5%;
   color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.shadowDark : templates.color.grey};
-
 `;
 
 const StyledA = styled.a`

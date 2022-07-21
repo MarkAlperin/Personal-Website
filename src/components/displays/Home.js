@@ -11,8 +11,8 @@ const Home = () => {
 
   return (
     <HomeContainer>
+      <Portrait src={portrait} alt="Portrait" />
       <TextContainer>
-        <Portrait src={portrait} alt="Portrait" />
         <P1 ctx={ctx}>Hello, I'm Mark </P1>
         <P2 ctx={ctx}>I build things for the web.</P2>
         <Icons />
@@ -29,7 +29,7 @@ const HomeContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   padding-top: 5%;
-  @media (orientation: landscape) {
+  @media (orientation: landscape) and (max-width: ${templates.breakpoints.tablet}) {
     flex-direction: row;
   }
 `;

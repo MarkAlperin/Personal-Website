@@ -26,7 +26,9 @@ const TitleContainer = styled.div`
   align-self: flex-start;
   margin-left: 5%;
   margin-bottom: 3%;
-
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    margin-top: 10%;
+  };
 `;
 
 const BlurbContainer = styled.div`

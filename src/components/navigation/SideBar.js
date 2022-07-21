@@ -57,6 +57,15 @@ const SideBar = () => {
             <i className="fa-solid fa-envelope"></i>
             <P>CONTACT</P>
           </IconTextContainer>
+          <ResumeTextContainer
+            ctx={ctx}
+            target="_blank"
+            href="../Mark-Alperin-Resume.pdf"
+            alt="Mark Alperin Resume"
+          >
+            <i className="fa-solid fa-scroll"></i>
+            <P>RESUME</P>
+          </ResumeTextContainer>
         </IconContainer>
       </StyledAside>
       <HiddenDiv ctx={ctx} onClick={() => ctx.setShowMenu(false)} />
@@ -73,16 +82,16 @@ const StyledAside = styled.aside`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: ${({ ctx }) => (ctx.showMenu ? "36%" : "0px")};
+  width: ${({ ctx }) => (ctx.showMenu ? "37%" : "0px")};
   height: auto;
   background-color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.black : templates.color.white};
   color: ${({ ctx }) =>
-    ctx.darkMode ? templates.color.white : templates.color.black};
+    ctx.darkMode ? templates.color.shadowLight : templates.color.grey};
   transition: all 0.3s ease-in;
   border: 1px solid
     ${({ ctx }) =>
-      ctx.darkMode ? templates.color.white : templates.color.black};
+      ctx.darkMode ? templates.color.shadowLight : templates.color.grey};
   border-bottom-left-radius: ${templates.borderRadius};
   z-index: 50;
 `;
@@ -103,7 +112,18 @@ const IconTextContainer = styled.div`
   margin-left: 8%;
   padding-left: 10px;
   width: 120px;
-  border-radius: 5px;
+  transition: all 0.3s ease-in;
+`;
+
+const ResumeTextContainer = styled.a`
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-left: 8%;
+  padding-left: 10px;
+  width: 120px;
+  color: ${({ ctx }) =>
+    ctx.darkMode ? templates.color.shadowLight : templates.color.grey};
   transition: all 0.3s ease-in;
 `;
 

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import templates from "../templates";
 import AppContext from "../../context/appContext";
 
+
 const NavHeader = (props) => {
   const ctx = useContext(AppContext);
 
@@ -71,9 +72,13 @@ const NavHeader = (props) => {
       >
         RESUME
       </StyledA>
-      <HamburgerContainer ctx={ctx}>
+      <HamburgerContainer ctx={ctx} onClick={() => {
+        ctx.setShowMenu(!ctx.showMenu);
+        console.log(ctx.showMenu);
+      }}>
         <i className="fa-solid fa-bars fa-lg"></i>
       </HamburgerContainer>
+
       {/* <Outlet /> */}
     </StyledHeader>
   );
@@ -94,6 +99,7 @@ const StyledHeader = styled.div`
   transition: all 0.6s ease-in-out;
   @media (max-width: ${templates.breakpoints.mobile}) {
     justify-content: space-between;
+
   };
 `;
 

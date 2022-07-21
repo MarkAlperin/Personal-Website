@@ -1,53 +1,62 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 
-import logo from "../assets/logo.svg";
-import templates from "./templates";
-import AppContext from "../context/appContext"
-import "../App.css";
+import templates from "../templates";
+import AppContext from "../../context/appContext";
+// import "../App.css";
 
 const SideBar = () => {
-  const [showSideBar, setShowSideBar] = useState(false);
   const ctx = useContext(AppContext);
 
   const scrollHandler = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   };
 
-  const enterHandler = () => {
-    setShowSideBar(true);
-  };
-
-  const leaveHandler = () => {
-    setShowSideBar(false);
-  };
-
   return (
-    <StyledAside onMouseEnter={enterHandler} onMouseLeave={leaveHandler} ctx={ctx}>
-      <StyledImg src={logo} onClick={() => {scrollHandler("home")}}/>
-      {!ctx.darkMode && <IconContainer>
-        <IconTextContainer onClick={() => {scrollHandler("home")}}>
-          <i className="fa-solid fa-house" ></i>
-          {showSideBar && <P>Home</P>}
+    <StyledAside ctx={ctx}>
+      <IconContainer>
+        <IconTextContainer
+          onClick={() => {
+            scrollHandler("home");
+          }}
+        >
+          <i className="fa-solid fa-house"></i>
+          <P>Home</P>
         </IconTextContainer>
-        <IconTextContainer  onClick={() => {scrollHandler("about")}}>
+        <IconTextContainer
+          onClick={() => {
+            scrollHandler("about");
+          }}
+        >
           <i className="fa-solid fa-user"></i>
-          {showSideBar && <P>About</P>}
+          <P>About</P>
         </IconTextContainer>
-        <IconTextContainer onClick={() => {scrollHandler("skills")}}>
+        <IconTextContainer
+          onClick={() => {
+            scrollHandler("skills");
+          }}
+        >
           <i className="fa-solid fa-display"></i>
-          {showSideBar && <P>Skills</P>}
+          <P>Skills</P>
         </IconTextContainer>
-        <IconTextContainer onClick={() => {scrollHandler("projects")}}>
+        <IconTextContainer
+          onClick={() => {
+            scrollHandler("projects");
+          }}
+        >
           <i className="fa-solid fa-briefcase"></i>
-          {showSideBar && <P>Projects</P>}
+          <P>Projects</P>
         </IconTextContainer>
-        <IconTextContainer onClick={() => {scrollHandler("contact")}}>
+        <IconTextContainer
+          onClick={() => {
+            scrollHandler("contact");
+          }}
+        >
           <i className="fa-solid fa-envelope"></i>
-          {showSideBar && <P>Contact</P>}
+          <P>Contact</P>
         </IconTextContainer>
-      </IconContainer>}
-      <Hidden>.</Hidden>
+      </IconContainer>
+      {/* <Hidden>.</Hidden> */}
     </StyledAside>
   );
 };
@@ -55,18 +64,20 @@ const SideBar = () => {
 export default SideBar;
 
 const StyledAside = styled.aside`
+  position: absolute;
+  float: right;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: ${({ctx}) =>
-      ctx.darkMode ? "0px" : "105px"};
-  height: 100vh;
-  background-color: ${templates.color.black};
-  /* border-right: 1.2px solid ${templates.color.light}; */
-  position: fixed;
+  width: ${({ ctx }) => (ctx.showMenu ? "33px" : "0px")};
+  height:  ${({ ctx }) => (ctx.showMenu ? "33vh" : "0px")};
+  background-color: ${({ctx}) => ctx.darkMode ? templates.color.black : templates.color.black};
+  /* position: fixed; */
   color: ${templates.color.white};
   transition: all 0.3s ease-in;
-  z-index: 10;
+  z-index: 1000;
+  top: 0px;
   &:hover {
     width: 200px;
   }
@@ -77,7 +88,8 @@ const IconContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
-  height: 300px;
+  height: 400px;
+  padding-top: 100px;
   transition: all 0.3s ease-in;
 `;
 
@@ -107,6 +119,5 @@ const IconTextContainer = styled.div`
 
 const P = styled.p`
   margin-left: 20px;
-  font-size: .8rem;
-
+  font-size: 0.8rem;
 `;

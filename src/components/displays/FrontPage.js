@@ -11,6 +11,7 @@ import Contact from "./Contact";
 import templates from "../templates";
 import helpers from "../../helpers/helpers";
 import SectionTitle from "./SectionTitle";
+import SideBar from "../navigation/SideBar";
 
 
 const FrontPage = () => {
@@ -33,6 +34,7 @@ const FrontPage = () => {
   return (
     <OuterContainer ctx={ctx}>
       <NavHeader />
+      <SideBar />
       <ScrollContainer ctx={ctx}>
         <HomeContainer id="home" height={height}>
           <Home />

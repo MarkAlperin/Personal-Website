@@ -74,7 +74,7 @@ const StyledAside = styled.aside`
   flex-direction: column;
   justify-content: space-between;
   width: ${({ ctx }) => (ctx.showMenu ? "35%" : "0px")};
-  height: 50%;
+  height: auto;
   background-color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.black : templates.color.white};
   /* position: fixed; */

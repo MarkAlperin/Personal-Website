@@ -3,22 +3,22 @@ import React, { useState } from "react";
 const AppContext = React.createContext({
   darkMode: true,
   setDarkMode: () => {},
-  // width: 0,
-  // setWidth: () => {},
+  showMenu: false,
+  setShowMenu: () => {},
 });
 
 export const AppContextProvider = (props) => {
   const [darkMode, setDarkMode] = useState(true);
-  // const [width, setWidth] = useState();
-  // const [height, setHeight] = useState((window.innerHeight > 0) ? window.innerHeight : screen.height);
+  const [showMenu, setShowMenu] = useState(false);
 
-  // let w = (window.innerWidth > 0) ? window.innerWidth : screen.width
 
   return (
     <AppContext.Provider
       value={{
         darkMode,
-        setDarkMode
+        setDarkMode,
+        showMenu,
+        setShowMenu,
       }}
     >
       {props.children}

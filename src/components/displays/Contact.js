@@ -52,16 +52,17 @@ const LeftBorderContainer = styled.div`
       ctx.darkMode ? templates.color.white : templates.color.black};
   padding-left: 2rem;
   margin-top: 2.5rem;
-  /* margin-bottom: 2rem; */
 `;
 
 const P1 = styled.p`
   margin: 0 0 0 -2px;
   padding: 0;
-  padding-top: 5rem;
+  padding-top: 4rem;
+  margin-left: 4%;
   font-size: 5rem;
   @media (max-width: ${templates.breakpoints.mobile}) {
     font-size: 3.5rem;
+    margin-left: 0;
   };
   line-height: 1em;
   font-weight: 600;
@@ -82,9 +83,10 @@ const P3 = styled.p`
   line-height: 1em;
   font-weight: 150;
   margin-bottom: 2rem;
-  margin-left: 5px;
+  margin-left: 5%;
   color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.shadowDark : templates.color.grey};
+
 `;
 
 const StyledA = styled.a`

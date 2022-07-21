@@ -21,7 +21,8 @@ const LinksContainer = styled.div`
   align-items: center;
   justify-content: space-around;
   width: ${({ offsetIcons }) => (offsetIcons ? "170px" : "130px")};
-  margin-left: ${({ offsetIcons }) => offsetIcons ? "60px" : "0"};
+  margin-left: ${({ offsetIcons }) => offsetIcons ? "12%" : "0"};
+  margin-top: ${({ offsetIcons }) => offsetIcons ? ".5rem" : "0"};
   @media (max-width: ${templates.breakpoints.mobile}) {
     margin-left: 0;
   };

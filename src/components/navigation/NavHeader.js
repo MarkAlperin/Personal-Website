@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 
 import templates from "../templates";
@@ -74,7 +74,7 @@ const NavHeader = (props) => {
       <HamburgerContainer ctx={ctx}>
         <i className="fa-solid fa-bars fa-lg"></i>
       </HamburgerContainer>
-      <Outlet />
+      {/* <Outlet /> */}
     </StyledHeader>
   );
 };
@@ -181,7 +181,9 @@ const StyledA = styled.a`
 const HamburgerContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 4%;
+  justify-content: center;
+  /* align-self: flex-end; */
+  /* margin-right:; */
   /* padding-left: 5px; */
   width: 90px;
   height: auto;

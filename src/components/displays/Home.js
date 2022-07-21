@@ -11,10 +11,12 @@ const Home = () => {
 
   return (
     <HomeContainer>
-      <Portrait src={portrait} alt="Portrait" />
-      <P1 ctx={ctx}>Hello, I'm Mark </P1>
-      <P2 ctx={ctx}>I build things for the web.</P2>
-      <Icons />
+      <TextContainer>
+        <Portrait src={portrait} alt="Portrait" />
+        <P1 ctx={ctx}>Hello, I'm Mark </P1>
+        <P2 ctx={ctx}>I build things for the web.</P2>
+        <Icons />
+      </TextContainer>
     </HomeContainer>
   );
 };
@@ -27,6 +29,9 @@ const HomeContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   padding-top: 5%;
+  @media (orientation: landscape) {
+    flex-direction: row;
+  }
 `;
 
 const Portrait = styled.img`
@@ -34,7 +39,7 @@ const Portrait = styled.img`
   width: 200px;
   @media (max-width: ${templates.breakpoints.mobile}) {
     width: 175px;
-  };
+  }
   height: auto;
   border-radius: 50%;
   margin: 5%;
@@ -46,7 +51,7 @@ const P1 = styled.p`
   font-size: 5rem;
   @media (max-width: ${templates.breakpoints.mobile}) {
     font-size: 3.5rem;
-  };
+  }
   line-height: 1em;
   font-weight: 600;
   text-shadow: 0 0 1px
@@ -65,4 +70,11 @@ const P2 = styled.p`
       ctx.darkMode ? templates.color.shadowLight : templates.color.shadowDark};
   color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.shadowDark : templates.color.grey};
+`;
+
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 `;

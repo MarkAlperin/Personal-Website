@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 
-import templates from "./templates";
-import AppContext from "../context/appContext";
+import templates from "../templates";
+import AppContext from "../../context/appContext";
+
 
 const NavHeader = (props) => {
   const ctx = useContext(AppContext);
@@ -71,7 +72,15 @@ const NavHeader = (props) => {
       >
         RESUME
       </StyledA>
-      <Outlet />
+      <HamburgerContainer ctx={ctx} onClick={() => {
+        ctx.setShowMenu(!ctx.showMenu);
+        console.log(ctx.showMenu);
+      }}>
+        {!ctx.showMenu && <i className="fa-solid fa-bars fa-lg"></i>}
+        {ctx.showMenu && <i className="fa-solid fa-xmark fa-lg"></i>}
+      </HamburgerContainer>
+
+      {/* <Outlet /> */}
     </StyledHeader>
   );
 };
@@ -79,7 +88,9 @@ const NavHeader = (props) => {
 export default NavHeader;
 
 const StyledHeader = styled.div`
+positions: absolute;
   width: 100%;
+  z-index: 100;
   height: ${({ ctx }) => (ctx.darkMode ? "6.5%" : "4%")};
   min-height: ${({ ctx }) => (ctx.darkMode ? "100px" : "60px")};
   position: fixed;
@@ -89,6 +100,10 @@ const StyledHeader = styled.div`
   justify-content: flex-start;
   background-color: ${templates.color.black};
   transition: all 0.6s ease-in-out;
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    justify-content: space-between;
+
+  };
 `;
 
 const StyledName = styled.p`
@@ -140,6 +155,9 @@ const StyledP = styled.p`
     color: ${templates.color.white};
     border-bottom: 0.5px solid ${templates.color.white};
   }
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    display: none;
+  } ;
 `;
 
 const StyledA = styled.a`
@@ -156,12 +174,32 @@ const StyledA = styled.a`
     color: ${templates.color.white};
     border-bottom: 0.5px solid ${templates.color.white};
   }
-  &:after {
+  /* &:after {
     content: "";
     height: 10px;
     width: 100px;
     background: ${templates.color.mid};
     border-radius: 10px;
     box-shadow: 0px 0px 2px black;
-  }
+  } */
+  @media (max-width: ${templates.breakpoints.mobile}) {
+    display: none;
+  } ;
+`;
+
+const HamburgerContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* align-self: flex-end; */
+  /* margin-right:; */
+  /* padding-left: 5px; */
+  width: 90px;
+  height: auto;
+  border-radius: 3px;
+  transition: all 0.3s ease-in;
+  color: white;
+  @media (min-width: ${templates.breakpoints.mobile}) {
+    display: none;
+  } ;
 `;

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 
-import templates from "./templates";
-import AppContext from "../context/appContext";
+import templates from "../templates";
+import AppContext from "../../context/appContext";
 
 const SectionTitle = ({blurb, title, margin=false}) => {
   const ctx = useContext(AppContext);

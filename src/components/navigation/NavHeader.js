@@ -79,8 +79,6 @@ const NavHeader = (props) => {
         {!ctx.showMenu && <i className="fa-solid fa-bars fa-lg"></i>}
         {ctx.showMenu && <i className="fa-solid fa-xmark fa-lg"></i>}
       </HamburgerContainer>
-
-      {/* <Outlet /> */}
     </StyledHeader>
   );
 };
@@ -88,7 +86,6 @@ const NavHeader = (props) => {
 export default NavHeader;
 
 const StyledHeader = styled.div`
-positions: absolute;
   width: 100%;
   z-index: 100;
   height: ${({ ctx }) => (ctx.darkMode ? "6.5%" : "4%")};

@@ -14,51 +14,53 @@ const SideBar = () => {
   };
 
   return (
-    <StyledAside ctx={ctx}>
-      <IconContainer>
-        <IconTextContainer
-          onClick={() => {
-            scrollHandler("home");
-          }}
-        >
-          <i className="fa-solid fa-house"></i>
-          <P>HOME</P>
-        </IconTextContainer>
-        <IconTextContainer
-          onClick={() => {
-            scrollHandler("about");
-          }}
-        >
-          <i className="fa-solid fa-user"></i>
-          <P>ABOUT</P>
-        </IconTextContainer>
-        <IconTextContainer
-          onClick={() => {
-            scrollHandler("skills");
-          }}
-        >
-          <i className="fa-solid fa-display"></i>
-          <P>SKILLS</P>
-        </IconTextContainer>
-        <IconTextContainer
-          onClick={() => {
-            scrollHandler("projects");
-          }}
-        >
-          <i className="fa-solid fa-briefcase"></i>
-          <P>PROJECTS</P>
-        </IconTextContainer>
-        <IconTextContainer
-          onClick={() => {
-            scrollHandler("contact");
-          }}
-        >
-          <i className="fa-solid fa-envelope"></i>
-          <P>CONTACT</P>
-        </IconTextContainer>
-      </IconContainer>
-      {/* <Hidden>.</Hidden> */}
-    </StyledAside>
+    <>
+      <StyledAside ctx={ctx}>
+        <IconContainer>
+          <IconTextContainer
+            onClick={() => {
+              scrollHandler("home");
+            }}
+          >
+            <i className="fa-solid fa-house"></i>
+            <P>HOME</P>
+          </IconTextContainer>
+          <IconTextContainer
+            onClick={() => {
+              scrollHandler("about");
+            }}
+          >
+            <i className="fa-solid fa-user"></i>
+            <P>ABOUT</P>
+          </IconTextContainer>
+          <IconTextContainer
+            onClick={() => {
+              scrollHandler("skills");
+            }}
+          >
+            <i className="fa-solid fa-display"></i>
+            <P>SKILLS</P>
+          </IconTextContainer>
+          <IconTextContainer
+            onClick={() => {
+              scrollHandler("projects");
+            }}
+          >
+            <i className="fa-solid fa-briefcase"></i>
+            <P>PROJECTS</P>
+          </IconTextContainer>
+          <IconTextContainer
+            onClick={() => {
+              scrollHandler("contact");
+            }}
+          >
+            <i className="fa-solid fa-envelope"></i>
+            <P>CONTACT</P>
+          </IconTextContainer>
+        </IconContainer>
+      </StyledAside>
+      <HiddenDiv ctx={ctx} onClick={() => ctx.setShowMenu(false)} />
+    </>
   );
 };
 
@@ -111,4 +113,15 @@ const IconTextContainer = styled.div`
 const P = styled.p`
   margin-left: 20px;
   font-size: 0.8rem;
+`;
+
+const HiddenDiv = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 49;
+  display: ${({ ctx }) => (ctx.showMenu ? "block" : "none")};
 `;

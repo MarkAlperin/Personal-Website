@@ -24,6 +24,7 @@ const FrontPage = () => {
 
   window.onscroll = () => {
     let scrollPct = helpers.amountscrolled();
+    ctx.setShowMenu(false);
     if (ctx.darkMode && scrollPct > 1 && scrollPct < 96) {
       ctx.setDarkMode(false);
     } else if (!ctx.darkMode && (scrollPct <= 1 || scrollPct >= 96)) {

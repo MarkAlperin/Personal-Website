@@ -29,9 +29,9 @@ const HomeContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   padding-top: 5%;
-  @media screen (orientation: landscape) and (max-width: ${templates.breakpoints.tablet}) {
+  /* @media only screen and (orientation: landscape) and (max-width: ${templates.breakpoints.tablet}) {
     flex-direction: row;
-  }
+  } */
 `;
 
 const Portrait = styled.img`
@@ -40,9 +40,9 @@ const Portrait = styled.img`
   @media (max-width: ${templates.breakpoints.mobile}) {
     width: 175px;
   }
-  @media (orientation: landscape) and (max-width: ${templates.breakpoints.tablet}) {
+  /* @media only screen and (orientation: landscape) and (max-width: ${templates.breakpoints.tablet}) {
     width: 150px;
-  }
+  } */
   height: auto;
   border-radius: 50%;
   margin: 5%;
@@ -52,9 +52,9 @@ const P1 = styled.p`
   margin: 0 0 0 -2px;
   padding: 0;
   font-size: 5rem;
-  @media screen (orientation: landscape) and (max-width: ${templates.breakpoints.tablet}) {
+  /* @media only screen and (orientation: landscape) and (max-width: ${templates.breakpoints.tablet}) {
     font-size: 2.5rem;
-  }
+  } */
   @media (max-width: ${templates.breakpoints.mobile}) {
     font-size: 3.5rem;
   }
@@ -69,9 +69,9 @@ const P1 = styled.p`
 
 const P2 = styled.p`
   font-size: 2rem;
-  @media screen (orientation: landscape) and (max-width: ${templates.breakpoints.tablet}) {
+  /* @media only screen and (orientation: landscape) and (max-width: ${templates.breakpoints.tablet}) {
     font-size: 1.5rem;
-  }
+  } */
   line-height: 1em;
   font-weight: 100;
   text-shadow: 0 0 1px

@@ -18,10 +18,21 @@ const About = () => {
         for readability and smooth debugging.
         <br />
         <br />
-        With a background in industrial electrical systems and military special
-        ops, my experience has given me a solid foundation for finding solutions
+        With a background in industrial electrical systems and military special-operations
+        {/* {" "}
+        <span>
+          <StyledA
+            ctx={ctx}
+            target="_blank"
+            href="../Mark-Alperin-Resume.pdf"
+            alt="Alperin Military Record"
+          >
+            military special-operations
+          </StyledA>
+        </span> */}
+        , my experience has given me a solid foundation for finding solutions
         to complex, logical problems and strong teamwork skills. After a few
-        months of self-teaching, I pursued and got accepted into the{" "}
+        months of self-teaching, I pursued and got accepted into {" "}
         <span>
           <StyledA
             ctx={ctx}
@@ -34,14 +45,14 @@ const About = () => {
         </span>
         , a 12-week advanced software engineering immersive program consisting
         of 1000+ hours of coding. Through this experience, I learned full-stack
-        development with JavaScript, React, Express, PostgreSQL, MongoDB, and
-        MySQL in an AGILE environment.
+        development with JavaScript, React, Node.js, relational and
+        non-relational databases, in an AGILE environment.
         <br />
         <br />
         Right now, I am currently looking for a full-time software engineering
-        role at an Austin-based company that emphasizes/values XYZ. I’m
-        confident that my background and technical capabilities will make me a
-        strong addition to an engineering team.
+        role at an Austin-based company that emphasizes personal responsibility,
+        continuous learning, and grit. I’m confident that my background and technical capabilities
+        will make me a strong addition to an engineering team.
         <br />
         <br />
         Personally, when I am not coding I enjoy rock climbing, playing board
@@ -59,8 +70,6 @@ const AboutContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 90%;
-  /* margin: 10%;
-  padding: 10%; */
   height: auto;
   background-color: white;
   border-radius: 10px;

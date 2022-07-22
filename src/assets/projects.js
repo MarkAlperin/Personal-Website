@@ -3,7 +3,7 @@ const sdcImage = require("./sdc.png");
 // const fecGif = require("./fecGif.gif");
 const fecImage = require("./fec.png");
 const cardImage = require("./cards.png");
-const arcImage = require("./fec.png");
+const arcImage = require("./arc.png");
 
 const projects = [
   {

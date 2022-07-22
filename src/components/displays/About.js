@@ -49,7 +49,7 @@ const About = () => {
         non-relational databases, in an AGILE environment.
         <br />
         <br />
-        Right now, I am currently looking for a full-time software engineering
+        Right now, I am looking for a full-time software engineering
         role at an Austin-based company that emphasizes personal responsibility,
         continuous learning, and grit. I’m confident that my background and technical capabilities
         will make me a strong addition to an engineering team.

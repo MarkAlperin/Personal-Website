@@ -12,7 +12,7 @@ const About = () => {
       <StyledP ctx={ctx}>
         I am a full-stack software engineer living in Austin, Texas. I'm
         passionate about clean, modular code. I write my code to be clear,
-        concise, and understandable, with variables clear enough to be
+        concise, and understandable, with variables intuitive enough to be
         self-documenting and files that typically don’t exceed 60 lines of code.
         If I ever spot something that can be done with less code, I refactor it
         for readability and smooth debugging.

@@ -6,10 +6,14 @@ import templates from "../templates";
 const ProjectCard = ({ project }) => {
   return (
     <ProjectCardContainer>
-      <H3a>{project.name}</H3a>
+      <H3a href={project.github} target="_blank">
+        {project.name}
+      </H3a>
       <StyledImage src={project.image} />
       <TextContainer>
-        <H3>{project.name}</H3>
+        <H3 href={project.github} target="_blank">
+          {project.name}
+        </H3>
         <StyledP>{project.description}</StyledP>
         <StyledP2>
           Tech:{" "}
@@ -53,7 +57,7 @@ const ProjectCardContainer = styled.div`
   } */
   @media (max-width: 768px) {
     flex-direction: column;
-  };
+  } ;
 `;
 
 const ButtonLink = styled.a`
@@ -61,14 +65,12 @@ const ButtonLink = styled.a`
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;
-
-
-    color: ${templates.color.mid};
-    text-shadow: 0 0 1.15px ${templates.color.shadowDark};
+  color: ${templates.color.mid};
+  text-shadow: 0 0 1.15px ${templates.color.shadowDark};
 
   @media (max-width: ${templates.breakpoints.mobile}) {
     align-self: center;
-  };
+  } ;
 `;
 
 const StyledImage = styled.img`
@@ -76,7 +78,7 @@ const StyledImage = styled.img`
   @media (max-width: ${templates.breakpoints.tablet}) {
     width: 90%;
     margin-top: 1.5%;
-  };
+  }
   height: auto;
   border: 1.5px solid ${templates.color.light};
 `;
@@ -85,7 +87,7 @@ const TextContainer = styled.div`
   width: 40%;
   @media (max-width: ${templates.breakpoints.tablet}) {
     width: 90%;
-  };
+  }
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -106,20 +108,30 @@ const StyledP2 = styled.p`
   color: #081f29;
 `;
 
-const H3 = styled.h3`
+const H3 = styled.a`
+  text-decoration: none;
   font-size: 1.25rem;
   font-weight: bold;
   @media (max-width: ${templates.breakpoints.mobile}) {
     display: none;
   }
-`;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  color: ${templates.color.black};
+  &:hover {
+    color: ${templates.color.mid};
+    text-shadow: 0px 0px 2px ${templates.color.shadowDark};
+  }
+  `;
 
-const H3a = styled.h3`
+const H3a = styled.a`
+text-decoration: none;
   font-size: 1.25rem;
   font-weight: bold;
   @media (min-width: ${templates.breakpoints.mobile}) {
     display: none;
   }
+  color: ${templates.color.black};
 `;
 
 const StyledLi = styled.li`

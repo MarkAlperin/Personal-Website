@@ -18,18 +18,18 @@ const About = () => {
         for readability and smooth debugging.
         <br />
         <br />
-        With a background in industrial electrical systems and military special-operations
-        {/* {" "}
+        With a background in industrial electrical systems and
+        {" "}
         <span>
           <StyledA
             ctx={ctx}
             target="_blank"
-            href="../Mark-Alperin-Resume.pdf"
+            href="../Military-Awards.pdf"
             alt="Alperin Military Record"
           >
             military special-operations
           </StyledA>
-        </span> */}
+        </span>
         , my experience has given me a solid foundation for finding solutions
         to complex, logical problems and strong teamwork skills. After a few
         months of self-teaching, I pursued and got accepted into {" "}

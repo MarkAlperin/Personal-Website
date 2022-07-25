@@ -12,7 +12,6 @@ const projects = [
     techs: [
       "React-Native, ",
       "Node.js, ",
-      "uWebSockets, ",
       "PostgreSQL, ",
       "Express ",
     ],
@@ -20,7 +19,7 @@ const projects = [
     bullets: [
       "Implemented custom card deck and table sandbox UX with the React-Native PanResponder and Gesture Responder systems to intuitively simulate real life interactions.",
       "Used the React-Native Animated library to synchronously display player actions to all users.",
-      "Leveraged uWebSockets create a real time data stream between the server and the clients.",
+
     ],
     image: cardImage,
   },
@@ -34,14 +33,12 @@ const projects = [
       "GoogleMaps, ",
       "Node.js, ",
       "Firebase, ",
-      "PostgreSQL, ",
-      "Socket.io",
+      "PostgreSQL ",
     ],
     github: "https://github.com/GreeneOcean/Project_Greene",
     bullets: [
       "Created map components with the GoogleMaps API to provide UI/UX for local-to-user data.",
       "Built out React functionality for the landing, browse, and item pages for an intuitive user experience.",
-      "Implement Socket.io video chat to allow user-to-user communication.",
     ],
     image: mapImage,
   },

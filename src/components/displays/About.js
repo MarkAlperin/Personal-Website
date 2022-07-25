@@ -55,7 +55,7 @@ const About = () => {
         will make me a strong addition to an engineering team.
         <br />
         <br />
-        Personally, when I am not coding I enjoy rock climbing, playing board
+        When I am not coding I enjoy backpacking, playing board
         games, and spending time with my friends, family, and lovely wife.
       </StyledP>
     </AboutContainer>

@@ -24,7 +24,7 @@ const About = () => {
           <StyledA
             ctx={ctx}
             target="_blank"
-            href="../Chronological-Military-Decorations.pdf"
+            href="../Chronological-Military-Awards.pdf"
             alt="Alperin Military Record"
           >
             military special-operations

@@ -1,9 +1,9 @@
-const mapImage = require("./map.png");
-const sdcImage = require("./sdc.png");
+const mapImage = require("./map72.webp");
+const sdcImage = require("./sdc72.webp");
 // const fecGif = require("./fecGif.gif");
-const fecImage = require("./fec.png");
-const cardImage = require("./cards.png");
-const arcImage = require("./arc.png");
+const fecImage = require("./fec72.webp");
+const cardImage = require("./cards72.webp");
+const arcImage = require("./arc72.webp");
 
 const projects = [
   {

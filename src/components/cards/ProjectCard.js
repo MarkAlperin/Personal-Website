@@ -2,14 +2,24 @@ import React from "react";
 import styled from "styled-components";
 
 import templates from "../templates";
+import useImage from "../../hooks/useImage"
+
 
 const ProjectCard = ({ project }) => {
+
+  const imageS = useImage(project.imageS).image;
+  const imageL = useImage(project.imageL).image;
+
   return (
     <ProjectCardContainer>
       <H3a href={project.github} target="_blank">
         {project.name}
       </H3a>
-      <StyledImage src={project.image} alt={project.alt} />
+      <StyledImage
+        src={imageS}
+        srcSet={`${imageS} 400w, ${imageL} 768w`}
+        alt={project.alt}
+      />
       <TextContainer>
         <H3 href={project.github} target="_blank">
           {project.name}

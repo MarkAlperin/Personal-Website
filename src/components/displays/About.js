@@ -11,15 +11,12 @@ const About = () => {
     <AboutContainer>
       <StyledP ctx={ctx}>
         I am a full-stack software engineer living in Austin, Texas. I'm
-        passionate about clean, modular code. I write my code to be clear,
-        concise, and understandable, with variables intuitive enough to be
-        self-documenting and files that typically don’t exceed 60 lines of code.
-        If I ever spot something that can be done with less code, I refactor it
-        for readability and smooth debugging.
+        passionate about clean, modular code. I write my code to be
+        understandable and self-documenting. If I can accomplish
+        something with less code, I will.
         <br />
         <br />
-        With a background in industrial electrical systems and
-        {" "}
+        With a background in industrial electrical systems and{" "}
         <span>
           <StyledA
             ctx={ctx}
@@ -27,12 +24,12 @@ const About = () => {
             href="../Chronological-Military-Awards.pdf"
             alt="Alperin Military Record"
           >
-            military special-operations
+            military special-ops
           </StyledA>
         </span>
-        , my experience has given me a solid foundation for finding solutions
-        to complex, logical problems and strong teamwork skills. After a few
-        months of self-teaching, I pursued and got accepted into {" "}
+        , my experience has given me a solid foundation for finding solutions to
+        complex, logical problems and strong teamwork skills. After a few months
+        of self-teaching, I pursued and got accepted into{" "}
         <span>
           <StyledA
             ctx={ctx}
@@ -49,14 +46,14 @@ const About = () => {
         non-relational databases, in an AGILE environment.
         <br />
         <br />
-        Right now, I am looking for a full-time software engineering
-        role at an Austin-based company that emphasizes personal responsibility,
-        continuous learning, and grit. I’m confident that my background and technical capabilities
-        will make me a strong addition to an engineering team.
+        Right now, I am looking for a full-time software engineering role at an
+        Austin-based company that emphasizes personal responsibility, continuous
+        learning, and grit. I’m confident that my background and technical
+        capabilities will make me a strong addition to an engineering team.
         <br />
         <br />
-        When I am not coding I enjoy backpacking, playing board
-        games, and spending time with my friends, family, and lovely wife.
+        When I am not coding I enjoy mountain biking, playing board games, and
+        spending time with my friends, family, and lovely wife.
       </StyledP>
     </AboutContainer>
   );

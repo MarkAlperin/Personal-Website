@@ -17,7 +17,7 @@ const ProjectCard = ({ project }) => {
       </H3a>
       <StyledImage
         src={imageS}
-        srcSet={`${imageS} 400w, ${imageL} 768w`}
+        srcSet={`${imageS} 400w, ${imageL} 1280w`}
         alt={project.alt}
       />
       <TextContainer>

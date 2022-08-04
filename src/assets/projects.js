@@ -1,13 +1,4 @@
-// const mapL = require("./map54.webp");
-// const mapS = require("./map18.webp");
-// const fecL = require("./fec54.webp");
-// const fecS = require("./fec24.webp");
-// const cardsL = require("./cards54.webp");
-// const cardsS = require("./cards24.webp");
-// const arcL = require("./arc54.webp");
-// const arcS = require("./arc24.webp");
-// const sdcL = require("./sdc54.webp");
-// const sdcS = require("./sdc18.webp");
+
 
 const projects = [
   {
@@ -25,8 +16,6 @@ const projects = [
       "Used the React-Native Animated library to synchronously display player actions to all users.",
 
     ],
-    // imageL: cardsL,
-    // imageS: cardsS,
     imageL: "cards54.webp",
     imageS: "cards24.webp",
     alt: "a mobile playing card sandbox game",
@@ -71,8 +60,6 @@ const projects = [
       "Horizontally scaled with Nginx and 3 AWS servers to increase capacity from 500 rps to 1400 rps.",
       "Used Loader.io to monitor the performance of the API and optimize the load balancer.",
     ],
-    // imageL: sdcL,
-    // imageS: sdcS,
     imageL: "cards54.webp",
     imageS: "cards24.webp",
     alt: "an image perfomance measurments for an API"
@@ -89,8 +76,6 @@ const projects = [
       "Implemented the state management tool React Redux to integrate multiple widgets from different developers and reduce refactor times.",
       "Built API interactivity with Axios to gather product data and persist user shopping data.",
     ],
-    // imageL: fecL,
-    // imageS: fecS,
     imageL: "fec54.webp",
     imageS: "fec24.webp",
     alt: "an image of a clothing website front page"
@@ -107,8 +92,6 @@ const projects = [
       "Implemented Google Firebase's RealTime Database to allow users to create and rsvp to events.",
       "Leveraged the DateFNS library to create recurring events funtionality. ",
     ],
-    // imageL: arcL,
-    // imageS: arcS,
     imageL: "arc54.webp",
     imageS: "arc24.webp",
     alt: "an image of a calendar app for a local marksmanship club"

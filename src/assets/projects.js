@@ -67,7 +67,7 @@ const projects = [
     alt: "perfomance measurments for an API"
   },
   {
-    name: "Clothing Front Page",
+    name: "Clothing Website Front-End",
     description:
       "E-commerce front page that allows users to shop for clothing products, read and write reviews.",
     position: "Front-End Engineer",

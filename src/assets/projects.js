@@ -7,7 +7,7 @@ const arcImage = require("./arc72.webp");
 
 const projects = [
   {
-    name: "Secret Card Club",
+    name: "Just Cards",
     description: "A mobile playing card sandbox game for up to 8 players.",
     techs: [
       "React-Native, ",
@@ -22,6 +22,7 @@ const projects = [
 
     ],
     image: cardImage,
+    alt: "a mobile playing card sandbox game",
   },
   {
     name: "Project Greene",
@@ -41,9 +42,10 @@ const projects = [
       "Built out React functionality for the landing, browse, and item pages for an intuitive user experience.",
     ],
     image: mapImage,
+    alt: "an image of google maps displaying local donations"
   },
   {
-    name: "Cradle Mountain API",
+    name: "Cradle Mountain API Redesign",
     description:
       "Backend system designed to handle production level traffic for 15 million data entries.",
     position: "Back-End Engineer",
@@ -62,9 +64,10 @@ const projects = [
       "Used Loader.io to monitor the performance of the API and optimize the load balancer.",
     ],
     image: sdcImage,
+    alt: "an image perfomance measurments for an API"
   },
   {
-    name: "Cradle Mountain",
+    name: "Cradle Mountain Clothing Front-End",
     description:
       "E-commerce front page that allows users to shop for clothing products, read and write reviews.",
     position: "Front-End Engineer",
@@ -76,6 +79,7 @@ const projects = [
       "Built API interactivity with Axios to gather product data and persist user shopping data.",
     ],
     image: fecImage,
+    alt: "an image of a clothing website front page"
   },
   {
     name: "ARC Calendar App",
@@ -90,6 +94,7 @@ const projects = [
       "Leveraged the DateFNS library to create recurring events funtionality. ",
     ],
     image: arcImage,
+    alt: "an image of a calendar app for a local marksmanship club"
   },
 ];
 

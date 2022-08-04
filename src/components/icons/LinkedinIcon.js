@@ -8,7 +8,7 @@ import linkedinIcon from "../../assets/linkedin.svg";
 const LinkedinIcon = () => {
   return (
     <IconContainer href="https://www.linkedin.com/in/markalperin/" target="_blank" rel="noopener noreferrer">
-    <StyledLinkedin src={linkedinIcon} />
+    <StyledLinkedin src={linkedinIcon} alt="the linkedin logo"/>
   </IconContainer>
   );
 };

@@ -16,7 +16,7 @@ const SkillCard = ({ icon }) => {
   );
 };
 
-export default SkillCard;
+export default React.memo(SkillCard);
 
 const SkillCardContainer = styled.a`
   display: flex;

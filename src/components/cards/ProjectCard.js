@@ -9,7 +9,7 @@ const ProjectCard = ({ project }) => {
       <H3a href={project.github} target="_blank">
         {project.name}
       </H3a>
-      <StyledImage src={project.image} />
+      <StyledImage src={project.image} alt={project.alt} />
       <TextContainer>
         <H3 href={project.github} target="_blank">
           {project.name}
@@ -122,10 +122,10 @@ const H3 = styled.a`
     color: ${templates.color.mid};
     text-shadow: 0px 0px 2px ${templates.color.shadowDark};
   }
-  `;
+`;
 
 const H3a = styled.a`
-text-decoration: none;
+  text-decoration: none;
   font-size: 1.25rem;
   font-weight: bold;
   @media (min-width: ${templates.breakpoints.mobile}) {

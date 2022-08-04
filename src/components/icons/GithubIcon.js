@@ -11,12 +11,12 @@ const GithubIcon = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <StyledGithub src={githubIcon} />
+      <StyledGithub src={githubIcon} alt="the github icon" />
     </IconContainer>
   );
 };
 
-export default GithubIcon;
+export default React.memo(GithubIcon);
 
 const IconContainer = styled.a`
   display: flex;

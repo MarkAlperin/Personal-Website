@@ -81,7 +81,7 @@ const NavHeader = () => {
   );
 };
 
-export default React.memo(NavHeader);
+export default NavHeader;
 
 const StyledHeader = styled.div`
   width: 100%;

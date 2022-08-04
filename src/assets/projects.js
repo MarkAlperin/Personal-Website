@@ -78,8 +78,8 @@ const projects = [
       "Implemented the state management tool React Redux to integrate multiple widgets from different developers and reduce refactor times.",
       "Built API interactivity with Axios to gather product data and persist user shopping data.",
     ],
-    imageL: "fec54.webp",
-    imageS: "fec24.webp",
+    imageL: "fec36.webp",
+    imageS: "fec54.webp",
     alt: "an image of a clothing website front page"
   },
   {

@@ -16,7 +16,7 @@ const GithubIcon = () => {
   );
 };
 
-export default React.memo(GithubIcon);
+export default GithubIcon;
 
 const IconContainer = styled.a`
   display: flex;

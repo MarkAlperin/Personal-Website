@@ -1,16 +1,17 @@
-import React, { lazy, Suspense, useContext } from "react";
+import React, { lazy, Suspense, memo, useContext } from "react";
 import styled from "styled-components";
 
 import AppContext from "../../context/appContext";
 import NavHeader from "../navigation/NavHeader";
 import Home from "./Home";
 import Fallback from "../displays/Fallback";
-import Skills from "./Skills";
-import Projects from "./Projects";
-import Contact from "./Contact";
 import templates from "../templates";
 import helpers from "../../helpers/helpers";
-import SectionTitle from "./SectionTitle";
+
+const Contact = lazy(() => import("./Contact"));
+const Projects = lazy(() => import("./Projects"));
+const SectionTitle = lazy(() => import("./SectionTitle"));
+const Skills = lazy(() => import("./Skills"));
 const SideBar = lazy(() => import("../navigation/SideBar"));
 const About = lazy(() => import("./About"));
 
@@ -48,26 +49,32 @@ const FrontPage = () => {
             <About />
           </AboutContainer>
         </Suspense>
-        <SkillsContainer id="skills">
-          <SectionTitle blurb="CHECK OUT MY" title="SKILLS" margin={true} />
-          <Skills />
-        </SkillsContainer>
-        <ProjectsContainer id="projects">
-          <SectionTitle
-            blurb="TAKE A LOOK AT MY"
-            title="PROJECTS"
-            margin={true}
-          />
-          <Projects />
-        </ProjectsContainer>
-        <ContactContainer id="contact" height={height}>
-          <Contact />
-        </ContactContainer>
+        <Suspense fallback={<Fallback />}>
+          <SkillsContainer id="skills">
+            <SectionTitle blurb="CHECK OUT MY" title="SKILLS" margin={true} />
+            <Skills />
+          </SkillsContainer>
+        </Suspense>
+        <Suspense fallback={<Fallback />}>
+          <ProjectsContainer id="projects">
+            <SectionTitle
+              blurb="TAKE A LOOK AT MY"
+              title="PROJECTS"
+              margin={true}
+            />
+            <Projects />
+          </ProjectsContainer>
+        </Suspense>
+        <Suspense fallback={<Fallback />}>
+          <ContactContainer id="contact" height={height}>
+            <Contact />
+          </ContactContainer>
+        </Suspense>
       </ScrollContainer>
     </OuterContainer>
   );
 };
-export default FrontPage;
+export default memo(FrontPage);
 
 const OuterContainer = styled.div`
   z-index: 5;

@@ -1,17 +1,18 @@
-import React, { useContext } from "react";
+import React, { lazy, Suspense, useContext } from "react";
 import styled from "styled-components";
 
 import AppContext from "../../context/appContext";
 import NavHeader from "../navigation/NavHeader";
 import Home from "./Home";
-import About from "./About";
+import Fallback from "../displays/Fallback";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import templates from "../templates";
 import helpers from "../../helpers/helpers";
 import SectionTitle from "./SectionTitle";
-import SideBar from "../navigation/SideBar";
+const SideBar = lazy(() => import("../navigation/SideBar"));
+const About = lazy(() => import("./About"));
 
 const FrontPage = () => {
   const ctx = useContext(AppContext);
@@ -34,15 +35,19 @@ const FrontPage = () => {
   return (
     <OuterContainer ctx={ctx}>
       <NavHeader />
-      <SideBar />
+      <Suspense fallback={<Fallback />}>
+        <SideBar />
+      </Suspense>
       <ScrollContainer ctx={ctx}>
         <HomeContainer id="home" height={height}>
           <Home />
         </HomeContainer>
-        <AboutContainer id="about">
-          <SectionTitle blurb="SOME INFO" title="ABOUT ME" />
-          <About />
-        </AboutContainer>
+        <Suspense fallback={<Fallback />}>
+          <AboutContainer id="about">
+            <SectionTitle blurb="SOME INFO" title="ABOUT ME" />
+            <About />
+          </AboutContainer>
+        </Suspense>
         <SkillsContainer id="skills">
           <SectionTitle blurb="CHECK OUT MY" title="SKILLS" margin={true} />
           <Skills />
@@ -65,8 +70,6 @@ const FrontPage = () => {
 export default FrontPage;
 
 const OuterContainer = styled.div`
-
-
   z-index: 5;
   transition: all 0.4s ease-in-out;
   background-color: ${({ ctx }) =>
@@ -83,7 +86,6 @@ const ScrollContainer = styled.div`
   transition: all 0.4s ease-in-out;
   background-color: ${({ ctx }) =>
     ctx.darkMode ? templates.color.black : "whitesmoke"};
-
 `;
 
 const HomeContainer = styled.div`

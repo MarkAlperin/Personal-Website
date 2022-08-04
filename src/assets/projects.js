@@ -12,8 +12,9 @@ const projects = [
     ],
     github: "https://github.com/SecretCardClub",
     bullets: [
-      "Implemented custom card deck and table sandbox UX with the React-Native PanResponder and Gesture Responder systems to intuitively simulate real life interactions.",
+      "Created dynamic screen location detection for sandbox UX with the React-Native PanResponder system to intuitively simulate drag and drop interactions.",
       "Used the React-Native Animated library to synchronously display player actions to all users.",
+      "Leveraged React-Native’s Gesture Responder system to build gesture based interactions for cards."
 
     ],
     imageL: "cards54.webp",
@@ -21,7 +22,7 @@ const projects = [
     alt: "a mobile playing card sandbox game",
   },
   {
-    name: "Project Greene",
+    name: "Local Donation Exchange",
     description:
       "Interactive donation website to connect and broker exchanges between local users.",
     position: "Front-End Engineer",
@@ -36,13 +37,14 @@ const projects = [
     bullets: [
       "Created map components with the GoogleMaps API to provide UI/UX for local-to-user data.",
       "Built out React functionality for the landing, browse, and item pages for an intuitive user experience.",
+      "Implemented descriptive tags in PostgreSQL to improve user filtering and searching for donations."
     ],
     imageL: "map54.webp",
     imageS: "map18.webp",
     alt: "an image of google maps displaying local donations"
   },
   {
-    name: "Cradle Mountain API Redesign",
+    name: "Shopping API Redesign",
     description:
       "Backend system designed to handle production level traffic for 15 million data entries.",
     position: "Back-End Engineer",
@@ -60,12 +62,12 @@ const projects = [
       "Horizontally scaled with Nginx and 3 AWS servers to increase capacity from 500 rps to 1400 rps.",
       "Used Loader.io to monitor the performance of the API and optimize the load balancer.",
     ],
-    imageL: "cards54.webp",
-    imageS: "cards24.webp",
-    alt: "an image perfomance measurments for an API"
+    imageL: "sdc54.webp",
+    imageS: "sdc18.webp",
+    alt: "perfomance measurments for an API"
   },
   {
-    name: "Cradle Mountain Clothing Front-End",
+    name: "Clothing Front Page",
     description:
       "E-commerce front page that allows users to shop for clothing products, read and write reviews.",
     position: "Front-End Engineer",

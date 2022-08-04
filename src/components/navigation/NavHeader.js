@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-// import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 
 import templates from "../templates";
 import AppContext from "../../context/appContext";
 
 
-const NavHeader = (props) => {
+const NavHeader = () => {
   const ctx = useContext(AppContext);
 
   const scrollHandler = (id) => {
@@ -74,7 +73,6 @@ const NavHeader = (props) => {
       </StyledA>
       <HamburgerContainer ctx={ctx} onClick={() => {
         ctx.setShowMenu(!ctx.showMenu);
-        console.log(ctx.showMenu);
       }}>
         {!ctx.showMenu && <i className="fa-solid fa-bars fa-lg"></i>}
         {ctx.showMenu && <i className="fa-solid fa-xmark fa-lg"></i>}
@@ -83,7 +81,7 @@ const NavHeader = (props) => {
   );
 };
 
-export default NavHeader;
+export default React.memo(NavHeader);
 
 const StyledHeader = styled.div`
   width: 100%;
@@ -106,7 +104,6 @@ const StyledHeader = styled.div`
 const StyledName = styled.p`
   margin-left: 4%;
   margin-right: 2%;
-  /* visibility: ${({ ctx }) => (ctx.darkMode ? "visible" : "hidden")}; */
   width: auto;
   padding: 12px 0;
   color: #fff;
@@ -124,7 +121,6 @@ const StyledName = styled.p`
 const StyledInitials = styled.p`
   margin-left: 4%;
   margin-right: 2%;
-  /* visibility: ${({ ctx }) => (ctx.darkMode ? "visible" : "hidden")}; */
   width: auto;
   padding: 12px 0;
   color: #fff;
@@ -143,7 +139,6 @@ const StyledInitials = styled.p`
 const StyledP = styled.p`
   margin-left: 2%;
   padding: 12px 0;
-  /* visibility: ${({ ctx }) => (ctx.darkMode ? "visible" : "hidden")}; */
   width: auto;
   color: ${templates.color.shadowDark};
   cursor: pointer;
@@ -160,7 +155,6 @@ const StyledP = styled.p`
 const StyledA = styled.a`
   margin-left: 2%;
   padding: 12px 0;
-  /* visibility: ${({ ctx }) => (ctx.darkMode ? "visible" : "hidden")}; */
   text-decoration: none;
   width: auto;
   color: ${templates.color.shadowDark};
@@ -171,14 +165,6 @@ const StyledA = styled.a`
     color: ${templates.color.white};
     border-bottom: 0.5px solid ${templates.color.white};
   }
-  /* &:after {
-    content: "";
-    height: 10px;
-    width: 100px;
-    background: ${templates.color.mid};
-    border-radius: 10px;
-    box-shadow: 0px 0px 2px black;
-  } */
   @media (max-width: ${templates.breakpoints.mobile}) {
     display: none;
   } ;
@@ -188,9 +174,6 @@ const HamburgerContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* align-self: flex-end; */
-  /* margin-right:; */
-  /* padding-left: 5px; */
   width: 90px;
   height: auto;
   border-radius: 3px;

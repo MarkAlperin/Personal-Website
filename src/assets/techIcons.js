@@ -103,6 +103,11 @@ const icons = {
       alt: "Postman",
     },
     {
+      href: "https://pptr.dev/",
+      src: "https://www.vectorlogo.zone/logos/pptrdev/pptrdev-icon.svg",
+      alt: "Puppeteer",
+    },
+    {
       href: "https://pandas.pydata.org",
       src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/pandas/pandas-original-wordmark.svg",
       alt: "Pandas",

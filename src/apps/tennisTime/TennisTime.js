@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { Link as RouterLink } from "react-router-dom";
+import { useNavigate, Link as RouterLink } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -29,6 +29,7 @@ export default function TennisTime() {
   const [time, setTime] = useState("");
   const [clickCounter, setClickCounter] = useState(0);
   const [isRandi, setIsRandi] = useState(localRandiAuth);
+  const navigate = useNavigate();
 
   const chipClickHandler = () => {
     setFacility((prevState) => {
@@ -71,6 +72,7 @@ export default function TennisTime() {
           console.error(err);
           alert(err.message);
         });
+        navigate("/tennis-time/reservations");
     } else {
       alert("Please select a date and time");
     }
@@ -99,9 +101,9 @@ export default function TennisTime() {
             Tennis Time
           </Typography>
           <Box
+            onSubmit={handleSubmit}
             component="form"
             noValidate
-            onSubmit={handleSubmit}
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
@@ -146,7 +148,6 @@ export default function TennisTime() {
               </Grid>
             </Grid>
             <Button
-              type="submit"
               onClick={handleSubmit}
               fullWidth
               variant="contained"

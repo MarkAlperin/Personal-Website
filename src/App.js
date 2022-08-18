@@ -3,32 +3,25 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { AppContextProvider } from "./context/appContext";
 import FrontPage from "./components/displays/FrontPage";
-import Fallback from "./components/Fallback";
+// import Fallback from "./components/Fallback";
 const TennisTime = React.lazy(() => import("./apps/tennisTime/TennisTime"));
 
-const App = () => {
+
+function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/"
-          element={
-            <AppContextProvider>
-              <FrontPage />
-            </AppContextProvider>
-          }
-        />
+          element={<AppContextProvider>
+            <FrontPage />
+          </AppContextProvider>} />
         <Route
           path="/tennis-time"
-          element={
-            <Suspense fallback={Fallback}>
-              <TennisTime />
-            </Suspense>
-          }
-        />
+          element={<Suspense fallback={<div>Loading...</div>}><TennisTime /></Suspense>} />
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
 export default App;

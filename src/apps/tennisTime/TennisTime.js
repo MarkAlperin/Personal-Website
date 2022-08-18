@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-
+import { Link as RouterLink, Router} from 'react-router-dom';
+import { LinkProps } from '@mui/material/Link';
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -154,7 +155,7 @@ export default function TennisTime() {
             >
               Schedule Reservation
             </Button>
-            <Grid container justifyContent="flex-end">
+            <Grid container flexDirection="column" alignItems="flex-end">
               <Grid item>
                 <Link
                   href="https://sites.onlinecourtreservations.com/reservations"
@@ -165,13 +166,11 @@ export default function TennisTime() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link
-                  href="https://sites.onlinecourtreservations.com/reservations"
-                  target="_blank"
-                  variant="body2"
-                >
-                  See your future scheduleings
+
+                <Link component={RouterLink} to="/tennis-time/reservations" variant="body2">
+                  See your reservations
                 </Link>
+
               </Grid>
             </Grid>
           </Box>

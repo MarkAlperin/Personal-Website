@@ -10,8 +10,8 @@ const Projects = () => {
 
   return (
     <ProjectsContainer>
-      {projects.map((project, idx) => {
-        return <ProjectCard key={idx} project={project} />;
+      {projects.map((project) => {
+        return <ProjectCard key={project.name} project={project} />;
       })}
     </ProjectsContainer>
   );

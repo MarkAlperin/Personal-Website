@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { Link as RouterLink, Router} from 'react-router-dom';
-import { LinkProps } from '@mui/material/Link';
+import { Link as RouterLink } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -166,11 +165,13 @@ export default function TennisTime() {
                 </Link>
               </Grid>
               <Grid item>
-
-                <Link component={RouterLink} to="/tennis-time/reservations" variant="body2">
+                <Link
+                  component={RouterLink}
+                  to="/tennis-time/reservations"
+                  variant="body2"
+                >
                   See your reservations
                 </Link>
-
               </Grid>
             </Grid>
           </Box>

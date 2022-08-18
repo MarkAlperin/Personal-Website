@@ -15,12 +15,12 @@ const projects = [
     ],
     github: "https://github.com/MarkAlperin/Tennis_Time",
     bullets: [
-      "A web app that allows the client to schedule future tennis court bookings, that are handled by a bot.",
+      "These are all placeholders...",
       "The bot uses Puppeteer to scrape the tennis court website and send the booking information to the client.",
       "The client can then schedule the booking and the bot will send the booking information to the tennis court website."
     ],
-    imageL: "cards54.webp",
-    imageS: "cards24.webp",
+    imageL: "tennisTime54.webp",
+    imageS: "tennisTime24.webp",
     alt: "a web app that allows the client to schedule future tennis court bookings.",
     link: "/tennis-time",
   },

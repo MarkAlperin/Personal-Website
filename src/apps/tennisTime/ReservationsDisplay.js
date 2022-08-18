@@ -9,8 +9,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import ReservationCard from "./ReservationCard";
 
-
 const theme = createTheme();
+const localRandiAuth = localStorage.getItem("localRandiAuth");
 
 export default function ReservationsDisplay(props) {
   const [reservations, setReservations] = useState([]);
@@ -25,7 +25,8 @@ export default function ReservationsDisplay(props) {
     setReservations(reservationData.data);
   };
 
-  const cancelReservation = async (id) => {
+  const cancelReservation = async (id, madeByRandi) => {
+    if(localRandiAuth || !madeByRandi) {
     await axios.delete(`http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}/${id}`)
       .then((res) => {
         console.log(res);
@@ -34,6 +35,9 @@ export default function ReservationsDisplay(props) {
         console.log("ERROR: ", err);
       });
     getReservations();
+    } else {
+      alert("You must be Randi to cancel a reservation");
+    }
   };
 
   return (

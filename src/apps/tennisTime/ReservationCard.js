@@ -62,7 +62,7 @@ export default function Upcoming({ reservation, date, cancelReservation }) {
         )}
         <Button
           type="submit"
-          onClick={() => {cancelReservation(reservation._id)}}
+          onClick={() => {cancelReservation(reservation._id, reservation.isRandi)}}
           variant="contained"
           sx={{ mt: 3, mb: 2 }}
         >

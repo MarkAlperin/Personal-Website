@@ -2,6 +2,29 @@
 
 const projects = [
   {
+    name: "Tennis Time",
+    description: "A web app that the client to schedule future tennis court bookings, which are handled by a bot.",
+    techs: [
+      "React, ",
+      "MUI, ",
+      "AWS, ",
+      "Node, ",
+      "Express, ",
+      "MongoDB, ",
+      "Puppeteer",
+    ],
+    github: "https://github.com/MarkAlperin/Tennis_Time",
+    bullets: [
+      "A web app that allows the client to schedule future tennis court bookings, that are handled by a bot.",
+      "The bot uses Puppeteer to scrape the tennis court website and send the booking information to the client.",
+      "The client can then schedule the booking and the bot will send the booking information to the tennis court website."
+    ],
+    imageL: "cards54.webp",
+    imageS: "cards24.webp",
+    alt: "a web app that allows the client to schedule future tennis court bookings.",
+    link: "/tennis-time",
+  },
+  {
     name: "Just Cards",
     description: "A mobile playing card sandbox game for up to 8 players.",
     techs: [

@@ -1,27 +1,34 @@
-import React from "react";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { Suspense } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import FrontPage from "./components/displays/FrontPage";
 import { AppContextProvider } from "./context/appContext";
-
+import FrontPage from "./components/displays/FrontPage";
+import Fallback from "./components/Fallback";
+const TennisTime = React.lazy(() => import("./apps/tennisTime/TennisTime"));
 
 const App = () => {
   return (
-    <AppContextProvider>
-      <FrontPage />
-    </AppContextProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <AppContextProvider>
+              <FrontPage />
+            </AppContextProvider>
+          }
+        />
+        <Route
+          path="/tennis-time"
+          element={
+            <Suspense fallback={Fallback}>
+              <TennisTime />
+            </Suspense>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
-
-  // return (
-  //   <BrowserRouter>
-  //     <Routes>
-  //       <AppContextProvider>
-  //         <Route path="/" element={<FrontPage />} />
-  //       </AppContextProvider>
-  //       <Route path="/cradleMountain" element={<CradleMountainApp />} />
-  //     </Routes>
-  //   </BrowserRouter>
-  // );
 };
 
 export default App;

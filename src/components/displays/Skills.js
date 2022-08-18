@@ -41,8 +41,8 @@ const Skills = () => {
             <P2 ctx={ctx}>Testing</P2>
           </TitleContainer>
         <IconsContainer>
-          {icons.development.map((icon, idx) => {
-            return <SkillCard key={idx} icon={icon} />;
+          {icons.development.map((icon) => {
+            return <SkillCard key={icon.alt} icon={icon} />;
           })}
         </IconsContainer>
       </SectionContainer>

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import templates from "../templates";
 import useImage from "../../hooks/useImage"
@@ -9,6 +10,15 @@ const ProjectCard = ({ project }) => {
 
   const imageS = useImage(project.imageS).image;
   const imageL = useImage(project.imageL).image;
+
+  const linkStyle = {
+    marginBottom: "10px",
+    textDecoration: "none",
+    fontWeight: "bold",
+    fontSize: "15px",
+    color: `${templates.color.mid}`,
+    textShadow: `0 0 1.15px ${templates.color.shadowDark}`
+  };
 
   return (
     <ProjectCardContainer>
@@ -36,10 +46,14 @@ const ProjectCard = ({ project }) => {
             return <StyledLi key={idx}>{bullet}</StyledLi>;
           })}
         </StyledList>
+        <LinksContainer>
         <ButtonLink href={project.github} target="_blank">
           {" "}
           Repo{" "}
         </ButtonLink>
+        {project.link && (
+          <Link to={project.link} style={linkStyle}>Link</Link>)}
+        </LinksContainer>
       </TextContainer>
     </ProjectCardContainer>
   );
@@ -68,20 +82,26 @@ const ProjectCardContainer = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
   } ;
-`;
+  `;
 
 const ButtonLink = styled.a`
   margin-bottom: 10px;
+  margin-right: 10px;
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;
   color: ${templates.color.mid};
   text-shadow: 0 0 1.15px ${templates.color.shadowDark};
+  `;
 
+const LinksContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   @media (max-width: ${templates.breakpoints.mobile}) {
     align-self: center;
   } ;
-`;
+  `;
 
 const StyledImage = styled.img`
   width: 40%;
@@ -122,7 +142,7 @@ const H3 = styled.a`
   text-decoration: none;
   font-size: 1.25rem;
   font-weight: bold;
-  @media (max-width: ${templates.breakpoints.mobile}) {
+  @media (max-width: ${templates.breakpoints.tablet}) {
     display: none;
   }
   cursor: pointer;
@@ -138,7 +158,7 @@ const H3a = styled.a`
   text-decoration: none;
   font-size: 1.25rem;
   font-weight: bold;
-  @media (min-width: ${templates.breakpoints.mobile}) {
+  @media (min-width: ${templates.breakpoints.tablet}) {
     display: none;
   }
   color: ${templates.color.black};

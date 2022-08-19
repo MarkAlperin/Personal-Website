@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import styled from "styled-components";
 
 import Container from "@mui/material/Container";
 import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import ReservationCard from "./ReservationCard";
@@ -14,6 +17,7 @@ const localRandiAuth = localStorage.getItem("localRandiAuth");
 
 export default function ReservationsDisplay(props) {
   const [reservations, setReservations] = useState([]);
+  const navigate = useNavigate();
   const date = new Date();
 
   useEffect(() => {
@@ -21,20 +25,25 @@ export default function ReservationsDisplay(props) {
   }, []);
 
   const getReservations = async () => {
-    const reservationData = await axios.get(`http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}`);
+    const reservationData = await axios.get(
+      `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}`
+    );
     setReservations(reservationData.data);
   };
 
   const cancelReservation = async (id, madeByRandi) => {
-    if(localRandiAuth || !madeByRandi) {
-    await axios.delete(`http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}/${id}`)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log("ERROR: ", err);
-      });
-    getReservations();
+    if (localRandiAuth || !madeByRandi) {
+      await axios
+        .delete(
+          `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}/${id}`
+        )
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log("ERROR: ", err);
+        });
+      getReservations();
     } else {
       alert("You must be Randi to cancel a reservation");
     }
@@ -52,10 +61,24 @@ export default function ReservationsDisplay(props) {
             alignItems: "center",
           }}
         >
-          <Typography component="h1" variant="h5">
-            Reservations to be scheduled
-          </Typography>
-          {!reservations.length && <Typography variant="body1">No reservations</Typography>}
+          <Box
+          sx={{
+            width: .42,
+            display: "flex",
+            alignItems: "center",
+          }}>
+
+              <ArrowBackIcon onClick={() => navigate("/tennis-time")} />
+
+            <TypographyContainer>
+            <Typography component="h1" variant="h5" >
+              Future Bookings
+            </Typography>
+            </TypographyContainer>
+          </Box>
+          {!reservations.length && (
+            <Typography variant="body1">No reservations</Typography>
+          )}
           {Array.isArray(reservations) &&
             reservations.map((reservation) => (
               <ReservationCard
@@ -70,3 +93,18 @@ export default function ReservationsDisplay(props) {
     </ThemeProvider>
   );
 }
+
+const TitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  width: inherit;
+`;
+
+const ArrowBackContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const TypographyContainer = styled.div`
+  margin-left: 5%;
+  `;

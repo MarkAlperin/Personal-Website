@@ -15,9 +15,9 @@ const projects = [
     ],
     github: "https://github.com/MarkAlperin/Tennis_Time",
     bullets: [
-      "These are all placeholders...",
-      "The bot uses Puppeteer to scrape the tennis court website and send the booking information to the client.",
-      "The client can then schedule the booking and the bot will send the booking information to the tennis court website."
+      "Created a reservation system with Node, AWS, and MongoDB that allows the client to schedule future tennis court bookings.",
+      "Leveraged the MUI library to create a user-friendly interface.",
+      "Created a bot with puppeteer that automatically schedules tennis court bookings for the client.",
     ],
     imageL: "tennisTime54.webp",
     imageS: "tennisTime24.webp",

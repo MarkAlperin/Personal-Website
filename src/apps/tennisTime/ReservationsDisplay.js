@@ -94,16 +94,16 @@ export default function ReservationsDisplay(props) {
   );
 }
 
-const TitleContainer = styled.div`
-  display: flex;
-  align-items: center;
-  width: inherit;
-`;
+// const TitleContainer = styled.div`
+//   display: flex;
+//   align-items: center;
+//   width: inherit;
+// `;
 
-const ArrowBackContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
+// const ArrowBackContainer = styled.div`
+//   display: flex;
+//   align-items: center;
+// `;
 
 const TypographyContainer = styled.div`
   margin-left: 5%;

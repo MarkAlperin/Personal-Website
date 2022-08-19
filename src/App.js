@@ -5,7 +5,7 @@ import { AppContextProvider } from "./context/appContext";
 import FrontPage from "./components/displays/FrontPage";
 // import Fallback from "./components/Fallback";
 const TennisTime = React.lazy(() => import("./apps/tennisTime/TennisTime"));
-const ReservationsDisplay = React.lazy(() => import("./apps/tennisTime/ReservationsDisplay"));
+const ResPage = React.lazy(() => import("./apps/tennisTime/ResPage"));
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
         <Route path="/tennis-time/reservations"
           element={
             <Suspense fallback={<div>Loading...</div>}>
-              <ReservationsDisplay />
+              <ResPage />
             </Suspense>
           }
         />

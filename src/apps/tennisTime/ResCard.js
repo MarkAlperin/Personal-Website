@@ -78,7 +78,7 @@ const ReservationContainer = styled.div`
   flex-direction: column;
   border-radius: 5px;
   border: 1px solid black;
-  width: 80%;
+  width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;

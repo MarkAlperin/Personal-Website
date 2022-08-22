@@ -30,8 +30,12 @@ export default function ResCard({ reservation, date, cancelReservation }) {
   const formatTime = (integer) => (integer < 10 ? `0${integer}` : integer);
 
   const avatarClickHandler = () => {
-    console.log(reservation);
-    console.log("hoursLeft", hoursLeft);
+    console.log(reservation)
+    console.log("timeLeft", timeLeft)
+    console.log("daysLeft", daysLeft)
+    console.log("hoursLeft", hoursLeft)
+    console.log("minutesLeft", minutesLeft)
+    console.log("secondsLeft", secondsLeft)
   };
 
   const avatarSX =
@@ -43,7 +47,7 @@ export default function ResCard({ reservation, date, cancelReservation }) {
     <ReservationContainer>
       <DateTimeContainer>
         <Avatar sx={avatarSX} onClick={avatarClickHandler}>
-          {reservation.isRandi ? <SportsTennisIcon /> : <BlockIcon />}
+          <SportsTennisIcon />
         </Avatar>
         <Typography variant="h6">{reservation.game}</Typography>
         <p>{`${reservation.humanTime[0]}`}</p>{" "}
@@ -51,9 +55,8 @@ export default function ResCard({ reservation, date, cancelReservation }) {
       </DateTimeContainer>
       <UpcomingBody>
         {daysLeft - 14 > 0 && (
-          <Typography>{`Event will be scheduled in ${daysLeft - 14} day${
-            daysLeft - 14 > 1 ? "s" : ""
-          }`}</Typography>
+          <Typography>{`Event will be scheduled in ${daysLeft - 14} ${
+            daysLeft - 14 > 1 ? "days" : "day " + hoursLeft + " hours"}`}</Typography>
         )}
         {!(daysLeft - 14 > 0) && (
           <Typography>{`Event will be scheduled in ${hoursLeft}:${formatTime(

@@ -11,28 +11,33 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import ResCard from "./ResCard";
 import BookedCard from "./BookedCard";
+import helpers from "./helpers/helpers";
 
 const theme = createTheme();
 const localRandiAuth = localStorage.getItem("localRandiAuth");
 
-export default function ResPage(props) {
+export default function ResPage({isRandi}) {
   const [reservations, setReservations] = useState([]);
   const navigate = useNavigate();
-  const date = new Date();
 
   useEffect(() => {
     getReservations();
   }, []);
 
   const getReservations = async () => {
-    const reservationData = await axios.get(
-      `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}`
-    );
-    setReservations(reservationData.data);
+    if (localRandiAuth) {
+      const reservationData = await axios.get(
+        `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}`
+      );
+      setReservations(reservationData.data);
+    } else {
+      const reservationData = helpers.makeDummyReservations();
+      setReservations(reservationData);
+    }
   };
 
-  const cancelReservation = async (id, madeByRandi) => {
-    if (localRandiAuth || !madeByRandi) {
+  const cancelReservation = async (id) => {
+    if (localRandiAuth) {
       await axios
         .delete(
           `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}/${id}`

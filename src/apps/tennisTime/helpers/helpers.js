@@ -20,6 +20,23 @@ const formatResData = (date, time, facility, isRandi) => {
   return resData;
 };
 
+const makeDummyReservations = () => {
+  let reservations = [1, 5, 7, 13, 15, 16, 25].map((i, idx) => {
+    let dateMilliseconds = new Date().getTime() + (i * 24 * 60 * 60 * 1000)
+    let date = new Date(dateMilliseconds);
+
+    date.setHours(i % 5 === 0 ? 9 : 17, 0);
+    let facility = i % 5 === 0 ? "Tennis" : "Pickleball";
+    let resData = formatResData(date, date, facility, false);
+    resData.isScheduled =
+    resData._id = date;
+    resData.isScheduled = i > 14 ? false : true;
+
+    return resData;
+  });
+  return reservations;
+};
+
 const formatCourtIndex = (courtStr) => {
   const courts = [
     "NL1",
@@ -118,5 +135,6 @@ module.exports = {
   formatResData,
   formatTimeIndex,
   formatCourtIndex,
+  makeDummyReservations,
   months,
 };

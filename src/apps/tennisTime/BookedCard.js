@@ -14,7 +14,6 @@ export default function BookedCard({ reservation, cancelReservation }) {
   const [hoursLeft, setHoursLeft] = useState();
   const [minutesLeft, setMinutesLeft] = useState();
   const [secondsLeft, setSecondsLeft] = useState();
-  const fourteenDays = 1209600000;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -48,20 +47,19 @@ export default function BookedCard({ reservation, cancelReservation }) {
     <ReservationContainer>
       <DateTimeContainer>
         <Avatar sx={avatarSX} onClick={avatarClickHandler}>
-          {reservation.isRandi ? <SportsTennisIcon /> : <BlockIcon/>}
+          <SportsTennisIcon />
         </Avatar>
         <Typography variant="h6">{reservation.game}</Typography>
         <p>{`${reservation.humanTime[0]}`}</p>{" "}
         <p>{`${reservation.humanTime[1]}`}</p>
       </DateTimeContainer>
       <UpcomingBody>
-        {daysLeft - 1 > 0 && (
-          <Typography>{`Tennis time in  ${
-            daysLeft
-          } day${daysLeft > 1 ? "s" : ""}`}</Typography>
+      {daysLeft > 0 && (
+          <Typography>{`Tennis time in ${daysLeft} ${
+            daysLeft > 1 ? "days" : "day " + hoursLeft + " hours"}`}</Typography>
         )}
-        {daysLeft - 1 < 0 && (
-          <Typography>{`Event will be scheduled in ${hoursLeft}:${formatTime(
+        {!(daysLeft > 0) && (
+          <Typography>{`Tennis time in ${hoursLeft}:${formatTime(
             minutesLeft
           )}:${formatTime(secondsLeft)}`}</Typography>
         )}

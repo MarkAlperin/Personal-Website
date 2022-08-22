@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
@@ -30,6 +29,9 @@ export default function ResPage({isRandi}) {
         `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}`
       );
       setReservations(reservationData.data);
+      setTimeout(() => {
+        getReservations();
+      }, 1000);
     } else {
       const reservationData = helpers.makeDummyReservations();
       setReservations(reservationData);
@@ -60,10 +62,11 @@ export default function ResPage({isRandi}) {
       <TwoColumnsContainer>
         <ResListContainer>
           <TitleContainer>
-            {/* <ArrowBackIcon onClick={() => navigate("/tennis-time")} /> */}
+            <ArrowBackIcon onClick={() => navigate("/tennis-time")} />
             <Typography component="h1" variant="h5">
               Future Bookings
             </Typography>
+            <StyledP>.</StyledP>
           </TitleContainer>
           {!reservations.length && (
             <Typography variant="body1">No reservations</Typography>
@@ -81,9 +84,11 @@ export default function ResPage({isRandi}) {
         </ResListContainer>
         <ResListContainer>
           <TitleContainer>
+            <StyledP>.</StyledP>
             <Typography component="h1" variant="h5">
               Booked Reservations
             </Typography>
+            <StyledP>.</StyledP>
           </TitleContainer>
           {!reservations.length && (
             <Typography variant="body1">No reservations</Typography>
@@ -126,13 +131,12 @@ const ResListContainer = styled.div`
 const TitleContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content:space-between;
   align-items: center;
   width: 100%;
   margin-top: 6%;
 `;
 
-const TypographyContainer = styled.div`
-  display: flex;
-  align-self: center;
+const StyledP = styled.div`
+color: white;
 `;

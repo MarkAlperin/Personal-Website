@@ -3,7 +3,7 @@
 const projects = [
   {
     name: "Tennis Time",
-    description: "A web app that the client to schedule future tennis court bookings, which are handled by a bot.",
+    description: "A web app that automatically schedules tennis court reservations for the client.",
     techs: [
       "React, ",
       "MUI, ",
@@ -15,9 +15,9 @@ const projects = [
     ],
     github: "https://github.com/MarkAlperin/Tennis_Time",
     bullets: [
-      "Created a reservation system with Node, AWS, and MongoDB that allows the client to schedule future tennis court bookings.",
-      "Leveraged the MUI library to create a user-friendly interface.",
-      "Created a bot with puppeteer that automatically schedules tennis court bookings for the client.",
+      "Created a reservations system with Node, AWS, and MongoDB to allow the client to schedule future bookings",
+      "Built a bot with puppeteer that automatically schedules tennis court bookings.",
+      "Leveraged the MUI library to create a user-friendly interface, and Twilio for text-based user feedback.",
     ],
     imageL: "tennisTime54.webp",
     imageS: "tennisTime24.webp",

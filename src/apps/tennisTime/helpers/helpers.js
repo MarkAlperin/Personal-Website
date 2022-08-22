@@ -28,7 +28,6 @@ const makeDummyReservations = () => {
     date.setHours(i % 5 === 0 ? 9 : 17, 0);
     let facility = i % 5 === 0 ? "Tennis" : "Pickleball";
     let resData = formatResData(date, date, facility, false);
-    resData.isScheduled =
     resData._id = date;
     resData.isScheduled = i > 14 ? false : true;
 

@@ -4,23 +4,23 @@ import styled from "styled-components";
 import Button from "@mui/material/Button";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
-import BlockIcon from "@mui/icons-material/Block";
+import BlockIcon from '@mui/icons-material/Block';
 import SportsTennisIcon from "@mui/icons-material/SportsTennis";
 
-export default function ResCard({ reservation, date, cancelReservation }) {
-  const [timeLeft, setTimeLeft] = useState(
-    new Date(reservation.date).setHours(9, 0) - new Date()
-  );
+
+export default function BookedCard({ reservation, cancelReservation }) {
+  const [timeLeft, setTimeLeft] = useState(new Date(reservation.date) - new Date());
   const [daysLeft, setDaysLeft] = useState();
   const [hoursLeft, setHoursLeft] = useState();
   const [minutesLeft, setMinutesLeft] = useState();
   const [secondsLeft, setSecondsLeft] = useState();
+  const fourteenDays = 1209600000;
 
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeLeft((prevState) => prevState - 1000);
     }, 1000);
-    setDaysLeft(Math.floor(timeLeft / (1000 * 60 * 60 * 24)));
+    setDaysLeft(Math.round(timeLeft / (1000 * 60 * 60 * 24)));
     setHoursLeft(Math.floor(timeLeft / (1000 * 60 * 60)) % 24);
     setMinutesLeft(Math.floor(timeLeft / (1000 * 60)) % 60);
     setSecondsLeft(Math.floor(timeLeft / 1000) % 60);
@@ -29,42 +29,45 @@ export default function ResCard({ reservation, date, cancelReservation }) {
 
   const formatTime = (integer) => (integer < 10 ? `0${integer}` : integer);
 
-  const avatarClickHandler = () => {
-    console.log(reservation);
-    console.log("hoursLeft", hoursLeft);
-  };
+  const avatarClickHandler=()=>{
+    console.log(reservation)
+    console.log("timeLeft", timeLeft)
+    console.log("daysLeft", daysLeft)
+    console.log("hoursLeft", hoursLeft)
+    console.log("minutesLeft", minutesLeft)
+    console.log("secondsLeft", secondsLeft)
+  }
 
   const avatarSX =
     reservation.game === "Tennis"
       ? { m: 1, bgcolor: "secondary.main" }
       : { m: 1, bgcolor: "success.main" };
 
+
   return (
     <ReservationContainer>
       <DateTimeContainer>
         <Avatar sx={avatarSX} onClick={avatarClickHandler}>
-          {reservation.isRandi ? <SportsTennisIcon /> : <BlockIcon />}
+          {reservation.isRandi ? <SportsTennisIcon /> : <BlockIcon/>}
         </Avatar>
         <Typography variant="h6">{reservation.game}</Typography>
         <p>{`${reservation.humanTime[0]}`}</p>{" "}
         <p>{`${reservation.humanTime[1]}`}</p>
       </DateTimeContainer>
       <UpcomingBody>
-        {daysLeft - 14 > 0 && (
-          <Typography>{`Event will be scheduled in ${daysLeft - 14} day${
-            daysLeft - 14 > 1 ? "s" : ""
-          }`}</Typography>
+        {daysLeft - 1 > 0 && (
+          <Typography>{`Tennis time in  ${
+            daysLeft
+          } day${daysLeft > 1 ? "s" : ""}`}</Typography>
         )}
-        {!(daysLeft - 14 > 0) && (
+        {daysLeft - 1 < 0 && (
           <Typography>{`Event will be scheduled in ${hoursLeft}:${formatTime(
             minutesLeft
           )}:${formatTime(secondsLeft)}`}</Typography>
         )}
         <Button
           type="submit"
-          onClick={() => {
-            cancelReservation(reservation._id, reservation.isRandi);
-          }}
+          onClick={() => {cancelReservation(reservation._id, reservation.isRandi)}}
           variant="contained"
           sx={{ mt: 3, mb: 2 }}
         >

@@ -10,6 +10,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import ResCard from "./ResCard";
+import BookedCard from "./BookedCard";
 
 const theme = createTheme();
 const localRandiAuth = localStorage.getItem("localRandiAuth");
@@ -68,7 +69,6 @@ export default function ResPage(props) {
               .map((reservation) => (
                 <ResCard
                   reservation={reservation}
-                  date={date}
                   key={reservation._id}
                   cancelReservation={cancelReservation}
                 />
@@ -87,9 +87,8 @@ export default function ResPage(props) {
             reservations
               .filter((reservation) => reservation.isScheduled)
               .map((reservation) => (
-                <ResCard
+                <BookedCard
                   reservation={reservation}
-                  date={date}
                   key={reservation._id}
                   cancelReservation={cancelReservation}
                 />

@@ -59,6 +59,7 @@ export default function TennisTime() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (date && time) {
+      if (isRandi) {
       const resData = formatResData(date, time, facility, isRandi);
       axios({
         method: "post",
@@ -73,6 +74,9 @@ export default function TennisTime() {
           alert(err.message);
         });
         navigate("/tennis-time/reservations");
+      } else {
+        alert("You must be Randi to make a reservation");
+      }
     } else {
       alert("Please select a date and time");
     }

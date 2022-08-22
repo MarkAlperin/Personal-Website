@@ -2,6 +2,25 @@
 
 const projects = [
   {
+    name: "Just Cards",
+    description: "A mobile playing card sandbox game for up to 8 players.",
+    techs: [
+      "React-Native, ",
+      "Node.js, ",
+      "PostgreSQL, ",
+      "Express ",
+    ],
+    github: "https://github.com/SecretCardClub",
+    bullets: [
+      "Created dynamic screen location detection for sandbox UX with the React-Native PanResponder system to intuitively simulate drag and drop interactions.",
+      "Used the React-Native Animated library to synchronously display player actions to all users.",
+      "Leveraged React-Native’s Gesture Responder system to build gesture based interactions for cards."
+    ],
+    imageL: "cards54.webp",
+    imageS: "cards24.webp",
+    alt: "a mobile playing card sandbox game",
+  },
+  {
     name: "Tennis Time",
     description: "A web app that automatically schedules tennis court reservations for the client.",
     techs: [
@@ -23,26 +42,6 @@ const projects = [
     imageS: "tennisTime24.webp",
     alt: "a web app that allows the client to schedule future tennis court bookings.",
     link: "/tennis-time",
-  },
-  {
-    name: "Just Cards",
-    description: "A mobile playing card sandbox game for up to 8 players.",
-    techs: [
-      "React-Native, ",
-      "Node.js, ",
-      "PostgreSQL, ",
-      "Express ",
-    ],
-    github: "https://github.com/SecretCardClub",
-    bullets: [
-      "Created dynamic screen location detection for sandbox UX with the React-Native PanResponder system to intuitively simulate drag and drop interactions.",
-      "Used the React-Native Animated library to synchronously display player actions to all users.",
-      "Leveraged React-Native’s Gesture Responder system to build gesture based interactions for cards."
-
-    ],
-    imageL: "cards54.webp",
-    imageS: "cards24.webp",
-    alt: "a mobile playing card sandbox game",
   },
   {
     name: "Local Donation Exchange",

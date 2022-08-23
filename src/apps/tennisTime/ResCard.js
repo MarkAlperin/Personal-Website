@@ -4,7 +4,6 @@ import styled from "styled-components";
 import Button from "@mui/material/Button";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
-import BlockIcon from "@mui/icons-material/Block";
 import SportsTennisIcon from "@mui/icons-material/SportsTennis";
 
 export default function ResCard({ reservation, date, cancelReservation }) {

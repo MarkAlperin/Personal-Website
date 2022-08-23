@@ -1,4 +1,4 @@
-const formatResData = (date, time, facility, isRandi) => {
+const formatResData = (date, time, facility) => {
   date.setHours(time.getHours(), time.getMinutes());
   const resData = {
     date: date,
@@ -9,8 +9,8 @@ const formatResData = (date, time, facility, isRandi) => {
     courts: facility === "Tennis" ? ["1", "2", "3", "4"] : ["1", "2"],
     game: facility,
     humanTime: date.toLocaleString("en-US").split(", "),
-    isRandi: isRandi,
-    isScheduled: false,
+    isAttempted: false,
+    isReserved: false,
   };
   let t = resData.humanTime[1];
   resData.humanTime[1] = `${t.slice(0, t.length - 6)} ${t.slice(

@@ -21,6 +21,9 @@ export default function ResPage() {
 
   useEffect(() => {
     getReservations();
+    setTimeout(() => {
+      getReservations();
+    }, 1000);
   }, []);
 
   const getReservations = async () => {
@@ -29,9 +32,6 @@ export default function ResPage() {
         `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}`
       );
       setReservations(reservationData.data);
-      setTimeout(() => {
-        getReservations();
-      }, 1000);
     } else {
       const reservationData = helpers.makeDummyReservations();
       setReservations(reservationData);

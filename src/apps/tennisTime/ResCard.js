@@ -29,12 +29,7 @@ export default function ResCard({ reservation, date, cancelReservation }) {
   const formatTime = (integer) => (integer < 10 ? `0${integer}` : integer);
 
   const avatarClickHandler = () => {
-    console.log(reservation)
-    console.log("timeLeft", timeLeft)
-    console.log("daysLeft", daysLeft)
-    console.log("hoursLeft", hoursLeft)
-    console.log("minutesLeft", minutesLeft)
-    console.log("secondsLeft", secondsLeft)
+    console.log(reservation);
   };
 
   const avatarSX =

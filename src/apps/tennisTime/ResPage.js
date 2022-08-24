@@ -68,12 +68,12 @@ export default function ResPage() {
             </Typography>
             <StyledP>.</StyledP>
           </TitleContainer>
-          {!reservations.length && (
+          {!reservations.filter(res => !res.isReserved && !res.isAttempted).length && (
             <Typography variant="body1">No reservations</Typography>
           )}
           {Array.isArray(reservations) &&
             reservations
-              .filter((reservation) => !reservation.isScheduled)
+              .filter((reservation) => !reservation.isAttempted)
               .map((reservation) => (
                 <ResCard
                   reservation={reservation}
@@ -90,12 +90,12 @@ export default function ResPage() {
             </Typography>
             <StyledP>.</StyledP>
           </TitleContainer>
-          {!reservations.length && (
+          {!reservations.filter(res => res.isReserved && res.isAttempted).length && (
             <Typography variant="body1">No reservations</Typography>
           )}
           {Array.isArray(reservations) &&
             reservations
-              .filter((reservation) => reservation.isScheduled)
+              .filter((reservation) => reservation.isReserved)
               .map((reservation) => (
                 <BookedCard
                   reservation={reservation}

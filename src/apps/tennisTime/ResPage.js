@@ -90,7 +90,7 @@ export default function ResPage() {
             </Typography>
             <StyledP>.</StyledP>
           </TitleContainer>
-          {!reservations.filter(res => res.isReserved && res.isAttempted).length && (
+          {!reservations.filter(res => res.isReserved).length && (
             <Typography variant="body1">No reservations</Typography>
           )}
           {Array.isArray(reservations) &&

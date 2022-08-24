@@ -116,6 +116,7 @@ const TwoColumnsContainer = styled.div`
   width: 100%;
   @media (max-width: 768px) {
     flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -126,6 +127,9 @@ const ResListContainer = styled.div`
   align-items: "center";
   margin-top: 6%;
   width: 35%;
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 `;
 
 const TitleContainer = styled.div`

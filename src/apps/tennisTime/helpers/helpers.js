@@ -21,7 +21,7 @@ const formatResData = (date, time, facility) => {
 };
 
 const makeDummyReservations = () => {
-  let reservations = [1, 5, 7, 13, 15, 16, 25].map((i, idx) => {
+  let reservations = [1, 5, 7, 13, 15, 16, 20].map((i, idx) => {
     let dateMilliseconds = new Date().getTime() + (i * 24 * 60 * 60 * 1000)
     let date = new Date(dateMilliseconds);
 

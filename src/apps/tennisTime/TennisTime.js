@@ -61,6 +61,7 @@ export default function TennisTime() {
     if (date && time) {
       if (isRandi) {
       const resData = formatResData(date, time, facility);
+      console.log("resData: ", resData);
       axios({
         method: "post",
         url: `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}`,

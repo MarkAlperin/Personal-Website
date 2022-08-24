@@ -30,6 +30,7 @@ const makeDummyReservations = () => {
     let resData = formatResData(date, date, facility, false);
     resData._id = date;
     resData.isReserved = i > 14 ? false : true;
+    resData.isAttempted = i > 14 ? false : true;
 
     return resData;
   });

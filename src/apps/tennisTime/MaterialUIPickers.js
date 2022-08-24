@@ -16,7 +16,6 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
   isMobile = false;
 }
 
-
 export default function MaterialUIPickers(props) {
 
   return (

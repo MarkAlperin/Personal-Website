@@ -26,6 +26,8 @@ export default function MaterialUIPickers(props) {
           inputFormat="MM/dd/yyyy"
           value={props.date}
           onChange={props.handleDateChange}
+          disablePast={true}
+          showDaysOutsideCurrentMonth={true}
           renderInput={(params) => <TextField {...params} />}
         />}
         {isMobile && <MobileDatePicker
@@ -33,6 +35,8 @@ export default function MaterialUIPickers(props) {
           inputFormat="MM/dd/yyyy"
           value={props.date}
           onChange={props.handleDateChange}
+          disablePast={true}
+          showDaysOutsideCurrentMonth={true}
           renderInput={(params) => <TextField {...params} />}
         />}
         {!isMobile && <TimePicker
@@ -41,6 +45,7 @@ export default function MaterialUIPickers(props) {
           minutesStep={30}
           value={props.time}
           onChange={props.handleTimeChange}
+          ampmInClock={true}
           renderInput={(params) => <TextField {...params} />}
         />}
         {isMobile && <MobileTimePicker
@@ -48,6 +53,7 @@ export default function MaterialUIPickers(props) {
           minutesStep={30}
           value={props.time}
           onChange={props.handleTimeChange}
+          ampmInClock={true}
           renderInput={(params) => <TextField {...params} />}
         />}
       </Stack>

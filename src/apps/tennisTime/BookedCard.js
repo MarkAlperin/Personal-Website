@@ -29,6 +29,7 @@ export default function BookedCard({ reservation, cancelReservation }) {
 
   const avatarClickHandler=()=>{
     console.log(reservation);
+    console.log(typeof reservation.date);
   };
 
   const avatarSX =

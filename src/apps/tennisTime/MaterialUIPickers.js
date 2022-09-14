@@ -46,6 +46,8 @@ export default function MaterialUIPickers(props) {
           value={props.time}
           onChange={props.handleTimeChange}
           ampmInClock={true}
+          minTime={new Date(0, 0, 0, 6)}
+          maxTime={new Date(0, 0, 0, 22, 30)}
           renderInput={(params) => <TextField {...params} />}
         />}
         {isMobile && <MobileTimePicker
@@ -54,6 +56,8 @@ export default function MaterialUIPickers(props) {
           value={props.time}
           onChange={props.handleTimeChange}
           ampmInClock={true}
+          minTime={new Date(0, 0, 0, 6)}
+          maxTime={new Date(0, 0, 0, 22, 30)}
           renderInput={(params) => <TextField {...params} />}
         />}
       </Stack>

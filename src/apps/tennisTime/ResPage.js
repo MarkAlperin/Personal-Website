@@ -39,13 +39,14 @@ export default function ResPage() {
   };
 
   const cancelReservation = async (id, isReserved) => {
+    console.log(id, isReserved);
     if (localRandiAuth) {
       await axios({
         method: "delete",
         url: `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}/${id}`,
         data: {
-          id,
-          isReserved,
+          id: id,
+          isReserved: isReserved,
         },
       })
         .then((res) => {

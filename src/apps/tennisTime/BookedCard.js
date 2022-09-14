@@ -29,7 +29,6 @@ export default function BookedCard({ reservation, cancelReservation }) {
 
   const avatarClickHandler=()=>{
     console.log(reservation);
-    console.log(typeof reservation.date);
   };
 
   const avatarSX =
@@ -60,7 +59,7 @@ export default function BookedCard({ reservation, cancelReservation }) {
         )}
         <Button
           type="submit"
-          onClick={() => {cancelReservation(reservation._id, reservation.isRandi)}}
+          onClick={() => {cancelReservation(reservation._id, reservation.isReserved)}}
           variant="contained"
           sx={{ mt: 3, mb: 2 }}
         >

@@ -39,15 +39,11 @@ export default function ResPage() {
   };
 
   const cancelReservation = async (id, isReserved) => {
-    console.log(id, isReserved);
     if (localRandiAuth) {
       await axios({
         method: "delete",
         url: `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}/${id}`,
-        data: {
-          id: id,
-          isReserved: isReserved,
-        },
+        data: {id, isReserved},
       })
         .then((res) => {
           console.log(res);
@@ -56,17 +52,6 @@ export default function ResPage() {
           console.log("ERROR: ", err);
         });
       getReservations();
-      //   .delete(
-      //     `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}/${id}`,
-      //     {data: {id, isReserved}}
-      //   )
-      //   .then((res) => {
-      //     console.log(res);
-      //   })
-      //   .catch((err) => {
-      //     console.log("ERROR: ", err);
-      //   });
-      // getReservations();
     } else {
       alert("You must be Randi to cancel a reservation");
     }

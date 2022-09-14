@@ -40,11 +40,14 @@ export default function ResPage() {
 
   const cancelReservation = async (id, isReserved) => {
     if (localRandiAuth) {
-      await axios
-        .delete(
-          `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}/${id}`,
-          {data: {id, isReserved}}
-        )
+      await axios({
+        method: "delete",
+        url: `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}/${id}`,
+        data: {
+          id,
+          isReserved,
+        },
+      })
         .then((res) => {
           console.log(res);
         })
@@ -52,6 +55,17 @@ export default function ResPage() {
           console.log("ERROR: ", err);
         });
       getReservations();
+      //   .delete(
+      //     `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}/${id}`,
+      //     {data: {id, isReserved}}
+      //   )
+      //   .then((res) => {
+      //     console.log(res);
+      //   })
+      //   .catch((err) => {
+      //     console.log("ERROR: ", err);
+      //   });
+      // getReservations();
     } else {
       alert("You must be Randi to cancel a reservation");
     }
@@ -69,9 +83,8 @@ export default function ResPage() {
             </Typography>
             <StyledP>.</StyledP>
           </TitleContainer>
-          {!reservations.filter(res => !res.isReserved && !res.isAttempted).length && (
-            <Typography variant="body1">No reservations</Typography>
-          )}
+          {!reservations.filter((res) => !res.isReserved && !res.isAttempted)
+            .length && <Typography variant="body1">No reservations</Typography>}
           {Array.isArray(reservations) &&
             reservations
               .filter((reservation) => !reservation.isAttempted)
@@ -91,7 +104,7 @@ export default function ResPage() {
             </Typography>
             <StyledP>.</StyledP>
           </TitleContainer>
-          {!reservations.filter(res => res.isReserved).length && (
+          {!reservations.filter((res) => res.isReserved).length && (
             <Typography variant="body1">No reservations</Typography>
           )}
           {Array.isArray(reservations) &&
@@ -136,12 +149,12 @@ const ResListContainer = styled.div`
 const TitleContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   margin-top: 6%;
 `;
 
 const StyledP = styled.div`
-color: white;
+  color: white;
 `;

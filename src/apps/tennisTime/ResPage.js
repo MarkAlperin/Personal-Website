@@ -104,7 +104,7 @@ export default function ResPage() {
                 />
               ))}
 
-          {Array.isArray(reservations) && reservations.filter((res) => !res.isReserved && res.isAttempted).length && (
+          {(Array.isArray(reservations) && reservations.filter((res) => !res.isReserved && res.isAttempted).length > 0) && (
             <>
             <TitleContainer>
               <StyledP>.</StyledP>

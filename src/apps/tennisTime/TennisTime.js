@@ -15,10 +15,16 @@ import FaceIcon from "@mui/icons-material/Face";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Chip from "@mui/material/Chip";
+import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import MaterialUIPickers from "./MaterialUIPickers";
-import { formatResData } from "./helpers/helpers";
+import { formatResData, convertCourts } from "./helpers/helpers";
+
 
 const theme = createTheme();
 const localRandiAuth = localStorage.getItem("localRandiAuth");
@@ -29,12 +35,20 @@ export default function TennisTime() {
   const [time, setTime] = useState("");
   const [clickCounter, setClickCounter] = useState(0);
   const [isRandi, setIsRandi] = useState(localRandiAuth);
+  const [courts, setCourts] = useState("1")
   const navigate = useNavigate();
 
   const chipClickHandler = () => {
     setFacility((prevState) => {
       return prevState === "Tennis" ? "Pickleball" : "Tennis";
     });
+    setCourts((prevCourts) => {
+      return convertCourts[prevCourts]
+    });
+  };
+
+  const handleCourtsChange = (newValue) => {
+    setCourts(newValue.target.value)
   };
 
   const handleDateChange = (newValue) => {
@@ -60,20 +74,20 @@ export default function TennisTime() {
     event.preventDefault();
     if (date && time) {
       if (isRandi) {
-      const resData = formatResData(date, time, facility);
-      console.log("resData: ", resData);
-      axios({
-        method: "post",
-        url: `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}`,
-        data: resData,
-      })
-        .then((res) => {
-          console.log(res);
+        const resData = formatResData(date, time, facility, courts);
+        console.log("resData: ", resData);
+        axios({
+          method: "post",
+          url: `http://${process.env.REACT_APP_SERVER_URL}:${process.env.REACT_APP_SERVER_PORT}/${process.env.REACT_APP_DB_NAME}`,
+          data: resData,
         })
-        .catch((err) => {
-          console.error(err);
-          alert(err.message);
-        });
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((err) => {
+            console.error(err);
+            alert(err.message);
+          });
         navigate("/tennis-time/reservations");
       } else {
         alert("You must be Randi to make a reservation");
@@ -128,6 +142,23 @@ export default function TennisTime() {
                     color={facility === "Pickleball" ? "success" : "default"}
                     label="Pickleball"
                   />
+                  <FormControl>
+                  <InputLabel id="court-select">Court</InputLabel>
+                  <Select
+                    labelId="Court"
+                    id="Court"
+                    value={courts}
+                    defaultValue={"1"}
+                    label="Court"
+                    onChange={handleCourtsChange}
+                  >
+                    <MenuItem value={"1"}>One</MenuItem>
+                    <MenuItem value={"2"}>Two</MenuItem>
+                    {facility === "Tennis" && <MenuItem value={"3"}>Three</MenuItem>}
+                    {facility === "Tennis" && <MenuItem value={"4"}>Four</MenuItem>}
+                    <MenuItem value={facility === "Tennis" ? "1 2 3 4" : "1 2"}>Volley!</MenuItem>
+                  </Select>
+                  </FormControl>
                 </SelectContainer>
               </Grid>
               <Grid item xs={12}>

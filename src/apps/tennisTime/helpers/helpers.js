@@ -1,4 +1,4 @@
-const formatResData = (date, time, facility) => {
+const formatResData = (date, time, facility, courts) => {
   date.setHours(time.getHours(), time.getMinutes());
   const resData = {
     date: date,
@@ -6,7 +6,7 @@ const formatResData = (date, time, facility) => {
     month: months[date.getMonth()].name,
     day: date.getDate(),
     facility: facility === "Tennis" ? "25" : "88",
-    courts: facility === "Tennis" ? ["1", "2", "3", "4"] : ["1", "2"],
+    courts: courts,
     game: facility,
     humanTime: date.toLocaleString("en-US").split(", "),
     isAttempted: false,
@@ -101,6 +101,15 @@ const formatTimeIndex = (time) => {
   }
 };
 
+const convertCourts = {
+  "1 2 3 4": "1 2",
+  "1 2": "1 2 3 4",
+  "1": "1",
+  "2": "2",
+  "3": "1",
+  "4": "1",
+};
+
 const months = [
   "january",
   "february",
@@ -137,4 +146,5 @@ module.exports = {
   formatCourtIndex,
   makeDummyReservations,
   months,
+  convertCourts,
 };

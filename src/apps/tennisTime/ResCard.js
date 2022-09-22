@@ -37,6 +37,10 @@ export default function ResCard({ reservation, date, cancelReservation }) {
       ? { m: 1, bgcolor: "secondary.main" }
       : { m: 1, bgcolor: "success.main" };
 
+
+  const courts = reservation.courts.split(" ");
+  const courtText = `Court${courts.length > 1 ? "s" : ""} ${courts.length > 1 ? courts[0] + "-" + courts[courts.length - 1] : courts[0]}`
+
   return (
     <ReservationContainer>
       <DateTimeContainer>
@@ -46,6 +50,7 @@ export default function ResCard({ reservation, date, cancelReservation }) {
         <Typography variant="h6">{reservation.game}</Typography>
         <p>{`${reservation.humanTime[0]}`}</p>{" "}
         <p>{`${reservation.humanTime[1]}`}</p>
+        <p>{courtText}</p>
       </DateTimeContainer>
       <UpcomingBody>
         {daysLeft - 14 > 0 && (

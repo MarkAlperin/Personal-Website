@@ -6,7 +6,7 @@ import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import SportsTennisIcon from "@mui/icons-material/SportsTennis";
 
-export default function ResCard({ reservation, date, cancelReservation }) {
+export default function ResCard({ reservation, date, cancelReservation, failed }) {
   const [timeLeft, setTimeLeft] = useState(
     new Date(reservation.date).setHours(9, 0) - new Date()
   );
@@ -54,11 +54,11 @@ export default function ResCard({ reservation, date, cancelReservation }) {
       </DateTimeContainer>
       <UpcomingBody>
         {daysLeft - 14 > 0 && (
-          <Typography>{`Event will be scheduled in ${daysLeft - 14} ${
+          <Typography>{`${failed ? "Next attempt" : "Event will be scheduled"} in ${daysLeft - 14} ${
             daysLeft - 14 > 1 ? "days" : "day " + hoursLeft + " hours"}`}</Typography>
         )}
         {!(daysLeft - 14 > 0) && (
-          <Typography>{`Event will be scheduled in ${hoursLeft}:${formatTime(
+          <Typography>{`${failed ? "Next attempt" : "Event will be scheduled"} in ${hoursLeft}:${formatTime(
             minutesLeft
           )}:${formatTime(secondsLeft)}`}</Typography>
         )}

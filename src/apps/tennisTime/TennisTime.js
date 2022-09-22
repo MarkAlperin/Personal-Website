@@ -156,7 +156,7 @@ export default function TennisTime() {
                     <MenuItem value={"2"}>Two</MenuItem>
                     {facility === "Tennis" && <MenuItem value={"3"}>Three</MenuItem>}
                     {facility === "Tennis" && <MenuItem value={"4"}>Four</MenuItem>}
-                    <MenuItem value={facility === "Tennis" ? "1 2 3 4" : "1 2"}>Volley!</MenuItem>
+                    <MenuItem value={facility === "Tennis" ? "1 2 3 4" : "1 2"}>Volley</MenuItem>
                   </Select>
                   </FormControl>
                 </SelectContainer>

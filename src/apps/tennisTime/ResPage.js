@@ -103,6 +103,29 @@ export default function ResPage() {
                   cancelReservation={cancelReservation}
                 />
               ))}
+
+          {Array.isArray(reservations) && reservations.filter((res) => !res.isReserved && res.isAttempted).length && (
+            <>
+            <TitleContainer>
+              <StyledP>.</StyledP>
+              <Typography component="h1" variant="h5">
+                Failed Reservations
+              </Typography>
+              <StyledP>.</StyledP>
+            </TitleContainer>
+            {reservations
+                .filter((res) => !res.isReserved && res.isAttempted)
+                .map((res) => (
+                  <ResCard
+                    reservation={res}
+                    key={res._id}
+                    cancelReservation={cancelReservation}
+                    failed={true}
+                  />
+                ))
+              }
+              </>
+          )}
         </ResListContainer>
       </TwoColumnsContainer>
     </ThemeProvider>
